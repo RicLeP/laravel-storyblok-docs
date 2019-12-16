@@ -1,0 +1,4 @@
+name: laravel-storyblok-docs
+recipe: laravel
+config:
+  webroot: public
