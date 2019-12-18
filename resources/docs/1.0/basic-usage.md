@@ -30,12 +30,12 @@ resources/views/storyblok/pages/about/default.blade.php
 
 ### Result
 
-| URL    | View |
-|   :-   |  :-  |
+| URL                        | View                                                     |
+|   :-                       |  :-                                                      |
 | example.com/about          | resources/views/storyblok/pages/about.blade.php          |
 | example.com/about/the-team | resources/views/storyblok/pages/about/the-team.blade.php |
 | example.com/about/history  | resources/views/storyblok/pages/about.blade.php          |
-| example.com/about/news     | resources/views/storyblok/pages/news.blade.php          |
+| example.com/about/news     | resources/views/storyblok/pages/news.blade.php           |
 | example.com/contact/       | resources/views/storyblok/pages/default.blade.php        |
 
 - As no `history.blade.php` file exists the first matching file will be `about.blade.php` - it uses the URL’s path.
