@@ -5,10 +5,10 @@
     - [Basic usage](/{{route}}/{{version}}/basic-usage)
     
 - ## Advanced Usage
-    - [Views](/{{route}}/{{version}}/views)
     - [Blocks](/{{route}}/{{version}}/blocks)
     - [Pages](/{{route}}/{{version}}/pages)
     - [Folders](/{{route}}/{{version}}/folders)
+    - [Views](/{{route}}/{{version}}/views)
     
     
 - ## Making Content Sing
