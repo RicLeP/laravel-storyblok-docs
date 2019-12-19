@@ -2,7 +2,8 @@
 
 ---
 
-- [TODO](#todo)
+- [Determining the view to use](#determining-view)
+- [Available Data](#available-data)
 
 
 Once [installed](/{{route}}/{{version}}/installation) you can start working with Storyblok in your Laravel application just by creating the appropriate Blade views.
@@ -15,7 +16,9 @@ Create the following folder `resources/views/storyblok/pages`, this is the defau
 
 ---
 
+<a name="determining-view">
 ## Determining the view to use
+</a>
 
 The `DefaultPage` looks for views matching the current URL structure, when no matching file is found it walks down the path until it finds a file that does. Take the following example:
 
@@ -44,7 +47,9 @@ resources/views/storyblok/pages/about/default.blade.php
 
 ---
 
+<a name="available-data">
 ## Available Data
+</a>
 
 The `DefaultPage` passes four variables to the view, the most important of which is `story` - this contains nested `DefaultBlock`s matching the JSON structure returned by the Storyblok API.
 
@@ -107,17 +112,17 @@ use App\Storyblok\DefaultBlock;
 use Illuminate\Support\Collection;
 
 DefaultBlock {
-    #component: "homepage"
-    #content: Collection {
-        #items: {
+    component: "homepage"
+    content: Collection {
+        items: {
             "hero" => DefaultBlock {
-                #component: hero
-                #content: Collection {
+                component: hero
+                content: Collection {
                     0 => DefaultBlock {
-                        #_uid: "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-                        #component: "hero",
-                        #content: Collection {
-                            #items: {
+                        _uid: "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+                        component: "hero",
+                        content: Collection {
+                            items: {
                                 "headline" => "This package allows you to easily use Storyblok with Laravel."
                             }
                         }
@@ -125,28 +130,28 @@ DefaultBlock {
                 }
             },
             "intro" => DefaultBlock {
-                #component: intro
-                #content: Collection {
+                component: intro
+                content: Collection {
                     0 => DefaultBlock {
-                        #_uid: "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-                        #component: "text_with_button",
-                        #content: Collection {
-                            #items: {
+                        _uid: "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+                        component: "text_with_button",
+                        content: Collection {
+                            items: {
                                 "text" => "Use the power of Storyblok with the elegance of Laravel.",
                                 "button" => DefaultBlock {
-                                    #_uid: "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-                                    #component: "button",
-                                    #content: Collection {
-                                        #items: {
+                                    _uid: "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+                                    component: "button",
+                                    content: Collection {
+                                        items: {
                                             0 => DefaultBlock {
-                                                #_uid: "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-                                                #component: "link_button",
-                                                #content: Collection {
-                                                    #items: {
+                                                _uid: "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+                                                component: "link_button",
+                                                content: Collection {
+                                                    items: {
                                                         "url" => DefaultBlock {
-                                                            #_uid: "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-                                                            #component: "url",
-                                                            #content: Collection {
+                                                            _uid: "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+                                                            component: "url",
+                                                            content: Collection {
                                                                 #items: {
                                                                     "id" => "2f05310d-c69b-4cf9-b7cc-732649b90fae",
                                                                     "url" => false,
