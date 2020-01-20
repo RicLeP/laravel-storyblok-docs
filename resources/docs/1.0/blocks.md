@@ -8,7 +8,20 @@
 - [Accessors](#accessors)
 
 
-Blocks are the key err.. building block of your pages. Every Storyblok component is transformed into a Block class. The class they become is determined based on the component’s name - if you have a matching Block class that will be used, for example a component called `cat-images` transforms into `CatImagesBlock` if available.
+Blocks are the key err.. building block of your pages. Every Storyblok component is transformed into a Block class. The class they become is determined based on the component’s name - if you have a matching Block class that will be used, for example a component called `cat-images` transforms into `CatImagesBlock` if available. Blocks should extend `Riclep\Storyblok\Block`.
+
+```php
+<?php
+
+namespace App\Storyblok;
+
+use Riclep\Storyblok\Block;
+
+class CatImagesBlock extends Block
+{
+
+}
+```
 
 Blocks borrow some concepts from Laravel’s Eloquent models to make using the data feel familiar such as creating accessors or casting variables to dates, but we don’t stop there, we also have a bunch of helpful features for Storyblok content - automatically transform markdown fields, apply typographical fixes and flourishes or return rendered HTML - we want to make building websites a enjoyable. 
 
@@ -139,3 +152,5 @@ class ServiceBlock extends Block
 	}
 }
 ```
+
+> {info} Storyblok also have a [Cloudinary app](https://www.storyblok.com/apps/cloudinary-native) that provides more powerful asset management and manipulation. 

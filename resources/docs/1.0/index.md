@@ -3,10 +3,11 @@
     - [Installation](/{{route}}/{{version}}/installation)
     - [Configuration](/{{route}}/{{version}}/configuration)
     - [Basic usage](/{{route}}/{{version}}/basic-usage)
+    - [Requesting pages](/{{route}}/{{version}}/requesting-pages)
     
 - ## Advanced Usage
-    - [Blocks](/{{route}}/{{version}}/blocks)
     - [Pages](/{{route}}/{{version}}/pages)
+    - [Blocks](/{{route}}/{{version}}/blocks)
     - [Folders](/{{route}}/{{version}}/folders)
     - [Views](/{{route}}/{{version}}/views)
     
