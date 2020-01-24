@@ -6,6 +6,7 @@
 - [Markdown](#markdown)
 - [HTML-o-rise](#html-o-rise)
 - [Accessors](#accessors)
+- [Editable comment link](#editable-comment-link)
 
 
 Blocks are the key err.. building block of your pages. Every Storyblok component is transformed into a Block class. The class they become is determined based on the component’s name - if you have a matching Block class that will be used, for example a component called `cat-images` transforms into `CatImagesBlock` if available. Blocks should extend `Riclep\Storyblok\Block`.
@@ -153,4 +154,10 @@ class ServiceBlock extends Block
 }
 ```
 
-> {info} Storyblok also have a [Cloudinary app](https://www.storyblok.com/apps/cloudinary-native) that provides more powerful asset management and manipulation. 
+> {info} Storyblok also have a [Cloudinary app](https://www.storyblok.com/apps/cloudinary-native) that provides more powerful asset management and manipulation.
+
+<a name="editable-comment-link">
+## Editable comment link
+</a>
+
+// Todo

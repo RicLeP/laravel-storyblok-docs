@@ -5,6 +5,7 @@
 - [Installing](#installing)
 - [Configuration](#configuration)
 - [Routing](#routing)
+- [VueJS Configuration](#vue-js)
 
 <a name="installing">
 ## Installing
@@ -51,3 +52,21 @@ Route::get('/{slug?}', '\Riclep\Storyblok\Http\Controllers\StoryblokController@s
 ```
 
 > {warning} If using the catch-all this should be your last route to stop it intercepting any other requests in your application.
+
+<a name="vue-js">
+## VueJS Configuration
+</a>
+
+A big part of the magic of Storyblok is the live editor. This uses special HTML comments to link your HTML to their editor. However, VueJS will remove comments by default so make sure you update your VueJS app configuration as so:
+
+```javascript
+const app = new Vue({
+	el: '#app',
+	comments: true,
+    ...
+});
+```
+
+To add the comments to your code use the `{!! editableBridge() !!}` method on the block, full details are in the Blocks documentation.
+
+> {warning} If you forget to update your VueJS configuration you can waste many hours debugging why the link isn’t working. 😅
