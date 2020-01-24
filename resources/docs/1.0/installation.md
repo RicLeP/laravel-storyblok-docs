@@ -67,6 +67,6 @@ const app = new Vue({
 });
 ```
 
-To add the comments to your code use the `{!! editableBridge() !!}` method on the block, full details are in the Blocks documentation.
+To add the comments to your code use the `{!! editableBridge() !!}` method on the block, full details are in the [Blocks documentation](/{{route}}/{{version}}/blocks).
 
 > {warning} If you forget to update your VueJS configuration you can waste many hours debugging why the link isn’t working. 😅
