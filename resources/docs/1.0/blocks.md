@@ -4,7 +4,8 @@
 
 - [Date casting](#date-casting)
 - [Markdown](#markdown)
-- [HTML-o-rise](#html-o-rise)
+- [Richtext](#richtext)
+- [Textarea to paragraphs](#textarea-to-paragraphs)
 - [Accessors](#accessors)
 - [Editable comment link](#editable-comment-link)
 
@@ -55,11 +56,31 @@ protected $markdown = ['interesting_story'];
 
 ---
 
-<a name="html-o-rise">
-## HTML-o-rise
+<a name="richtext">
+## Richtext
 </a>
 
-// TODO converts textareas to HTML paragraphs
+Storyblok’s Richtext editor is perhaps it’s most powerful field. We use their [Richtext Renderer](https://github.com/storyblok/storyblok-php-richtext-renderer) to convert the structured JSON to regular HTML. To do so, simply add a  `$richtext` propery to your block that contains an array of all the fields to convert. Converted fields are suffixed with `_html` leaving the original field intact.
+
+```php
+# creates a new content item called $really_rich_content_html
+protected $richtext = ['really_rich_content'];
+```
+
+> {warning} Nested blocks inside Richtext fields are not currently parsed. We hope to add this feature soon but feel you’re better off trying to design a good schema instead of relying upon being able to add anything to one box and losing a well defined structure to your content.
+
+---
+
+<a name="textarea-to-paragraphs">
+## Textarea to paragraphs
+</a>
+
+Sometimes it’s better to use a simple textarea field instead of one of the fancy options above, you may however still want to wrap the paragraphs in `<p>` tags. This is easily done by adding a `$autoParagraphs` property to the block which lists all the fields to convert. As with Markdown and Richtext fields a new content property suffixed with `_html` is created containing the beautifully wrapped paragraphs.
+
+```php
+# creates a new content item called $simple_content_html
+protected $autoParagraphs = ['simple_content'];
+```
 
 ---
 
