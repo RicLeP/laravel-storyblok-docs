@@ -3,6 +3,7 @@
 ---
 
 - [Running methods upon creation](#running-methods-upon-creation)
+- [Getting a Block’s position](#getting-a-blocks-position)
 - [Date casting](#date-casting)
 - [Markdown](#markdown)
 - [Richtext](#richtext)
@@ -37,6 +38,37 @@ Sometimes you may want to run some code when a Block is created. To do this impl
 ## Built in methods
 
 Blocks borrow some concepts from Laravel’s Eloquent models to make using them feel familiar such as creating accessors or casting variables to dates, but we don’t stop there, we also have a bunch of helpful features for Storyblok content - automatically transforming markdown fields, apply typographical fixes and flourishes or returning rendered HTML - we want to help make building websites enjoyable. 
+
+---
+
+<a name="getting-a-blocks-position">
+## Getting a Block’s position
+</a>
+
+Sometimes it’s useful to know the parent and ancestors of the current Block. Every Block has a `_componentPath` property which is an array of the names of every Storyblok component passed through to reach the current point. There are several methods to help you work with this informtion.
+
+```php
+// Returns the current component’s name
+$currentComponent->component(); // 'current-component'
+
+// Returns the current path 
+$currentComponent->componentPath(); // ['root-component', 'ancestor-component', 'parent-component', 'current-component']
+
+// Checks if a compontent has a particular child
+$parentComponent->hasChildComponent('current-component'); // true
+$parentComponent->hasChildComponent('something-else'); // false
+
+// Returns the component name ‘x’ generations ago
+$currentComponent->getAncestorComponent(2); // 'ancestor-component'
+
+// Checks if this has a certain parent
+$currentComponent->isChildOf('parent'); // true
+
+// Checks if this has a certain ancestor
+$currentComponent->isAncestorOf('ancestor-component'); // true
+```
+
+Wouldn’t it be great to be able to create CSS classes when working in Blade that help you style nested Blocks? Don’t worry, [we have you covered](/{{route}}/{{version}}/views#creating-css-class-names).
 
 ---
 

@@ -17,9 +17,11 @@ This package allows you to use fantastic [Storyblok](https://www.storyblok.com/)
 
 - Pages from Storyblok mapped to [PHP Pages classes](/{{route}}/{{version}}/pages) giving access to the nest content ([Blocks](/{{route}}/{{version}}/blocks)) and meta data for SEO, OpenGraph and more
 - Each Storyblok component is automatically transformed into a [PHP class](/{{route}}/{{version}}/blocks) using a simple naming convention - just match your class and component names
+- **NEW!** Blocks know where they sit in relation to their ancestors and CSS classes can be created to help your styling
 - The structure of the JSON data is preserved but super powered making it simple to loop over in your views
 - Simple to link to the Storyblok visual composer
 - Request ‘[Folders](/{{route}}/{{version}}/folders)’ of content such as a list of articles or a team of people
+- **NEW!** Asset fields are converted to [Assets classes](/{{route}}/{{version}}/assets) allowing you to manipulate them as required
 - Feels like Laravel - use date casting and accessors exactly as you would with models
 - Built in support for Storyblok Markdown and Richtext fields - just add a property to your class
 - Richer Typography with [PHP Typography](https://github.com/mundschenk-at/php-typography) baked in
@@ -39,7 +41,7 @@ This package allows you to use fantastic [Storyblok](https://www.storyblok.com/)
 
 ## Contributing
 
-Feel free to help out
+Feel free to help out!
 
 ### Security
 
