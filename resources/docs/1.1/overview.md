@@ -41,7 +41,7 @@ This package allows you to use fantastic [Storyblok](https://www.storyblok.com/)
 
 ## Contributing
 
-Feel free to help out!
+Feel free to help out! 😀
 
 ### Security
 

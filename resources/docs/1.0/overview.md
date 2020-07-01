@@ -11,6 +11,7 @@
 [![Quality Score](https://img.shields.io/scrutinizer/g/riclep/laravel-storyblok.svg?style=flat-square)](https://scrutinizer-ci.com/g/riclep/laravel-storyblok)
 [![Total Downloads](https://img.shields.io/packagist/dt/riclep/laravel-storyblok.svg?style=flat-square)](https://packagist.org/packages/riclep/laravel-storyblok)
 
+
 This package allows you to use fantastic [Storyblok](https://www.storyblok.com/) headless CMS with the amazing [Laravel](https://laravel.com/) PHP framework. It’s designed to try and feel natural to Laravel developers and part of the ecosystem whilst also converting Storyblok’s API JSON responses into something powerful with minimal effort.
 
 ## Key Features
@@ -23,7 +24,6 @@ This package allows you to use fantastic [Storyblok](https://www.storyblok.com/)
 - Feels like Laravel - use date casting and accessors exactly as you would with models
 - Built in support for Storyblok Markdown and Richtext fields - just add a property to your class
 - Richer Typography with [PHP Typography](https://github.com/mundschenk-at/php-typography) baked in
-
 
 ## Future plans
 
@@ -39,7 +39,7 @@ This package allows you to use fantastic [Storyblok](https://www.storyblok.com/)
 
 ## Contributing
 
-Feel free to help out
+Feel free to help out! 😀
 
 ### Security
 
