@@ -6,6 +6,7 @@
 - [Rending pages](#rendering)
 - [Page title](#page-title)
 - [Meta description](#meta-description)
+- [Schema.org data](#schema-org-data)
 - [Open Graph and SEO](#seo)
 
 # TODO passing data to views - routing
@@ -38,10 +39,9 @@ Every page implements a `render()` method that returns a view with the following
 
 | Variable           | Content                                               |
 | :-                 | :-                                                    |
-| `title`            | String for the page’s title                           |
-| `meta_description` | String for the page’s meta description                |
-| `content`          | Nested Blocks representing the page’s content         |
-| `seo`              | Array of content from the Storyblok SEO app if used   |
+| `story`            | Story object                                          |
+
+> {warning} In prior versions more individual variables were passed but now we just send the entire Page.
 
 You are free to choose how you wish to display this data. You may want to create one single Blade file and loop over the nested objects. Alternatively you might pass some of the content to @includes. Each Block is also self-renderable - calling it’s render() method will pass it’s contents to a matching view.
 
@@ -63,6 +63,44 @@ If the Storyblok SEO app is installed this will return the description inputted 
 
 
 > {info} If you’re taking the time and care to optimise for search engines don’t forget to also use semantic HTML tags. You’ve got a [whole host of tags](https://developer.mozilla.org/en-US/docs/Web/HTML/Element) to choose from. They’ll not only improve SEO performance but will but make the site more accessible and your HTML easier to read.
+
+
+
+<a name="schema-org-data">
+## Schema.org data
+</a>
+
+[Schema.org](https://schema.org) is a collaborative, community activity with a mission to create, maintain, and promote schemas for structured data on the Internet, on web pages, in email messages, and beyond. These schemas are designed to be machine readable allowing you to provide structured data for search engines, social networks and bots.
+
+We use the super [Spatie Schema.org](https://github.com/spatie/schema-org) package.
+
+To add Schema.org meta data for you Page use the `Riclep\Storyblok\Traits\SchemaOrg` trait add a `schemaOrg` method that returns a Spatie schema.
+
+```php
+<?php
+
+namespace App\Storyblok\Pages;
+
+use Riclep\Storyblok\Page;
+use Riclep\Storyblok\Traits\SchemaOrg;
+use Spatie\SchemaOrg\Schema;
+
+class Specific extends Page
+{
+	use SchemaOrg;
+
+	protected function schemaOrg() {
+		return Schema::localBusiness()
+			->name('None of your business')
+			->email('ric@sirric.co.uk')
+			->contactPoint(Schema::contactPoint()->areaServed('Worldwide'));
+	}
+}
+```
+
+To output the `<script>` tags call `$story->schemaOrgScript()` in your view. This is best placed in the `<head>`.
+
+> {info} See the [Spatie package](https://github.com/spatie/schema-org) for full docs.
 
 
 <a name="seo">
@@ -87,6 +125,25 @@ By default Storyblok includes the SEO data within the page component’s content
 </body>
 </html>
 ```
+
+You can define the field you want to use for the title and description.
+
+```php
+<?php
+
+namespace App\Storyblok\Pages;
+
+use Riclep\Storyblok\Page;
+
+class Specific extends Page
+{
+	protected $titleField = 'use_for_title';
+
+	protected $descriptionField = 'use_for_description';
+}
+```
+
+### //TODO - using title and description
 
 
 
