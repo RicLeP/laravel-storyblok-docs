@@ -98,7 +98,7 @@ class Specific extends Page
 }
 ```
 
-To output the `<script>` tags call `$story->schemaOrgScript()` in your view. This is best placed in the `<head>`.
+To output the `<script>` tags call `$story->schemaOrgScript()` in your view, it includes the schemas for every Block on the page. This is best placed in the `<head>`.
 
 > {info} See the [Spatie package](https://github.com/spatie/schema-org) for full docs.
 
