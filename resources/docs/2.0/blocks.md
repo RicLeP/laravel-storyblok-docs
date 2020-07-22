@@ -3,12 +3,14 @@
 ---
 
 - [Running methods upon creation](#running-methods-upon-creation)
+- [Getting a Block’s position](#getting-a-blocks-position)
 - [Date casting](#date-casting)
 - [Markdown](#markdown)
 - [Richtext](#richtext)
 - [Automatically adding paragraphs](#adding-paragraphs)
 - [Accessors](#accessors)
 - [Linking to the visual editor](#editable-comment-link)
+- [Schema.org data](#schema-org-data)
 
 
 Blocks are the key err.. building block of your pages. Every Storyblok component is transformed into a Block class. The class they become is determined by the component’s name - if you have a matching Block class that will be used, for example a component called `cat-images` transforms into `App\Storyblok\Pages\CatImages` if available. Blocks should extend `Riclep\Storyblok\Block` or `App\Storyblok\DefaultBlock`.
@@ -26,6 +28,9 @@ class CatImages extends Block
 }
 ```
 
+You can get a Block’s parent with the `parent()` method and the `Page` by calling `page()`.
+
+
 <a name="running-methods-upon-creation">
 ## Running methods upon creation
 </a>
@@ -37,6 +42,37 @@ Sometimes you may want to run some code when a Block is created. To do this impl
 ## Built in methods
 
 Blocks borrow some concepts from Laravel’s Eloquent models to make using them feel familiar such as creating accessors or casting variables to dates, but we don’t stop there, we also have a bunch of helpful features for Storyblok content - automatically transforming markdown fields, apply typographical fixes and flourishes or returning rendered HTML - we want to help make building websites enjoyable. 
+
+---
+
+<a name="getting-a-blocks-position">
+## Getting a Block’s position
+</a>
+
+Sometimes it’s useful to know the parent and ancestors of the current Block. Every Block has a `_componentPath` property which is an array of the names of every Storyblok component passed through to reach the current point. There are several methods to help you work with this informtion.
+
+```php
+// Returns the current component’s name
+$currentComponent->component(); // 'current-component'
+
+// Returns the current path 
+$currentComponent->componentPath(); // ['root-component', 'ancestor-component', 'parent-component', 'current-component']
+
+// Checks if a compontent has a particular child
+$parentComponent->hasChildComponent('current-component'); // true
+$parentComponent->hasChildComponent('something-else'); // false
+
+// Returns the component name ‘x’ generations ago
+$currentComponent->getAncestorComponent(2); // 'ancestor-component'
+
+// Checks if this has a certain parent
+$currentComponent->isChildOf('parent'); // true
+
+// Checks if this has a certain ancestor
+$currentComponent->isAncestorOf('ancestor-component'); // true
+```
+
+Wouldn’t it be great to be able to create CSS classes when working in Blade that help you style nested Blocks? Don’t worry, [we have you covered](/{{route}}/{{version}}/views#creating-css-class-names).
 
 ---
 
@@ -227,3 +263,39 @@ Don’t worry, these comments are only added when viewing your website within th
 
 
 > {warning} If you are having problems getting this live preview to work check the [trouble shooting page](/{{route}}/{{version}}/troubleshooting#live-preview-not-reloading).
+
+
+<a name="schema-org-data">
+## Schema.org data
+</a>
+
+[Schema.org](https://schema.org) is a collaborative, community activity with a mission to create, maintain, and promote schemas for structured data on the Internet, on web pages, in email messages, and beyond. These schemas are designed to be machine readable allowing you to provide structured data for search engines, social networks and bots.
+
+We use the super [Spatie Schema.org](https://github.com/spatie/schema-org) package.
+
+To add Schema.org meta data for you Block use the `Riclep\Storyblok\Traits\SchemaOrg` trait add a `schemaOrg` method that returns a Spatie schema. This will automatically add it to the Page object.
+
+```php
+<?php
+
+namespace App\Storyblok\Blocks;
+
+use Riclep\Storyblok\Block;
+use Riclep\Storyblok\Traits\SchemaOrg;
+use Spatie\SchemaOrg\Schema;
+
+class Business extends Block
+{
+	use SchemaOrg;
+
+	protected function schemaOrg() {
+		return Schema::localBusiness()
+			->name($this->content()->name)
+			->email($this->content()->email);
+	}
+}
+```
+
+To output the `<script>` tags call `$story->schemaOrgScript()` in your view. This is best placed in the `<head>`.
+
+> {info} See the [Spatie package](https://github.com/spatie/schema-org) for full docs.

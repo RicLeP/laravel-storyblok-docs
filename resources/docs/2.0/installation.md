@@ -23,7 +23,7 @@ composer require riclep/laravel-storyblok
 ## Configuration
 </a>
 
-After installing the package update your .env file with your Storyblok Content Delivery API keys and if you want to receive draft content in development:
+After installing the package update your .env file with your Storyblok Content Delivery API keys and specify if you want to receive draft content in development:
 
 ```php
 STORYBLOK_PREVIEW_API_KEY=your_preview_key
@@ -35,7 +35,7 @@ STORYBLOK_DRAFT=true
 
 ---
 
-Next you need to publish the default Page and Block classes. These will be used for all your Storyblok Pages and Components unless you create your own custom instances. The default classes are published to `app/Storyblok`. This will also publish a `storyblok.php` configuration file.
+Next you need to publish the default Page and Block classes. These will be used for all your Storyblok Pages and Components but can be overridden by your own classes. The default classes are published to `app/Storyblok`. This will also publish a `storyblok.php` configuration file.
 
 ```php
 php artisan vendor:publish
@@ -55,6 +55,8 @@ Route::get('/{slug?}', '\Riclep\Storyblok\Http\Controllers\StoryblokController@s
 
 > {warning} If using the catch-all this should be your last route to stop it intercepting any other requests in your application.
 
+The package also creates a named route that posts to `clear-storyblok-cache` which is used when publishing in the visual editor. See [linking to the visual editor](/{{route}}/{{version}}/linking-the-visual-editor).
+
 <a name="vue-js">
 ## VueJS Configuration
 </a>
@@ -69,6 +71,6 @@ const app = new Vue({
 });
 ```
 
-To add the comments to your code use the `@{!! editableBridge() !!}` method on the block, full details are in the [Blocks documentation](/{{route}}/{{version}}/blocks).
+To add the link to your code use the Block’s `@{!! $someBlock->editLink() !!}` method, for more see [linking to the visual editor](/{{route}}/{{version}}/linking-the-visual-editor).
 
-> {warning} If you forget to update your VueJS configuration you can waste many hours debugging why the visual editor link isn’t working. 😅
+> {warning} If you forget to update your VueJS configuration you can waste many hours debugging why the visual editor link isn’t working! 😅

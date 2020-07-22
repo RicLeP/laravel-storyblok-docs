@@ -8,6 +8,8 @@
 - [Meta description](#meta-description)
 - [Open Graph and SEO](#seo)
 
+# TODO passing data to views - routing
+
 Only Storyblok components that can ‘[act as a content type](https://www.storyblok.com/docs/Guides/root-blocks)’ may be used as Pages and are transformed into a matching Page class. They are similar to [blocks](/{{route}}/{{version}}/blocks) but have some special features of their own.
 
 All pages will use the `DefaultPage` class by default but you can specify your own types by simply making a class called ‘ComponentName’ within ‘app/Storyblok/Pages’ that extends `Riclep\Storyblok\Page`. For example a component called ‘kittens’ would become `App\Storyblok\Pages\Kittens`.
