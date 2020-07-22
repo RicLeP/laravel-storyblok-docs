@@ -26,7 +26,9 @@ composer require riclep/laravel-storyblok
 After installing the package update your .env file with your Storyblok Content Delivery API Key:
 
 ```php
-STORYBLOK_API_KEY=yourkeyhere
+STORYBLOK_PREVIEW_API_KEY=yourkeyhere
+STORYBLOK_PUBLIC_API_KEY=yourkeyhere
+STORYBLOK_DRAFT=true
 ```
 
 > {info} Not sure where to find your API key? [Check their FAQs](https://www.storyblok.com/faq/where-to-find-my-content-delivery-api-key)
@@ -67,6 +69,6 @@ const app = new Vue({
 });
 ```
 
-To add the comments to your code use the `{!! editableBridge() !!}` method on the block, full details are in the [Blocks documentation](/{{route}}/{{version}}/blocks).
+To add the Storyblok comments to your code use the `editableBridge()` method on the block, full details are in the [Blocks documentation](/{{route}}/{{version}}/blocks).
 
 > {warning} If you forget to update your VueJS configuration you can waste many hours debugging why the link isn’t working. 😅
