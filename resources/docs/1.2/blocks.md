@@ -13,7 +13,7 @@
 - [Schema.org data](#schema-org-data)
 
 
-Blocks are the key err.. building block of your pages. Every Storyblok component is transformed into a Block class. The class they become is determined by the component’s name - if you have a matching Block class that will be used, for example a component called `cat-images` transforms into `App\Storyblok\Pages\CatImages` if available. Blocks should extend `Riclep\Storyblok\Block` or `App\Storyblok\DefaultBlock`.
+Blocks are the key err.. building block of your pages. Every Storyblok component is transformed into a Block class. The class they become is determined by the component’s name - if you have a matching Block class that will be used, for example a component called `cat-images` transforms into `App\Storyblok\Blocks\CatImages` if available. Blocks should extend `Riclep\Storyblok\Block` or `App\Storyblok\DefaultBlock`.
 
 ```php
 <?php

@@ -71,6 +71,6 @@ const app = new Vue({
 });
 ```
 
-To add the link to your code use the Block’s `@{!! $someBlock->editLink() !!}` method, for more see [linking to the visual editor](/{{route}}/{{version}}/linking-the-visual-editor).
+To add the link to your code use the Block’s `@{!! $someBlock->editorLink() !!}` method, for more see [linking to the visual editor](/{{route}}/{{version}}/linking-the-visual-editor).
 
 > {warning} If you forget to update your VueJS configuration you can waste many hours debugging why the visual editor link isn’t working! 😅
