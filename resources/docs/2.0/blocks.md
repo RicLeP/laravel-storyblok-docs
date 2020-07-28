@@ -3,17 +3,15 @@
 ---
 
 - [Running methods upon creation](#running-methods-upon-creation)
-- [Getting a Block’s position](#getting-a-blocks-position)
-- [Date casting](#date-casting)
-- [Markdown](#markdown)
-- [Richtext](#richtext)
-- [Automatically adding paragraphs](#adding-paragraphs)
+- [Accessing Fields](#accessing-fields)
 - [Accessors](#accessors)
+- [Getting a Block’s position](#getting-a-blocks-position)
+- [Casting Fields](#casting-fields)
 - [Linking to the visual editor](#editable-comment-link)
 - [Schema.org data](#schema-org-data)
 
 
-Blocks are the key err.. building block of your pages. Every Storyblok component is transformed into a Block class. The class they become is determined by the component’s name - if you have a matching Block class that will be used, for example a component called `cat-images` transforms into `App\Storyblok\Pages\CatImages` if available. Blocks should extend `Riclep\Storyblok\Block` or `App\Storyblok\DefaultBlock`.
+Every Storyblok component making up your page is transformed into a Block class. The class they become is determined by the component’s name - if you create a matching class that will be used, for example a component called `cat-images` transforms into `App\Storyblok\Blocks\CatImages` if available. If the class can’t be found then the default `App\Storyblok\Block` is used. Blocks should extend `Riclep\Storyblok\Block` or `App\Storyblok\Block` if you want to add some defaults.
 
 ```php
 <?php
@@ -28,104 +26,18 @@ class CatImages extends Block
 }
 ```
 
-You can get a Block’s parent with the `parent()` method and the `Page` by calling `page()`.
 
+Blocks borrow some concepts from Laravel’s Eloquent models to make using them feel familiar such as creating accessors or casting variables to dates, but we don’t stop there, we also have a bunch of helpful features for Storyblok content. 
 
-<a name="running-methods-upon-creation">
-## Running methods upon creation
+<a name="accessing-fields">
+## Accessing fields
 </a>
 
-Sometimes you may want to run some code when a Block is created. To do this implement an `init()` method on your block. This is run after any built-in transformations outlined below and is free to modify the Block and it’s contents as required. 
-
----
-
-## Built in methods
-
-Blocks borrow some concepts from Laravel’s Eloquent models to make using them feel familiar such as creating accessors or casting variables to dates, but we don’t stop there, we also have a bunch of helpful features for Storyblok content - automatically transforming markdown fields, apply typographical fixes and flourishes or returning rendered HTML - we want to help make building websites enjoyable. 
-
----
-
-<a name="getting-a-blocks-position">
-## Getting a Block’s position
-</a>
-
-Sometimes it’s useful to know the parent and ancestors of the current Block. Every Block has a `_componentPath` property which is an array of the names of every Storyblok component passed through to reach the current point. There are several methods to help you work with this informtion.
+Blocks store all their fields in a Laravel Collection on the `$_fields` property. You can access them directly on the Block’s object however.
 
 ```php
-// Returns the current component’s name
-$currentComponent->component(); // 'current-component'
-
-// Returns the current path 
-$currentComponent->componentPath(); // ['root-component', 'ancestor-component', 'parent-component', 'current-component']
-
-// Checks if a compontent has a particular child
-$parentComponent->hasChildComponent('current-component'); // true
-$parentComponent->hasChildComponent('something-else'); // false
-
-// Returns the component name ‘x’ generations ago
-$currentComponent->getAncestorComponent(2); // 'ancestor-component'
-
-// Checks if this has a certain parent
-$currentComponent->isChildOf('parent'); // true
-
-// Checks if this has a certain ancestor
-$currentComponent->isAncestorOf('ancestor-component'); // true
-```
-
-Wouldn’t it be great to be able to create CSS classes when working in Blade that help you style nested Blocks? Don’t worry, [we have you covered](/{{route}}/{{version}}/views#creating-css-class-names).
-
----
-
-<a name="date-casting">
-## Date casting
-</a>
-
-When using Storyblok’s Date/Time field you’ll probably want to convert it into something more handy to use in PHP. Simply define a `$dates` property on your Block containing an array of field names and we’ll convert them to [Carbon](https://github.com/briannesbitt/carbon) objects. 
-
-```php
-protected $dates = ['release_date'];
-```
-
----
-
-<a name="markdown">
-## Markdown
-</a>
-
-Storyblok includes Markdown fields (with an optional visual editor that’s perfect for clients!) and we make it super easy to convert them to HTML. Just add a `$markdown` property containing an array of field names and, hey presto, we magically create an HTML version thanks to the power of [CommonMark](https://commonmark.thephpleague.com/). We keep your original field untouched should you wish to do anything else with it and create a duplicate suffixed with `_html`.
-
-```php
-// creates a new content item called $interesting_story_html
-protected $markdown = ['interesting_story'];
-```
-
----
-
-<a name="richtext">
-## Richtext
-</a>
-
-Need even more power than Markdown? Use the Rich Text fieldtype in Storyblok. To convert it to HTML include a `$richtext` property on your Block. This will created a duplicate field suffixed by `_html` containing the processed content.
-
-```php
-// creates a new content item called $i_am_rich_html
-protected $richtext = ['i_am_rich'];
-```
-
-> {warning} The package doesn’t currently support components inside richtext fields.
-
----
-
-<a name="adding-paragraphs">
-## Wrapping content in paragraphs tags
-</a>
-
-You often want to wrap content from textareas in paragraph tags to allow better control of the formatting. This is really simple to do, just add a `$autoParagraphs` property containing an array of the fields to convert. This will add new attributes to your block appended with `_html` and leave the original content untouched.
-
-```php
-// creates a new content item called $textarea_content_html
-protected $autoParagraphs = ['textarea_content'];
-```
+echo $someBlock->someField;
+``` 
 
 ---
 
@@ -151,7 +63,7 @@ class KittenBlock extends Block
      */
     public function getFirstNameAttribute()
     {
-        return ucfirst($this->content['first_name']);
+        return ucfirst($this->_fields['first_name']);
     }
 }
 ```
@@ -176,7 +88,7 @@ class KittenBlock extends Block
      */
     public function getFullNameAttribute()
     {
-        return ucfirst($this->content['first_name']) . ' ' . ucfirst($this->content['surname']);
+        return ucfirst($this->_fields['first_name']) . ' ' . ucfirst($this->_fields['surname']);
     }
 }
 ```
@@ -196,66 +108,85 @@ class ServiceBlock extends Block
     # creates text_class content attribute containing the contrasting class name
 	public function getTextClassAttribute() {
 		$contrast = new ColorContrast();
-		$complimentary = $contrast->complimentaryTheme($this->content['colour']->color);
+		$complimentary = $contrast->complimentaryTheme($this->_fields['colour']->color);
 
 		return $complimentary === ColorContrast::LIGHT ? 'light-text' : 'dark-text';
 	}
 }
 ```
 
+---
 
-### Resizing images with Storyblok’s CDN
+<a name="getting-a-blocks-position">
+## Getting a Block’s position
+</a>
 
-Or perhaps you want to transform an image using Storyblok’s CDN, although a method might make more sense here so you can pass the desired dimensions in to it.
+Sometimes it’s useful to know the parent and ancestors of the current Block. Every Block has a `_componentPath` property which is an array of the names of every Storyblok component passed through to reach the current point. There are several methods to help you work with this information.
+
+```php
+// Returns the current component’s name
+$currentComponent->component(); // 'current-component'
+
+// Returns the current path 
+$currentComponent->_componentPath; // ['root-component', 'ancestor-component', 'parent-component', 'current-component']
+
+// Returns the component name ‘x’ generations ago
+$currentComponent->ancestorComponentName(2); // 'ancestor-component'
+
+// Checks if this has a certain parent
+$currentComponent->isChildOf('parent-component'); // true
+
+// Checks if this has a certain ancestor
+$currentComponent->isAncestorOf('ancestor-component'); // true
+```
+
+Wouldn’t it be great to be able to create CSS classes when working in Blade that help you style nested Blocks? Don’t worry, [we have you covered](/{{route}}/{{version}}/views#creating-css-class-names).
+
+---
+
+<a name="casting-fields">
+## Casting Fields
+</a>
+
+You can cast a Block’s field to any Field class you want with the `$casts` property. This is an array mapping a field name to a Class. The field’s data is passed to the Classes constructor. For more details see the [Fields documentation](/{{route}}/{{version}}/fields).
 
 ```php
 <?php
 
-namespace App\Storyblok;
+namespace App\Storyblok\Blocks;
 
+use Riclep\Storyblok\Fields\DateTime;
 use Riclep\Storyblok\Block;
+use App\Storyblok\Fields\HeroImage;
 
-class ServiceBlock extends Block
+class Custom extends Block
 {
-    # $block->image
-    # this simply transforms the existing content field called image
-    public function getImageAttribute()
-    {
-        return str_replace('//a.storyblok.com', '//img2.storyblok.com/filters:quality(80)', $this->image);
-    }
-
-    # $block->small_image
-    # it’s a tiny version
-	public function getSmallImageAttribute()
-	{
-		return str_replace('//a.storyblok.com', '//img2.storyblok.com/50x0/filters:quality(40)', $this->image);
-	}
-    
-    # $block->large_image
-    # but this one is large and will eat your mobile data
-    public function getLargeImageAttribute()
-	{
-		return str_replace('//a.storyblok.com', '//img2.storyblok.com/5000x0/filters:quality(100)', $this->image);
-	}
+	protected $casts = [
+		'datetime' => DateTime::class,
+		'image' => HeroImage::class,
+	];
 }
 ```
 
-> {info} Storyblok also have a [Cloudinary app](https://www.storyblok.com/apps/cloudinary-native) that provides more powerful image manipulation.
+> {warning} When casting fields to custom Classes make sure you extend `Riclep\Storyblok\Field` or a an existing Field and implement the `__toString()` method.
+
+---
+
 
 <a name="editable-comment-link">
 ## Linking to the visual editor
 </a>
 
-One of Storyblok’s most powerful features is its visual editor. This lets you click text and images within your page and Storyblok will load the correct content in the editing panel allowing you to make changes quickly. There is no need to manually navigate the nested components that make up your page.
+One of Storyblok’s most powerful features is its visual editor. This lets you click text and images within your page and Storyblok will load the correct content in the editing panel allowing you to make changes quickly.
 
-It does this by searching for comments injected into your HTML. To add them simply call the `editableBridge()` method in your Blade views just before the opening tag of the block you wish to make editable.
+It does this by searching for comments injected into your HTML. To add them simply call the `editorLink()` method in your Blade views just before the opening tag of the block you wish to make editable.
 
 ```html
-@{!! $story->editableBridge() !!}
+@{!! $story->editorLink() !!}
 <section>
-    <h1 class="t-1">@{{ $story->title }}</h1>
+    <h1>@{{ $story->title }}</h1>
 
-    <p class="t-2">@{{ $story->introduction }}</p>
+    <p>@{{ $story->introduction }}</p>
 </section>
 ```
 
@@ -273,7 +204,7 @@ Don’t worry, these comments are only added when viewing your website within th
 
 We use the super [Spatie Schema.org](https://github.com/spatie/schema-org) package.
 
-To add Schema.org meta data for you Block use the `Riclep\Storyblok\Traits\SchemaOrg` trait add a `schemaOrg` method that returns a Spatie schema. This will automatically add it to the Page object.
+To add Schema.org to the Block implement a `schemaOrg()` method returning a Spatie Schema.org object. This schema will be automatically added to any Pages this Block is added to.
 
 ```php
 <?php
@@ -281,21 +212,18 @@ To add Schema.org meta data for you Block use the `Riclep\Storyblok\Traits\Schem
 namespace App\Storyblok\Blocks;
 
 use Riclep\Storyblok\Block;
-use Riclep\Storyblok\Traits\SchemaOrg;
 use Spatie\SchemaOrg\Schema;
 
 class Business extends Block
 {
-	use SchemaOrg;
-
 	protected function schemaOrg() {
 		return Schema::localBusiness()
-			->name($this->content()->name)
-			->email($this->content()->email);
+			->name($this->_fields->name)
+			->email($this->_fields->email);
 	}
 }
 ```
 
-To output the `<script>` tags call `$story->schemaOrgScript()` in your view. This is best placed in the `<head>`.
+To output the `<script>` tags call `$story->schemaOrgScript()` on your page in the `<head>` tag.
 
 > {info} See the [Spatie package](https://github.com/spatie/schema-org) for full docs.

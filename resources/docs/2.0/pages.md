@@ -2,22 +2,14 @@
 
 ---
 
-- [Requesting a page](#requesting)
+- [Requestng the page](#requesting)
 - [Rending pages](#rendering)
-- [Page title](#page-title)
-- [Meta description](#meta-description)
+- [Page meta](#page-meta)
 - [Schema.org data](#schema-org-data)
-- [Open Graph and SEO](#seo)
 
-<a name="requesting">
-## Requesting a page
-</a>
+Everything starts with a Page, it contains all the Blocks making up the content and also useful meta information. In Storyblok every page is based on a component that can ‘[act as a Content Type](https://www.storyblok.com/docs/Guides/root-blocks)’. Each Content Type can have it’s own corresponding class on your website. Every Page also contains a root Block, you can access via `$page->block()`, which contains the Content Type’s data like any other Block.
 
-Only Storyblok components that can ‘[act as a content type](https://www.storyblok.com/docs/Guides/root-blocks)’ may be used as Pages and are transformed into a matching Page class.
-
-Each Page holds the content (in form of a root Block) and meta content from Storyblok.
-
-All pages will use the tPage` class by default but you can specify your own types by simply making a class called ‘ComponentName’ within ‘app/Storyblok/Pages’ that extends `Riclep\Storyblok\Page`. For example a component called ‘kitten_pictures’ would become `App\Storyblok\Pages\KittenPictures`.
+All pages will use the `App\Storyblok\Page` class by default but you can specify your own by simply making a class matching the component’s within `app/Storyblok/Pages` that extends `Riclep\Storyblok\Page`. For example a component called ‘kittens’ would become `App\Storyblok\Pages\Kittens`.
 
 ```php
 <?php
@@ -26,70 +18,38 @@ namespace App\Storyblok\Pages;
 
 use Riclep\Storyblok\Page;
 
-class KittenPictures extends Page
+class Kittens extends Page
 {
 
 }
 ```
 
-> {info} If you want to define defaults for all your Page classes then add them to `App\Storyblok\Page\` and extend this instead of `Riclep\Storyblok\Page`.
+> {info} If you want to define defaults for all your Page classes then add them to `App\Storyblok\Page\` class and extend this instead of `Riclep\Storyblok\Page`.
 
 <a name="rendering">
 ## Rendering pages
 </a>
 
-Every page implements a `render()` method that returns a view contaning the entire Story object. By default the selected view will match the component name but if you’d like to customise how which Blade view is selected then override the `views()` method on your Page class returning an array of paths suitable for Laravel’s `view()->first([$this->views()], ...)` method.
+Every page implements a `render()` method that returns a view with the `$story` object passed to it. You are free to choose how you wish to display this data. You may want to create one single Blade file and loop over the nested Blocks and Fields. Alternatively you might want to loop over Blocks and pass their content into include files. Each Block is also self-renderable - calling it’s render() method will pass it’s contents into a view matching it’s name.
 
-> {warning} In prior versions more individual variables were passed but now we just send the entire Page.
+> {info} If you’d like to customise how which Blade view to choose is determined then override the `views()` method on your Page class returning an array of paths suitable for Laravel’s `view()->first()` method.
 
-You are free to choose how you wish to display this data. You may want to create one single Blade file and loop over the nested objects. Alternatively you might pass some of the content to @includes. Each Block is also self-renderable - calling it’s render() method will pass it’s content to a matching view.
 
-### Via a controller
-
-If you wanted to have more control then you can use a controller like so:
-
-```php
-<?php
-
-namespace App\Http\Controllers;
-
-use Riclep\Storyblok\StoryblokFacade as StoryBlok;
-
-class EpisodesController extends Controller
-{
-	public function index() {
-		return view('some.view', ['story' => Storyblok::read('episodes')]);
-	}
-}
-```
-
-<a name="page-title">
-## Page title
+<a name="page-meta">
+## Page meta
 </a>
 
-Every page should have a `<title>` tag, to make populating that easy the `Page` class comes with a `title()` method. By default, if you have the Storyblok SEO app installed, it will use the SEO title, failing that it uses the name you gave when creating the page. If you want more control just override the method.
+The Page object contains useful meta content about the page. This could have been read from the Storyblok response data, added via a Block or could be Schema.org meta content. When first processed a Page’s meta will contain it’s name, full_slug and any tags added in Storyblok.
 
-
-<a name="meta-description">
-## Meta description
-</a>
-
-If the Storyblok SEO app is installed this will return the description inputted there, if not installed it uses the value specified in the `storyblok.php` config file. Of course you can replace this method with your own logic.
-
-
-> {info} If you’re taking the time and care to optimise for search engines don’t forget to also use semantic HTML tags. You’ve got a [whole host of tags](https://developer.mozilla.org/en-US/docs/Web/HTML/Element) to choose from. They’ll not only improve SEO performance but will but make the site more accessible and your HTML easier to read.
-
-
+You can access any meta data like so: `$page->meta()['title']`
 
 <a name="schema-org-data">
 ## Schema.org data
 </a>
 
-[Schema.org](https://schema.org) is a collaborative, community activity with a mission to create, maintain, and promote schemas for structured data on the Internet, on web pages, in email messages, and beyond. These schemas are designed to be machine readable allowing you to provide structured data for search engines, social networks and bots.
+[Schema.org](https://schema.org) is a collaborative, community activity with a mission to create, maintain, and promote schemas for structured data on the Internet, on web pages, in email messages, and beyond. These schemas are designed to be machine readable allowing you to provide structured data for search engines, social networks, bots and more. We use the super [Spatie Schema.org](https://github.com/spatie/schema-org) package to help you convert your Storyblok data into something friendly for Schema.org.
 
-We use the super [Spatie Schema.org](https://github.com/spatie/schema-org) package.
-
-To add Schema.org meta data for you Page use the `Riclep\Storyblok\Traits\SchemaOrg` trait add a `schemaOrg` method that returns a Spatie schema.
+To add Schema.org for your page implement a `schemaOrg()` method on your Page returning a Spatie Schema.org object. Schemas can also be defined in Blocks and will be included on any Page using that Block.
 
 ```php
 <?php
@@ -97,67 +57,19 @@ To add Schema.org meta data for you Page use the `Riclep\Storyblok\Traits\Schema
 namespace App\Storyblok\Pages;
 
 use Riclep\Storyblok\Page;
-use Riclep\Storyblok\Traits\SchemaOrg;
 use Spatie\SchemaOrg\Schema;
 
-class Specific extends Page
+class WithSchemaOrg extends Page
 {
-	use SchemaOrg;
-
 	protected function schemaOrg() {
 		return Schema::localBusiness()
-			->name('None of your business')
+			->name('On the page')
 			->email('ric@sirric.co.uk')
 			->contactPoint(Schema::contactPoint()->areaServed('Worldwide'));
 	}
 }
 ```
 
-To output the `<script>` tags call `$story->schemaOrgScript()` in your view, it includes the schemas for every Block on the page. This is best placed in the `<head>`.
+To output the `<script>` tags call `$story->schemaOrgScript()` in your view. This is best done in the `<head>` of the page.
 
 > {info} See the [Spatie package](https://github.com/spatie/schema-org) for full docs.
-
-
-<a name="seo">
-## Open Graph and Search Engine Optimisation
-</a>
-
-Storyblok comes with a [handy plugin](https://www.storyblok.com/apps/seo) for managing your SEO and [Open Graph](https://ogp.me/) meta data which we support out of the box. If you’re not using it, don’t worry, nothing will break.
-
-By default Storyblok includes the SEO data within the page component’s content properties. We yank it out of there and put it in a `seo` property of the `Page` class separating the page’s meta and regular content, this is then passed to the view and can be used as so:
-
-```html
-<!doctype html>
-<html lang="en">
-<head>
-    ...
-    <meta property="og:title" content="@{{ $seo['og_title'] }}">
-    <meta property="og:image" content="@{{ $seo['og_image'] }}">
-    ...
-</head>
-<body>
-    ...
-</body>
-</html>
-```
-
-You can define the field you want to use for the title and description.
-
-```php
-<?php
-
-namespace App\Storyblok\Pages;
-
-use Riclep\Storyblok\Page;
-
-class Specific extends Page
-{
-	protected $titleField = 'use_for_title';
-
-	protected $descriptionField = 'use_for_description';
-}
-```
-
-
-
-

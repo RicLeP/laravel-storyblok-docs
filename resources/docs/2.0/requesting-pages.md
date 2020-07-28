@@ -121,4 +121,4 @@ class Block extends BaseBlock
 }
 ```
 
-> {warning} It’s not recommended to set all Blocks to automatically resolve their linked stories as doing so could return a lot of deeply linked content or cause loops where Stories reference one another. Use with care!
+> {danger} It’s not recommended to set all Blocks to automatically resolve their linked stories as doing so could return a lot of deeply linked content or cause loops where Stories reference one another. Use with care!
