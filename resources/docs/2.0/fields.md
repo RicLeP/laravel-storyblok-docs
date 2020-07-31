@@ -19,7 +19,7 @@ Listed below is how we transform each of the built in fieldtypes. The Field clas
 | text                     | None           | Is not cast. Original string returned. Can be manually cast to `Textarea` |
 | textarea                 | None           | Is not cast. Original string returned. Can be manually cast to `Textarea` |
 | richtext                 | `RichText`     | Automatically converts content to HTML when field is called               |
-| markdown                 | `Markdown`     | Automatically converts content to HTML when field is called               |
+| markdown                 | `Markdown`     | Cast to `Riclep\Storyblok\Fields\Markdown`               |
 | number                   | None           | Is not cast. Original value returned                                      |
 | datetime                 | None           | Is not cast. Original value returned. Can be manually cast to `Datetime`  |
 | boolean                  | None           | Is not cast. Original value returned                                      |
