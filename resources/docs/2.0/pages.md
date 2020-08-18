@@ -41,7 +41,11 @@ Every page implements a `render()` method that returns a view with the `$story` 
 
 The Page object contains useful meta content about the page. This could have been read from the Storyblok response data, added via a Block or could be Schema.org meta content. When first processed a Page’s meta will contain it’s name, full_slug and any tags added in Storyblok.
 
-You can access any meta data like so: `$page->meta()['title']`
+```php
+$page->meta(); // returns full meta array
+$page->meta('full_slug'); // returns just this items
+$page->meta('missing_item', 'default value'); // returns the default if the item is missing
+```
 
 <a name="schema-org-data">
 ## Schema.org data

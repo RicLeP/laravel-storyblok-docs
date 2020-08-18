@@ -8,7 +8,7 @@
 - [Getting a Block’s position](#getting-a-blocks-position)
 - [Casting Fields](#casting-fields)
 - [Linking to the visual editor](#editable-comment-link)
-- [Schema.org data](#schema-org-data)
+- [Meta and Schema.org data](#schema-org-data)
 
 
 Every Storyblok component making up your page is transformed into a Block class. The class they become is determined by the component’s name - if you create a matching class that will be used, for example a component called `cat-images` transforms into `App\Storyblok\Blocks\CatImages` if available. If the class can’t be found then the default `App\Storyblok\Block` is used. Blocks should extend `Riclep\Storyblok\Block` or `App\Storyblok\Block` if you want to add some defaults.
@@ -197,8 +197,24 @@ Don’t worry, these comments are only added when viewing your website within th
 
 
 <a name="schema-org-data">
-## Schema.org data
+## Meta and Schema.org data
 </a>
+
+### Block meta
+
+Blocks can have useful meta data attached to them. This can be useful for either SEO or storing data about your Block. When resolving a relationship the relationship Block has a meta array containing the publish date, full slug and name of the Block from Storyblok.
+
+You can add items to the meta with the `$block->addMeta(['key' => 'some value']);`, it takes a key => value array, the value can be any PHP structure. Existing keys are not overwritten. You can replace an existing item with `$block->replaceMeta('key', 'value');`
+
+To access meta content use the following:
+
+```php
+$block->meta(); // returns full meta array
+$block->meta('full_slug'); // returns just this items
+$block->meta('missing_item', 'default value'); // returns the default if the item is missing
+```
+
+### Schema.org
 
 [Schema.org](https://schema.org) is a collaborative, community activity with a mission to create, maintain, and promote schemas for structured data on the Internet, on web pages, in email messages, and beyond. These schemas are designed to be machine readable allowing you to provide structured data for search engines, social networks and bots.
 
