@@ -104,6 +104,26 @@ class EpisodeController extends Controller
 }
 ```
 
+### Resolving relations via a Block
+
+If you’re not using a custom controller you can specify which relations you wish to resolve using the `$_resolveRelations` property on your Block. Simply create an array of the Storyblok fieldnames containing the relations you wish to resolve. They will be requested and converted into Blocks for you.
+
+```php
+<?php
+
+namespace App\Storyblok\Blocks;
+
+use App\Storyblok\Block;
+
+class Home extends Block
+{
+    public $_resolveRelations = ['field_name'];
+}
+```
+
+> {info} Using this mention of resolving relations will require additional API calls that using the controller method above as we can only request the relationships only after first requesting the initial content.
+
+
 ### Automatically resolving relations
 
 It’s also possible to automatically resolve relations. On any Block class set `$_autoResolveRelations` to `true`. It’s recommended to pass the array of relations to the `read()` method instead of autoresolving them as this minimising the API calls.
