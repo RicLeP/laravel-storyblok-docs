@@ -23,13 +23,22 @@ composer require riclep/laravel-storyblok
 ## Configuration
 </a>
 
-After installing the package update your .env file with your Storyblok Content Delivery API keys and specify if you want to receive draft content in development:
+After installing the package update your .env file with your Storyblok Content Delivery API keys and specify if you want to receive draft content.
 
 ```php
 STORYBLOK_PREVIEW_API_KEY=your_preview_key
 STORYBLOK_PUBLIC_API_KEY=your_public_key
 STORYBLOK_DRAFT=true
 ```
+
+To use the Artisan generator commands you’ll also need to specify your Space ID and OAuth Token.
+
+```php
+STORYBLOK_SPACE_ID=your_space_id
+STORYBLOK_OAUTH_TOKEN=your_oauth_token
+```
+
+
 
 > {info} Not sure where to find your API keys? [Check the Storyblok FAQs](https://www.storyblok.com/faq/where-to-find-my-content-delivery-api-key)
 

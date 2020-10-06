@@ -2,7 +2,7 @@
 
 ---
 
-- [Running methods upon creation](#running-methods-upon-creation)
+- [Artisan commands](#artisan-commands)
 - [Accessing Fields](#accessing-fields)
 - [Accessors](#accessors)
 - [Getting a Block’s position](#getting-a-blocks-position)
@@ -28,6 +28,75 @@ class CatImages extends Block
 
 
 Blocks borrow some concepts from Laravel’s Eloquent models to make using them feel familiar such as creating accessors or casting variables to dates, but we don’t stop there, we also have a bunch of helpful features for Storyblok content. 
+
+---
+
+<a name="artisan-commands">
+## Artisan commands
+</a>
+
+You can generate Block classes using the built-in the Artisan command. The Block’s name should match the name used in Storyblok but converted to StudlyCase so my-component becomes MyComponent. This will create a new class in App\Storyblok\Blocks. The component’s fields are read from Storyblok and the PHPDoc block updated to include them to allow IDE completion of the magic getters.
+
+```console
+php artisan ls:block MyComponent
+```
+
+Will become something like:
+
+```php
+<?php
+
+namespace App\Storyblok\Blocks;
+
+use Riclep\Storyblok\Block as BaseBlock;
+
+/**
+ * @property-read string title
+ * @property-read string text
+ * @property-read string buttons
+ * @property-read string image
+ * @property-read string overview
+ */
+class MyComponent extends BaseBlock
+{
+    //
+}
+```
+
+You can also generate Blade and SCSS files readily configured with the Block’s name by passing a `-s` or `-b` argument to the command.
+
+```console
+php artisan ls:block MyComponent -b
+```
+
+Creates resources/views/storyblok/components/my-component.blade.php
+
+```php
+<?php
+/** @var \App\Storyblok\Blocks\MyComponent $content */
+// dd($content);
+?>
+
+<div class="my-component">
+	
+</div>
+```
+
+```console
+php artisan ls:block MyComponent -s
+```
+
+Creates resources/sass/blocks/_my-component.scss and updates the app.scss file.
+
+```scss
+.my-component {
+
+}
+```
+
+> {warning} Ensure you have set your Space ID and OAUTH Token in the .env file.
+
+--
 
 <a name="accessing-fields">
 ## Accessing fields

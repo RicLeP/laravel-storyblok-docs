@@ -4,6 +4,7 @@
 
 - [Built-in Fields](#built-in-fields)
 - [Custom Fields](#custom-fields)
+- [The Table Field](#table-field)
 
 Fields are classes that the Block’s fields are turned into. There are lots of built-in types and where possible they are automatically cast but it is possible to create your own.
 
@@ -79,4 +80,83 @@ class Postcast extends Block
 }
 ```
 
-> {info} If you are making a custom Field for one of the built-in types it’s best to extend the built-in class to take advantage of any existing functionality such as converting rich-text content or ArrayAccess and Interator functionality on MultiAsset fields. 
+> {info} If you are making a custom Field for one of the built-in types it’s best to extend the built-in class to take advantage of any existing functionality such as converting rich-text content or ArrayAccess and Interator functionality on MultiAsset fields.
+
+
+<a name="table-field">
+## The Table field
+</a>
+
+The Table Field will automatically convert a table field in Storyblok to HTML. The headings will be added to the `<thead>` and the other columns to the `<tbody>`. Sometimes you might also need `<th>` if one of your columns is a header for each row. This is easily done by making a new Field class extending `\Riclep\Storyblok\Fields\Table` that matches the field name in Storyblok (or the Block + Field name as below, Detail Block -> Data Field). In this class add a `$headerColumns` property specifying the column number to become a header.
+
+```php
+<?php
+
+namespace App\Storyblok\Fields;
+
+class DetailsData extends \Riclep\Storyblok\Fields\Table
+{
+	protected $headerColumns = 1;
+    // or protected $headerColumns = [1, 4]; // both will become headers
+}
+```
+
+Will become the following. If `$headerColumns` is not present then no `<th>` tags will be added to the `<tbody>` rows.
+
+```html
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Value</th>
+            <th>Additional</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>Header</th>
+            <td>Data</td>
+            <td>Data</td>
+        </tr>
+        <tr>
+            <th>Header</th>
+            <td>Data</td>
+            <td>Data</td>
+        </tr>
+    </tbody>
+</table>
+```
+
+### Adding CSS classes
+
+To add a css class to your table just add a `$cssClass` property of the class you want.
+
+```php
+<?php
+
+namespace App\Storyblok\Fields;
+
+class DetailsData extends \Riclep\Storyblok\Fields\Table
+{
+	protected $cssClass = 'details-data';
+}
+```
+
+Will become the following:
+
+```html
+<table class="details-data">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Value</th>
+            <th>Additional</th>
+        </tr>
+    </thead>
+    <tbody>
+        ...
+    </tbody>
+</table>
+```
+
+> {info} If you need more control over formatting then implement a custom `toHtml()` method on your Table class, this must return a string. Alternatively you could deal directly with the data from Storyblok in your Blade view.
