@@ -62,13 +62,13 @@ class HeroImage extends Image
 {
 	protected function transformations() {
 		$this->transformations = [
+            'desktop' => [
+				'src' => $this->transform()->resize(500, 400),
+				'media' => '(min-width: 1000px)',
+			],
 			'mobile' => [
 				'src' => $this->transform()->resize(100, 120)->format('webp'),
 				'media' => '',
-			],
-			'desktop' => [
-				'src' => $this->transform()->resize(500, 400),
-				'media' => '(min-width: 1000px)',
 			],
 		];
 	}
@@ -102,6 +102,8 @@ This will create the following picture element with two `<source>` tags. The `<i
     <img src="https://a.storyblok.com/f/87028/960x1280/31a1d8dc75/an-image.jpg" alt="Some alt text">
 </picture>
 ```
+
+> {warning} The order you define the transformations is important and is the order they will appear in your html. Web browsers will use the first `<source>` tag they find that matches the media query!
 
 You can set the transformation to use for the `<img>` tag by passing it’s name as the second argument.
 
