@@ -12,6 +12,8 @@ Once [installed](/{{route}}/{{version}}/installation) you can start working with
 
 The package will consume Storyblok’s JSON responses and automatically convert them to nested PHP objects. The type of object created can be set just by matching the filename to that of the Storyblok component. This is covered in more detail in the [blocks documentation](/{{route}}/{{version}}/blocks).
 
+The best way to understand this is to `dd($story)` in Blade file and check out the document structure.
+
 Create the following folder `resources/views/storyblok/pages`, this is the default location where you will store all of your Blade views but you are free to use any structure you want. You can read more about how the package selects which view is loaded and how to define your own rules in the [views documentation](/{{route}}/{{version}}/views).
 
 > {info} You can change the default view path in the `storyblok.php` configuration file
