@@ -26,7 +26,7 @@ This package allows you to use fantastic [Storyblok](https://www.storyblok.com/)
 - Feels like Laravel - use date casting and accessors exactly as you would with models.
 - Richer Typography with [PHP Typography](https://github.com/mundschenk-at/php-typography) baked in.
 - **BETA** Live preview of text changes in the visual editor! [Live view](/{{route}}/{{version}}/linking-the-visual-editor#live-view)
-- **NEW** Image transformations and picture element generation [Live view](/{{route}}/{{version}}/images)
+- **NEW** [Image transformations](/{{route}}/{{version}}/images) and picture element generation
 
 
 ## Future plans

@@ -15,6 +15,8 @@ Storyblok has an [image transformation service](https://www.storyblok.com/docs/i
 All Storyblok Asset fields with uploaded images are automatically converted into Image Field classes. These can be transformed by calling `transform()` and chaining the various methods.
 
 ```php
+// $image = Riclep\Storyblok\Fields\Image or any class extending it
+
 // scales and crops the image to the requested dimensions (width, height, [focus]). If the proportions differ from the original image it is cropped
 $image->transform()->resize(234, 432);
 

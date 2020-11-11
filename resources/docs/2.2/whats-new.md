@@ -3,10 +3,18 @@
 ---
 
 
+- [Version 2.2.0](#2-2-0)
 - [Version 2.1.0](#2-1-0)
 - [Version 2.0.0](#2-0-0)
 - [Version 1.1.0](#1-2-0)
 - [Version 1.1.0](#1-1-0)
+
+<a name="2-2-0">
+## Version 2.2.0
+</a>
+
+- Added support for [image transformations](/{{route}}/{{version}}/images) in the visual editor
+
 
 <a name="2-1-0">
 ## Version 2.1.0

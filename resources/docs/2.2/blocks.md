@@ -217,7 +217,7 @@ Wouldn’t it be great to be able to create CSS classes when working in Blade th
 ## Casting Fields
 </a>
 
-You can cast a Block’s field to any Field class you want with the `$casts` property. This is an array mapping a field name to a Class. The field’s data is passed to the Classes constructor. For more details see the [Fields documentation](/{{route}}/{{version}}/fields).
+You can cast a Block’s field to any Field class you want with the `$_casts` property. This is an array mapping a field name to a Class. The field’s data is passed to the Classes constructor. For more details see the [Fields documentation](/{{route}}/{{version}}/fields).
 
 ```php
 <?php
@@ -230,14 +230,16 @@ use App\Storyblok\Fields\HeroImage;
 
 class Custom extends Block
 {
-	protected $casts = [
+	protected $_casts = [
 		'datetime' => DateTime::class,
 		'image' => HeroImage::class,
 	];
 }
 ```
 
-> {warning} When casting fields to custom Classes make sure you extend `Riclep\Storyblok\Field` or a an existing Field and implement the `__toString()` method.
+> {warning} When casting fields to custom Classes make sure you extend an existing Field type such as `Riclep\Storyblok\Field` or `Riclep\Storyblok\Fields\Image`  and implement the `__toString()` method.
+
+> {info} $casts was renamed to $_casts in version 2.2.1 to advoid field name classes
 
 ---
 
