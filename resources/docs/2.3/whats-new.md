@@ -3,11 +3,21 @@
 ---
 
 
+- [Version 2.2.0](#2-3-0)
 - [Version 2.2.0](#2-2-0)
 - [Version 2.1.0](#2-1-0)
 - [Version 2.0.0](#2-0-0)
-- [Version 1.1.0](#1-2-0)
+- [Version 1.2.0](#1-2-0)
 - [Version 1.1.0](#1-1-0)
+
+<a name="2-3-0">
+## Version 2.3.0
+</a>
+
+- Legacy images are converted into [Image](/{{route}}/{{version}}/images) classes.
+- [Tables Fields](/{{route}}/{{version}}/fields#table-field) can now have a caption and CSS class specified.
+- **2.3.2** Added support for clearing cache via the Storyblok Publish webhook. This means the Editor Bridge Blade view has had the JavaScript publish event removed.
+
 
 <a name="2-2-0">
 ## Version 2.2.0

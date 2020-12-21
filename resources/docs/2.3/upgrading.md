@@ -2,6 +2,11 @@
 
 ---
 
+## 2.3.1 -> 2.3.2
+
+Set up the publishing webhook as specified in the installation instructions. Removed the JavaScript published event from the Editor Bridge Blade view.
+
+
 ## 2.2.0 -> 2.3.0
 
 Legacy image fields are now converted to [Image](/{{route}}/{{version}}/images) classes.

@@ -103,3 +103,6 @@ STORYBLOK_DRAFT=true
 ```
 
 > {warning} Be careful not to use draft content in production! Either remove the env variable or set it to false.
+
+
+Every time you publish in Storyblok the webhook will clear Laravel’s cache but the package provides a `storyblok.clear-cache` route if you need to do this manually in your code. You can of course clear the cache with Artisan too. If you’re using a taggable Cache driver the package uses the `storyblok` tag.

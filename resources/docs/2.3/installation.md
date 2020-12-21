@@ -25,10 +25,13 @@ composer require riclep/laravel-storyblok
 
 After installing the package update your .env file with your Storyblok Content Delivery API keys and specify if you want to receive draft content.
 
+In Storyblok’s settings add the ‘Story published & unpublished’ URL as so: https://[yourdomain]/api/laravel-storyblok/webhook/publish. Make sure this is the exact URL as the webhook will not follow redirections on your server such as going from www to non-www. Next add your webhook secret in both the settings and your .env file.
+
 ```php
 STORYBLOK_PREVIEW_API_KEY=your_preview_key
 STORYBLOK_PUBLIC_API_KEY=your_public_key
 STORYBLOK_DRAFT=true
+STORYBLOK_WEBHOOK_SECRET=someComplexKeySuchAsAHash
 ```
 
 To use the Artisan generator commands you’ll also need to specify your Space ID and OAuth Token.
