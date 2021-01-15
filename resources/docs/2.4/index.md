@@ -16,7 +16,7 @@
     - [Images](/{{route}}/{{version}}/images)
     - [Folders](/{{route}}/{{version}}/folders)
     - [Views](/{{route}}/{{version}}/views)
-    - [Embedding media](/{{route}}/{{version}}/embedding)
+    - [Embedding media](/{{route}}/{{version}}/embedding-media)
     - [Extending](/{{route}}/{{version}}/traits)
     - [Linking to the editor](/{{route}}/{{version}}/linking-the-visual-editor)
     - [The data structure](/{{route}}/{{version}}/data-structure)

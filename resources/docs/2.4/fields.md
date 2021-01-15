@@ -183,4 +183,4 @@ Ideally all tables would include a descriptive caption, this is important for ac
 ## Embedding Media
 </a>
 
-You can embed many services and media providers such as YouTube and Twitter with a  [Feild trait](/{{route}}/{{version}}/embedding).
+You can embed many services and media providers such as YouTube and Twitter with a  [Field trait](/{{route}}/{{version}}/embedding-media).

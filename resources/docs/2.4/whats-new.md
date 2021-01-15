@@ -3,12 +3,20 @@
 ---
 
 
-- [Version 2.2.0](#2-3-0)
+- [Version 2.4.0](#2-4-0)
+- [Version 2.3.0](#2-3-0)
 - [Version 2.2.0](#2-2-0)
 - [Version 2.1.0](#2-1-0)
 - [Version 2.0.0](#2-0-0)
 - [Version 1.2.0](#1-2-0)
 - [Version 1.1.0](#1-1-0)
+
+<a name="2-4-0">
+## Version 2.4.0
+</a>
+
+- [Embed media](/{{route}}/{{version}}/embedding-media) such as Twitter and YouTube in Fields
+
 
 <a name="2-3-0">
 ## Version 2.3.0
