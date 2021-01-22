@@ -103,7 +103,7 @@ $field->content();
 */
 ```
 
-The Field’s `__toString()` method will loop over all the content and call the Block’s `render()` [method](/{{route}}/{{version}}/views#the-render-method).
+The Field’s `__toString()` method will loop over all the content and call the Block’s `render()` [method](/{{route}}/{{version}}/views#the-render-method). If you don’t use the `render()` method then look over `$field->content()` in your Blade file.
 
 Thank you to [papoms](https://github.com/papoms) on GitHub for contributing towards adding this.
 
