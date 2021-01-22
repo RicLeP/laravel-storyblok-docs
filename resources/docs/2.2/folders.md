@@ -14,12 +14,12 @@ To get a folder of Stories you can use the `DefaultFolder` Class in your control
 
 namespace App\Http\Controllers;
 
-use App\Storyblok\DefaultFolder;
+use App\Storyblok\Folder;
 
 class NewsController extends Controller
 {
 	public function index() {
-		$stories = new DefaultFolder();
+		$stories = new Folder();
 		$stories->slug('news');
 
 		return view('storyblok.pages.news', [
