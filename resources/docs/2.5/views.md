@@ -83,7 +83,7 @@ You can loop over the nested Blocks in your Blade template, optionally using `@@
 				</h2>
 
 				@@foreach($feature->body as $section)
-					@@include('storyblok.blocks._' . $section->component(), ['content' => $section])
+					@@include('storyblok.blocks._' . $section->component(), ['block' => $section])
 				@@endforeach
 			</section>
 		@@endforeach

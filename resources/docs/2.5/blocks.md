@@ -63,6 +63,8 @@ class MyComponent extends BaseBlock
 }
 ```
 
+> {warning} Ensure you have set your Space ID and OAUTH Token in the .env file.
+
 You can also generate Blade and SCSS files readily configured with the Block’s name by passing a `-s` or `-b` argument to the command.
 
 ```console
@@ -94,7 +96,15 @@ Creates resources/sass/blocks/_my-component.scss and updates the app.scss file.
 }
 ```
 
-> {warning} Ensure you have set your Space ID and OAUTH Token in the .env file.
+### Custom generator stubs
+
+You can customise any of the stubs used for creating files by making a `/resources/stubs/storyblok` folder containing the following files. You only need to create those you wish to customise.
+
+* `/resources/stubs/storyblok/block.stub` - Block class template
+* `/resources/stubs/storyblok/block.blade.stub` - Block Blade template
+* `/resources/stubs/storyblok/block.scss.stub` - Block SCSS template
+
+Each stub contains ‘Dummy’ references that get replaced during generation so it’s recommended you copy and adpt the files from [GitHub](https://github.com/RicLeP/laravel-storyblok/tree/master/src/Console/stubs).
 
 --
 
