@@ -7,8 +7,9 @@
 - [Creating CSS class names](#creating-css-class-names)
 
 
-You can loop over the nested Blocks in your Blade template, optionally using `@@include` to pass the data to child views to keep things manageable and reusable as shown below. This lets you quickly build your pages but does limit some of the dynamic nature of being able to create pages in Storyblok using any components you want but sometimes this control can be a good thing.
+You can loop over the nested Blocks in your Blade template, optionally using `@@include` to pass the data to child views to keep things manageable and reusable as shown below. This lets you quickly build your pages but does limit some of the dynamic nature of being able to create pages in Storyblok using nested components, see the `render()` method below.
 
+> {info} You can quickly scaffold all your component views by running `artisan ls:stub-views`. Use `artisan ls:stub-views -O` to overwrite your current Blade files.
 
 ```php
 @@extends('storyblok._layout')

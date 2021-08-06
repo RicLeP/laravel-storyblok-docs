@@ -57,7 +57,7 @@ Here is an example that loads Stories from the ‘news’ folder that where publ
 
 namespace App\Storyblok\Folders;
 
-class News extends \App\Storyblok\DefaultFolder
+class News extends \App\Storyblok\Folder
 {
 	protected $slug = 'news';
 	protected $sort = 'content.published_at:desc';
@@ -67,7 +67,7 @@ class News extends \App\Storyblok\DefaultFolder
 		$this->settings([
 			'filter_query' => [
 				'published_at' => [
-					'lt-date' => now()->format('Y-m-d h:i')
+					'lt_date' => now()->format('Y-m-d H:i'),
 				]
 			],
 			'per_page' => 20

@@ -4,6 +4,7 @@
 
 - [Transforming images](#transforming-images)
 - [Picture elements](#picture-elements)
+- [CSS variables](#css-variables)
 - [Image meta](#image-meta)
 
 All Storyblok Image fields are automatically converted to Image fields. Legacy image fields are also ‘upgraded’ to Image classes.
@@ -23,7 +24,7 @@ All Storyblok Asset fields with uploaded images are automatically converted into
 $image->transform()->resize(234, 432);
 
 // scales the image and crops centering on the ‘focal point’ specified on the image in Storyblok
-$image->transform()->resize(234, 432, 'focus');
+$image->transform()->resize(234, 432, 'focal-point');
 
 // scales the image and crops using Storyblok’s Smart Crop feature for detecting faces
 $image->transform()->resize(234, 432, 'smart');
@@ -144,9 +145,63 @@ $image->picture('A super image', 'mobile', ['class' => 'hero mb-10', 'id' => 'he
 ];
 ```
 
-> {info} When supplying your own view you could add extra items to the `transformations` array to use on each image size.
+
+### Defining picture elements directly in Blade
+
+**Since 2.5.22**
+
+Setting your `transformations` in the Field’s class can limit your flexibility, especially if you want to use that field in several places or pages.
+
+Use the `setTransformations()` method to define your picture element images directly in your view before calling `picture()`. The method takes the same input as you define in the `transformations()` method of the class. Be aware this will replace transformation defined in the class itself.
+
+```php
+
+<div>
+$field->setTransformations([
+    'mobile' => [
+        'src' => $field->transform()->resize(200, 200)->format('webp'),
+        'media' => '(min-width: 400px)',
+    ],
+    'desktop' => [
+        'src' => $field->transform()->resize(400, 400),
+        'media' => '(min-width: 800px)',
+    ],
+])->picture('The alt text', 'mobile')));
+</div>
+
+```
+
+> {info} When supplying your own view you could add extra values to the `transformations` array to use on each image size.
 
 Finally, for full control just override the `picture()` method on your custom Image class.
+
+<a name="css-variables">
+## CSS variables
+</a>
+
+**Since 2.5.19**
+
+Sometimes you might need your transformations to be used for background images. As you can’t create breakpoints using `style` attributes you will have to supply a CSS variable for each transformation. We make this simple like so:
+
+```html
+// <div style="--desktop: url(....); --mobile: url(....);">
+
+<div class="hero" style="@{{ $image->cssVars() }}"></div>
+```
+
+Each transformation key is converted to a variable with a value of the transformed URL. Make sure you CSS is set to look for these variables.
+
+```scss
+.hero {
+  background-image: var(--mobile);
+}
+
+@media (min-width: 1000px) {
+    .hero {
+      background-image: var(--desktop);
+    }
+}
+```
 
 ### Getting your CDN URL
 

@@ -11,7 +11,7 @@ A lot of people will probably be using Storyblok for brochureware style websites
 ## Applying typography
 </a>
 
-To use the typographic features your Block must use the `AppliesTypography` trait. This exposes a couple of new properties and methods. Add an `$applyTypography` property to your class with an array of the fields. Now call the `applyTypography()` method - a good place to do this is in the `init()` method that will be called when the Block is newed up. This will run PHP-Typography over all the chosen fields using some sensible defaults.
+To use the typographic features your Block must use the `AppliesTypography` trait. This exposes a couple of new properties and methods. Add an `$applyTypography` property to your class with an array of the fields. This will run PHP-Typography over all the chosen fields using some sensible defaults.
 
 ```php
 <?php
@@ -26,10 +26,6 @@ class TypoCat extends Block
     use AppliesTypography;
 
 	private $applyTypography = ['cats_name', 'biography'];
-
-	public function init() {
-		$this->applyTypography();
-	}
 }
 ```
 

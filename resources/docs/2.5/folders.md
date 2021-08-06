@@ -50,7 +50,7 @@ If you need more control over your request the `settings()` method accepts an ar
 
 Rather than calling multiple methods each time you need to request a folder you can create custom Folder class by extending `\App\Storyblok\DefaultFolder`. Within this class you are free to set any defaults or create methods to fulfill your requirements.
 
-Here is an example that loads Stories from the ‘news’ folder that where published any time before `now()`, ordering them by a `published_at` datetime field.
+Here is an example that loads Stories from the ‘news’ folder that where published any time before `now()`, ordering them by a `publish_date` datetime field.
 
 ```php
 <?php
@@ -67,7 +67,7 @@ class News extends \App\Storyblok\Folder
 		$this->settings([
 			'filter_query' => [
 				'published_at' => [
-					'lt-date' => now()->format('Y-m-d h:i')
+					'lt_date' => now()->format('Y-m-d H:i'),
 				]
 			],
 			'per_page' => 20

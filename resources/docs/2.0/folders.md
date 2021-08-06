@@ -67,7 +67,7 @@ class News extends \App\Storyblok\Folder
 		$this->settings([
 			'filter_query' => [
 				'published_at' => [
-					'lt-date' => now()->format('Y-m-d h:i')
+					'lt_date' => now()->format('Y-m-d H:i'),
 				]
 			],
 			'per_page' => 20

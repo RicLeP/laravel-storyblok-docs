@@ -67,7 +67,7 @@ Route::get('/{slug?}', '\Riclep\Storyblok\Http\Controllers\StoryblokController@s
 
 > {warning} If using the catch-all this should be your last route to stop it intercepting any other requests in your application.
 
-The package also creates a named route that posts to `clear-storyblok-cache` which is used when publishing in the visual editor. See [linking to the visual editor](/{{route}}/{{version}}/linking-the-visual-editor).
+The package also creates a named route that posts to `storyblok.clear-cache` which is used when publishing in the visual editor. See [linking to the visual editor](/{{route}}/{{version}}/linking-the-visual-editor).
 
 <a name="vue-js">
 ## VueJS Configuration

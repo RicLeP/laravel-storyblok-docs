@@ -74,7 +74,7 @@ use App\Storyblok\Fields\HeroImage;
 
 class Postcast extends Block
 {
-	protected $casts = [
+	protected $_casts = [
 		'release_date' => DateTime::class,
 		'image' => HeroImage::class,
 	];

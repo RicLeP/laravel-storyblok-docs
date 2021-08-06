@@ -17,7 +17,7 @@
 </a>
 
 - Added support components in [Rich text Fields](/{{route}}/{{version}}/fields) 
-
+- **2.5.16** Added `ls:stub-views` command to scaffold Blade files for each component
 
 <a name="2-4-0">
 ## Version 2.4.0
