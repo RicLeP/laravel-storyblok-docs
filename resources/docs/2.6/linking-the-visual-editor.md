@@ -71,6 +71,14 @@ To enable live preview set `live-preview` to `true` and specify the wrapper `liv
 </html>
 ```
 
+You’ll need to create a route to process the requests from the Storyblok bridge. It `POST`s the payload from Storyblok to the current URL and returns a new HTML stub of the changes.
+
+```php
+Route::post('/{slug?}', '\Riclep\Storyblok\Http\Controllers\LiveContentController@show')->where('slug', '(.*)')->withoutMiddleware([\App\Http\Middleware\VerifyCsrfToken::class])->middleware([\App\Http\Middleware\StoryblokEditor::class]);
+```
+
+> {info} Ensure this route is at the end of your `web.php` file so it doesn’t replace other routes in your application.
+
 As it needs to make a round trip to your server for each change it will be effected by latency but most modern hosting is fast enough for a good experience. You can disable this feature by setting `live-preview` to `true`.
 
 > {warning} This is still an experimental feature and may not work in 100% of circumstances.
