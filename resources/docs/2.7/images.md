@@ -145,6 +145,22 @@ $image->picture('A super image', 'mobile', ['class' => 'hero mb-10', 'id' => 'he
 ];
 ```
 
+**Since 2.7.3**
+
+As well as picture elements you can also create `<img>` tag `srcset` tags. The usage is identical to that for `<picture>` tags except you call the `srcset()` method.
+
+```php
+$image->srcset('A super image');
+```
+
+```html
+<img srcset="https://img2.storyblok.com/500x400/f/87028/960x1280/31a1d8dc75/bottle.jpg 500w,
+             https://img2.storyblok.com/100x120/filters:format(webp)/f/87028/960x1280/31a1d8dc75/bottle.jpg 100w,"
+     sizes="(min-width: 1200px) 500px,
+            100px,"
+     src="https://a.storyblok.com/f/87028/960x1280/31a1d8dc75/bottle.jpg" alt="A super image">
+```
+
 > {warning} The default `<picture>` and `srcset` templates expect your `transformations` array to list images from small to largest and use `min-width` for media queries. If you need different functionality then supply a custom Blade view as the fourth argument.
 
 ### Defining picture elements directly in Blade
