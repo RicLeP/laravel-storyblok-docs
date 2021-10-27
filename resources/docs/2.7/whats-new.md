@@ -3,7 +3,8 @@
 ---
 
 
-- [Version 2.5.0](#2-6-0)
+- [Version 2.7.0](#2-7-0)
+- [Version 2.6.0](#2-6-0)
 - [Version 2.5.0](#2-5-0)
 - [Version 2.4.0](#2-4-0)
 - [Version 2.3.0](#2-3-0)
@@ -12,6 +13,13 @@
 - [Version 2.0.0](#2-0-0)
 - [Version 1.2.0](#1-2-0)
 - [Version 1.1.0](#1-1-0)
+
+<a name="2-7-0">
+## Version 2.7.0
+</a>
+- Upgraded to CommonMark 2.0
+- **2.7.3** Added `srcset()` method to images to create `<img>` tag using your transformations
+- **2.7.4** Unpublished relations no longer 404
 
 <a name="2-6-0">
 ## Version 2.6.0

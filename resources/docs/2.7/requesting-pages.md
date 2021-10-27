@@ -106,7 +106,7 @@ class EpisodeController extends Controller
 
 ### Resolving relations via a Block
 
-If you’re not using a custom controller you can specify which relations you wish to resolve using the `$_resolveRelations` property on your Block. Simply create an array of the Storyblok fieldnames containing the relations you wish to resolve. They will be requested and converted into Blocks for you.
+If you’re not using a custom controller you can specify which relations you wish to resolve using the `$_resolveRelations` property on your Block. Simply create an array of the Storyblok field names containing the relations you wish to resolve. They will be requested and converted into Blocks for you.
 
 ```php
 <?php
@@ -122,6 +122,28 @@ class Home extends Block
 ```
 
 > {info} Using this mention of resolving relations will require additional API calls that using the controller method above as we can only request the relationships only after first requesting the initial content.
+
+
+### Unpublished relations
+
+**Since 2.7.4**
+
+If you link to an unpublished Story in one of your Multi-Option relations they are filtered out of the Collection of related Pages. If you need to know if a relation was removed from a Block set it’s `$_filterRelations` property to false. This wil return all valid relations as normal and `null` for failed relations. You can now handle this as required in your code.
+
+For Single-Option relations `null` will be returned if the relation could not be resolved. 
+
+```php
+<?php
+
+namespace App\Storyblok\Blocks;
+
+use App\Storyblok\Block;
+
+class Home extends Block
+{
+    public $_filterRelations = false;
+}
+```
 
 
 ### Automatically resolving relations

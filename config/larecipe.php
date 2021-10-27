@@ -86,7 +86,7 @@ return [
     */
 
     'cache'       => [
-        'enabled' => false,
+        'enabled' => true,
         'period'  => 5
     ],
 
@@ -104,7 +104,7 @@ return [
     */
 
     'search'            => [
-        'enabled'       => false,
+        'enabled'       => true,
         'default'       => 'algolia',
         'engines'       => [
             'internal'  => [

@@ -67,18 +67,20 @@ class HeroImage extends Image
 {
 	protected function transformations() {
 		$this->transformations = [
+		    'mobile' => [
+				'src' => $this->transform()->resize(100, 120)->format('webp'),
+				'media' => '',
+			],
             'desktop' => [
 				'src' => $this->transform()->resize(500, 400),
 				'media' => '(min-width: 1000px)',
-			],
-			'mobile' => [
-				'src' => $this->transform()->resize(100, 120)->format('webp'),
-				'media' => '',
 			],
 		];
 	}
 }
 ```
+
+> {info} The default `<picture>` and `srcset` templates expect your `transformations` array to list images from small to largest and use `min-width` for media queries. If you need different functionality then use a custom Blade view.
 
 They can now be accessed by name returning the `ImageTransform` object exactly like the manual transformations above and will return the image URL when cast to a string.
 
@@ -161,7 +163,7 @@ $image->srcset('A super image');
      src="https://a.storyblok.com/f/87028/960x1280/31a1d8dc75/bottle.jpg" alt="A super image">
 ```
 
-> {warning} The default `<picture>` and `srcset` templates expect your `transformations` array to list images from small to largest and use `min-width` for media queries. If you need different functionality then supply a custom Blade view as the fourth argument.
+> When using `srcset` all transformations must use the same ratio / crop - it can not be used for art direction. This is because the browser will automatically determine the correct image to use. If the browser has already cached a larger image this may still be used even when a smaller version matches.
 
 ### Defining picture elements directly in Blade
 
@@ -173,7 +175,6 @@ Use the `setTransformations()` method to define your picture element images dire
 
 ```php
 
-<div>
 $field->setTransformations([
     'mobile' => [
         'src' => $field->transform()->resize(200, 200)->format('webp'),
@@ -184,7 +185,6 @@ $field->setTransformations([
         'media' => '(min-width: 800px)',
     ],
 ])->picture('The alt text', 'mobile')));
-</div>
 
 ```
 
@@ -201,7 +201,7 @@ Finally, for full control just override the `picture()` method on your custom Im
 Sometimes you might need your transformations to be used for background images. As you can’t create breakpoints using `style` attributes you will have to supply a CSS variable for each transformation. We make this simple like so:
 
 ```html
-// <div style="--desktop: url(....); --mobile: url(....);">
+<div style="--desktop: url(....); --mobile: url(....);">
 
 <div class="hero" style="@{{ $image->cssVars() }}"></div>
 ```
