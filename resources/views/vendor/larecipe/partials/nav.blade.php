@@ -4,7 +4,7 @@
     <nav class="flex items-center justify-between text-black bg-navbar shadow-xs h-16">
         <div class="flex items-center flex-no-shrink">
             <a href="{{ url('/') }}" class="flex items-center flex-no-shrink text-black mx-4">
-                @include("larecipe::partials.logo")
+                <img src="{{ asset('img/l-sb.svg') }}" alt="">
 
                 <p class="inline-block font-semibold mx-1 text-grey-dark">
                     Laravel Storyblok
@@ -19,12 +19,7 @@
 
         <div class="block mx-4 flex items-center">
             @if(config('larecipe.search.enabled'))
-                <larecipe-button id="search-button"
-                    :type="searchBox ? 'primary' : 'link'"
-                    @click="searchBox = ! searchBox"
-                    class="px-4">
-                    <i class="fas fa-search" id="search-button-icon"></i>
-                </larecipe-button>
+		        <div class="js-search"></div>
             @endif
 
             <larecipe-button tag="a" href="https://github.com/RicLeP/laravel-storyblok/" target="_blank" type="black" class="mx-2 px-4">

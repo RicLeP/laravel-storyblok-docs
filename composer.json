@@ -13,8 +13,9 @@
         "fideloper/proxy": "^4.0",
         "laravel/framework": "^6.2",
         "laravel/tinker": "^1.0",
-		"ext-json": "*"
-	},
+        "ext-json": "*",
+        "riclep/laravel-storyblok": "*"
+    },
     "require-dev": {
         "facade/ignition": "^1.4",
         "fzaninotto/faker": "^1.4",
@@ -59,5 +60,11 @@
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
         ]
-    }
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "./larecipe-components/LaravelStoryblok"
+        }
+    ]
 }

@@ -111,8 +111,8 @@ return [
                 'index' => ['h2', 'h3']
             ],
             'algolia'   => [
-                'key'   => '',
-                'index' => ''
+                'key'   => 'a03819ec7a0e0b84b5c10e7fed8c8cba',
+                'index' => 'laravel-storyblok'
             ]
         ]
     ],
@@ -135,8 +135,8 @@ return [
         'fa_v4_shims'    => true, // Add FontAwesome v4 shims prevent BC break
         'show_side_bar'  => true,
         'colors'         => [
-            'primary'    => '#787AF6',
-            'secondary'  => '#2b9cf2'
+            'primary'    => '#00b3b0',
+            'secondary'  => '#ff2d20'
         ],
 
         'theme_order'    => null // ['LaRecipeDarkTheme', 'customTheme']

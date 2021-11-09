@@ -301,7 +301,7 @@ $block->meta('missing_item', 'default value'); // returns the default if the ite
 
 We use the super [Spatie Schema.org](https://github.com/spatie/schema-org) package.
 
-To add Schema.org to the Block implement a `schemaOrg()` method returning a Spatie Schema.org object. This schema will be automatically added to any Pages this Block is added to.
+To use Schema.org add the `Riclep\Storyblok\Traits\SchemaOrg` trait to the Block and implement a `schemaOrg()` method returning a Spatie Schema.org object. This schema will be automatically added to any Pages this Block is added to.
 
 ```php
 <?php
@@ -310,9 +310,12 @@ namespace App\Storyblok\Blocks;
 
 use Riclep\Storyblok\Block;
 use Spatie\SchemaOrg\Schema;
+use Riclep\Storyblok\Traits\SchemaOrg;
 
 class Business extends Block
 {
+	use SchemaOrg;
+
 	protected function schemaOrg() {
 		return Schema::localBusiness()
 			->name($this->_fields->name)

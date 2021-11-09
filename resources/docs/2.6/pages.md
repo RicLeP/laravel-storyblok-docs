@@ -53,7 +53,7 @@ $page->meta('missing_item', 'default value'); // returns the default if the item
 
 [Schema.org](https://schema.org) is a collaborative, community activity with a mission to create, maintain, and promote schemas for structured data on the Internet, on web pages, in email messages, and beyond. These schemas are designed to be machine readable allowing you to provide structured data for search engines, social networks, bots and more. We use the super [Spatie Schema.org](https://github.com/spatie/schema-org) package to help you convert your Storyblok data into something friendly for Schema.org.
 
-To add Schema.org for your page implement a `schemaOrg()` method on your Page returning a Spatie Schema.org object. Schemas can also be defined in Blocks and will be included on any Page using that Block.
+To use Schema.org add the `Riclep\Storyblok\Traits\SchemaOrg` trait to the Page and implement a `schemaOrg()` method on your Page returning a Spatie Schema.org object. Schemas can also be defined in Blocks and will be included on any Page using that Block.
 
 ```php
 <?php
@@ -62,9 +62,12 @@ namespace App\Storyblok\Pages;
 
 use Riclep\Storyblok\Page;
 use Spatie\SchemaOrg\Schema;
+use Riclep\Storyblok\Traits\SchemaOrg;
 
 class WithSchemaOrg extends Page
 {
+	use SchemaOrg;
+
 	protected function schemaOrg() {
 		return Schema::localBusiness()
 			->name('On the page')
