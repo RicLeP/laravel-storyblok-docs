@@ -51,7 +51,7 @@ To make elements on your page clickable simply call the `editorLink()` method in
 
 Storyblok has an amazing live preview feature where you can see your changes as you make them. This is supported in the package by sending the data to your server for rendering and updating the document in the editor asynchronously.
 
-To enable live preview set `live-preview` to `true` and specify the wrapper `live-element` in the Storyblok configuration file. The wrapper element must be inside your VueJS app tag and it’s best to use an element that doesn’t do anything else. Everything held inside the element will be replaced when updating content in Storyblok.
+To enable live preview set `live_preview` to `true` and specify the wrapper `live_element` in the Storyblok configuration file. The wrapper element must be inside your VueJS app tag and it’s best to use an element that doesn’t do anything else. Everything held inside the element will be replaced when updating content in Storyblok.
 
 ```php
 <!doctype html>
@@ -79,6 +79,6 @@ Route::post('/{slug?}', '\Riclep\Storyblok\Http\Controllers\LiveContentControlle
 
 > {info} Ensure this route is at the end of your `web.php` file so it doesn’t replace other routes in your application.
 
-As it needs to make a round trip to your server for each change it will be effected by latency but most modern hosting is fast enough for a good experience. You can disable this feature by setting `live-preview` to `false`.
+As it needs to make a round trip to your server for each change it will be effected by latency but most modern hosting is fast enough for a good experience. You can disable this feature by setting `live_preview` to `false`.
 
 > {warning} This is still an experimental feature and may not work in 100% of circumstances.

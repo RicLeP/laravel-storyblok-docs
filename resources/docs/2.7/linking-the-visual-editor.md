@@ -79,6 +79,6 @@ Route::post('/{slug?}', '\Riclep\Storyblok\Http\Controllers\LiveContentControlle
 
 > {info} Ensure this route is at the end of your `web.php` file so it doesn’t replace other routes in your application.
 
-As it needs to make a round trip to your server for each change it will be effected by latency but most modern hosting is fast enough for a good experience. You can disable this feature by setting `live-preview` to `true`.
+As it needs to make a round trip to your server for each change it will be effected by latency but most modern hosting is fast enough for a good experience. You can disable this feature by setting `live-preview` to `false`.
 
 > {warning} This is still an experimental feature and may not work in 100% of circumstances.
