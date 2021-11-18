@@ -11,59 +11,59 @@ You can loop over the nested Blocks in your Blade template, optionally using `@@
 
 
 ```php
-@@extends('storyblok._layout')
+@extends('storyblok._layout')
 
 
-@@section('content')
+@section('content')
 	<main>
 		<swiper :options="swiperHero">
-			@@foreach($story->feature_heroes as $featureHero)
+			@foreach($story->feature_heroes as $featureHero)
 				<swiper-slide>
-					@@include('storyblok.blocks._feature-hero', ['featureHero' => $featureHero])
+					@include('storyblok.blocks._feature-hero', ['featureHero' => $featureHero])
 				</swiper-slide>
-			@@endforeach
+			@endforeach
 		</swiper>
 
 		<section class="home-introduction u-w-narrowest u-w--centred">
-			<h1 class="t-3 fgc-ocean">@{{ $story->title }}</h1>
+			<h1 class="t-3 fgc-ocean">{{ $story->title }}</h1>
 
 			<div>
-				<p class="u-mb-30 t-8">@{{ $story->introduction }}</p>
+				<p class="u-mb-30 t-8">{{ $story->introduction }}</p>
 
 				<div>
-					@@foreach($story->buttons as $button)
-						<a href="@{{ url($button->url->cached_url) }}" class="button @{{ $button->cssClass() }}">
-                            @{{ $button->text }}
+					@foreach($story->buttons as $button)
+						<a href="{{ url($button->url->cached_url) }}" class="button {{ $button->cssClass() }}">
+                            {{ $button->text }}
                         </a>
-					@@endforeach
+					@endforeach
 				</div>
 			</div>
 		</section>
 
 		<div class="section-teasers">
-			@@foreach($story->teasers as $teaser)
-				@@include('storyblok.blocks._section-teaser', ['teaser' => $teaser])
-			@@endforeach
+			@foreach($story->teasers as $teaser)
+				@include('storyblok.blocks._section-teaser', ['teaser' => $teaser])
+			@endforeach
 		</div>
 
 		<section class="interview-teasers u-w-widest u-w--centred u-w--m-flush u-mt-100 u-mb-100">
 			<h4 class="t-6 interview-teasers__title">Real world advice and inspiration</h4>
 
-			@@foreach($story->interviews as $interview)
-				@@include('storyblok.blocks._interview-teaser', ['interview' => $interview])
-			@@endforeach
+			@foreach($story->interviews as $interview)
+				@include('storyblok.blocks._interview-teaser', ['interview' => $interview])
+			@endforeach
 		</section>
 
 		<section class="u-w-wide u-w--centred u-mb-180">
 			<header class="home-events u-mb-35">
 				<h2 class="t-2 fgc-ocean u-mr-10 u-mb-10">Upcoming IoD events</h2>
-				<a href="@{{ route('events') }}" class="t-4 link-underlined link-ocean">See all events</a>
+				<a href="{{ route('events') }}" class="t-4 link-underlined link-ocean">See all events</a>
 			</header>
 
 			<event-list :limit="2"></event-list>
 		</section>
 	</main>
-@@endsection
+@endsection
 
 ```
 
@@ -72,24 +72,24 @@ You can loop over the nested Blocks in your Blade template, optionally using `@@
 </a>
 
 ```php
-@@extends('layouts._default')
+@extends('layouts._default')
 
-@@section('content')
+@section('content')
 	<main>
-		@@foreach($story->features as $feature)
+		@foreach($story->features as $feature)
 			<section>
 				<h2>
-					@{{ $feature->title }}
+					{{ $feature->title }}
 				</h2>
 
-				@@foreach($feature->body as $section)
-					@@include('storyblok.blocks._' . $section->component(), ['content' => $section])
-				@@endforeach
+				@foreach($feature->body as $section)
+					@include('storyblok.blocks._' . $section->component(), ['content' => $section])
+				@endforeach
 			</section>
-		@@endforeach
+		@endforeach
 		</div>
 	</main>
-@@endsection
+@endsection
 ```
 
 
@@ -100,24 +100,24 @@ You can loop over the nested Blocks in your Blade template, optionally using `@@
 Alternatively a block can render itself by implementing the `Renderable` trait and calling the `render()` method. This will look for a view matching the Blocks name and pass the content to it.
 
 ```php
-@@extends('layouts._default')
+@extends('layouts._default')
 
-@@section('content')
+@section('content')
 	<main>
-		@@foreach($story->features as $feature)
+		@foreach($story->features as $feature)
 			<section>
 				<h2>
-					@{{ $feature->title }}
+					{{ $feature->title }}
 				</h2>
 
-				@@foreach($feature->body as $section)
+				@foreach($feature->body as $section)
 					$section->render()
-				@@endforeach
+				@endforeach
 			</section>
-		@@endforeach
+		@endforeach
 		</div>
 	</main>
-@@endsection
+@endsection
 ```
 
 
@@ -139,7 +139,7 @@ $block->cssClassWithParent(); // current-component@parent-component
 
 We’re a big fan of the BEM naming methodology and it fits well with Storyblok, but you can use any system or scheme you prefer. (BEM + utilities are the way to go though 😉). The child@parent rule might be a bit controversial but it can be helpful when looping over varied nested components that may be used in several contexts or layouts such as single or multiple columns.
 
-> {warning} Don’t forget to escape the @ symbol in your CSS files .child\@@parent { ... }
+> {warning} Don’t forget to escape the @ symbol in your CSS files .child\@parent { ... }
 
 ### Layouts
 
@@ -163,14 +163,14 @@ By default we check for component names prefixed with ‘layout_’ when identif
 
 ```php
 // when not in a layout add an additional class to centre the content
-<div class="scope-cms u-mb-40 @@if (!$block->getLayout()) centred @@endif">
-	@{!! $block->text_html !!}
+<div class="scope-cms u-mb-40 @if (!$block->getLayout()) centred @endif">
+	{!! $block->text_html !!}
 </div>
 
 // add an extra class when inside a layout
 <section class="layout_columns">
-    <article class="text @{{ $block->cssClassWithLayout() }}"> // text@layout_columns
-        @{{ $block->text }}
+    <article class="text {{ $block->cssClassWithLayout() }}"> // text@layout_columns
+        {{ $block->text }}
     </article>
 </section>
 
@@ -183,7 +183,7 @@ By default we check for component names prefixed with ‘layout_’ when identif
 }
 
 /* Don’t forget to escape the @ symbol - and CSS Grid is probably a far better way to achieve outcome */
-.text\@@layout_columns {
+.text\@layout_columns {
     width: 50%;
 }
 ```

@@ -19,13 +19,13 @@ First of all include the editor bridge from the package in the footer of your vi
 <!doctype html>
 <html>
 <head>
-	<title>@@yield('title')</title>
+	<title>@yield('title')</title>
 </head>
 <body>
     <div id="app">
     </div>
 
-    @@include('laravel-storyblok::editor-bridge')
+    @include('laravel-storyblok::editor-bridge')
 </body>
 </html>
 ```
@@ -34,11 +34,11 @@ First of all include the editor bridge from the package in the footer of your vi
 To make elements on your page clickable simply call the `editorLink()` method in your Blade views just before the opening tag of the block you wish to make editable. When within Storyblok each editable element should be outlined and clicking it will open the correct editor panel.
 
 ```php
-@{!! $story->editorLink() !!}
+{!! $story->editorLink() !!}
 <section>
-    <h1>@{{ $story->title }}</h1>
+    <h1>{{ $story->title }}</h1>
 
-    <p>@{{ $story->introduction }}</p>
+    <p>{{ $story->introduction }}</p>
 </section>
 ```
 
@@ -57,16 +57,16 @@ To enable live preview set `live_preview` to `true` and specify the wrapper `liv
 <!doctype html>
 <html>
 <head>
-	<title>@@yield('title')</title>
+	<title>@yield('title')</title>
 </head>
 <body>
     <div id="app">
         <div class="storyblok-live">
-			@@yield('content')
+			@yield('content')
 		</div>
     </div>
 
-    @@include('laravel-storyblok::editor-bridge')
+    @include('laravel-storyblok::editor-bridge')
 </body>
 </html>
 ```

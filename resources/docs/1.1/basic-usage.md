@@ -182,14 +182,14 @@ To use this in your Blade views simply do the following.
 ```html
 <main>
     <header class="video-hero">
-        <h1>@{{ $story->hero[0]->headline }}</h1>
+        <h1>{{ $story->hero[0]->headline }}</h1>
     </header>
 
     <section>
-        <p>@{{ $story->intro[0]->text }}</p>
+        <p>{{ $story->intro[0]->text }}</p>
 
-        <a href="@{{ $story->intro[0]->button[0]->url->cached_url }}">
-        	@{{ $story->intro[0]->button[0]->label }}
+        <a href="{{ $story->intro[0]->button[0]->url->cached_url }}">
+        	{{ $story->intro[0]->button[0]->label }}
         </a>
     </section>
 </main>

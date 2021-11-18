@@ -253,11 +253,11 @@ One of Storyblok’s most powerful features is its visual editor. This lets you 
 It does this by searching for comments injected into your HTML. To add them simply call the `editorLink()` method in your Blade views just before the opening tag of the block you wish to make editable.
 
 ```html
-@{!! $story->editorLink() !!}
+{!! $story->editorLink() !!}
 <section>
-    <h1>@{{ $story->title }}</h1>
+    <h1>{{ $story->title }}</h1>
 
-    <p>@{{ $story->introduction }}</p>
+    <p>{{ $story->introduction }}</p>
 </section>
 ```
 

@@ -186,7 +186,7 @@ Sometimes you might need your transformations to be used for background images. 
 ```html
 // <div style="--desktop: url(....); --mobile: url(....);">
 
-<div class="hero" style="@{{ $image->cssVars() }}"></div>
+<div class="hero" style="{{ $image->cssVars() }}"></div>
 ```
 
 Each transformation key is converted to a variable with a value of the transformed URL. Make sure you CSS is set to look for these variables.

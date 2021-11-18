@@ -116,8 +116,8 @@ By default Storyblok includes the SEO data within the page component’s content
 <html lang="en">
 <head>
     ...
-    <meta property="og:title" content="@{{ $seo['og_title'] }}">
-    <meta property="og:image" content="@{{ $seo['og_image'] }}">
+    <meta property="og:title" content="{{ $seo['og_title'] }}">
+    <meta property="og:image" content="{{ $seo['og_image'] }}">
     ...
 </head>
 <body>

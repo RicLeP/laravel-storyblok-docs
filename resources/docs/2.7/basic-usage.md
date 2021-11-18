@@ -59,15 +59,15 @@ The selected view will be passed the complete `Page` object in a variable called
 ```html
 <main>
     <header>
-        <h1>@{{ $story->title }}</h1>
+        <h1>{{ $story->title }}</h1>
     </header>
 
     <section>
-        @{{ $story->text }}
+        {{ $story->text }}
 
         <div>
-        	@{{ $story->nested[0]->name }}<br>
-        	@{{ $story->nested[0]->role }}
+        	{{ $story->nested[0]->name }}<br>
+        	{{ $story->nested[0]->role }}
         </div>
     </section>
 </main>

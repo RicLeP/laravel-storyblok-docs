@@ -169,7 +169,7 @@ class DetailsData extends \Riclep\Storyblok\Fields\Table
 Alternatively you can use the `cssClass()` method when adding your table to your Blade view.
 
 ```html
-@{!! $table->cssClass('details-data') !!}
+{!! $table->cssClass('details-data') !!}
 ```
 
 Will become the following:
@@ -194,9 +194,9 @@ Will become the following:
 Ideally all tables would include a descriptive caption, this is important for accessibility and just generally good practice. To do this use the `caption()` method passing in a string. If you also need to style the caption pass an array. 
 
 ```html
-@{!! $table->caption('Title of the table') !!}
+{!! $table->caption('Title of the table') !!}
 
-@{!! $table->caption(['Title of the table', 'the-css-class']) !!}
+{!! $table->caption(['Title of the table', 'the-css-class']) !!}
 ```
 
 > {info} If you need more control over formatting then implement a custom `toHtml()` method on your Table class, this must return a string. Alternatively you could deal directly with the data from Storyblok in your Blade view.
