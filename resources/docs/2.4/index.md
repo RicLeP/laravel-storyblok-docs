@@ -19,8 +19,6 @@
     - [Embedding media](/{{route}}/{{version}}/embedding-media)
     - [Extending](/{{route}}/{{version}}/traits)
     - [Linking to the editor](/{{route}}/{{version}}/linking-the-visual-editor)
-    - [The data structure](/{{route}}/{{version}}/data-structure)
-    
     
 - ## Making Content Sing
     - [Typography](/{{route}}/{{version}}/typography)

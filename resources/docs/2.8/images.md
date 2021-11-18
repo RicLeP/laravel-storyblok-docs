@@ -15,15 +15,6 @@ All Storyblok Image fields are automatically converted to Image fields. Legacy i
 
 All Storyblok Asset fields with uploaded images are automatically converted into Image Field classes. These can be transformed by calling `transform()` and chaining the various methods.
 
-Since version 2.8 it is possible to define a ‘transformer’ to use when transforming images. The default transformer is `Riclep\Storyblok\Support\ImageTransformers\Storyblok` which uses [Storyblok’s new image transformation URLs](https://www.storyblok.com/docs/image-service#migrating-from-the-previous-version-of-the-service). It’s also possible to use the old URL structure with the `Riclep\Storyblok\Support\ImageTransformers\StoryblokLegacy` transformer but it’s highly recommended to update. [View their docs](https://www.storyblok.com/docs/image-service) for more details on resizing, cropping etc.
-
-There is also a driver for Imgix’s web proxy allowing you to taken advantage of their more powerful transformations, simply change the transformer to `Riclep\Storyblok\Support\ImageTransformers\Imgix`.
-
-It is also possible to implement custom transformers by extending the `Riclep\Storyblok\Support\ImageTransformers\BaseTransformer` class.
-
-There are two ways to user a transformer - set the default transformer class in your Storyblok configuration file with the `image_transformer` key or pass a transformer class to the `transform(Riclep\Storyblok\Support\ImageTransformers\Imgix)` method.
-
-The examples below are using the Storyblok transformers. Different services may have different methods and functionality.
 
 ```php
 // $image = Riclep\Storyblok\Fields\Image or any class extending it
@@ -60,6 +51,22 @@ Transformations can be chained but not all combinations will work well together 
 $image->transform()->resize(800, 450)->format('webp');
 ```
 
+### Using alternate transformer
+
+Since version 2.8 it is possible to define a ‘transformer’ to use when transforming images. The default transformer is `Riclep\Storyblok\Support\ImageTransformers\Storyblok` which uses [Storyblok’s new image transformation URLs](https://www.storyblok.com/docs/image-service#migrating-from-the-previous-version-of-the-service). It’s also possible to use the old URL structure with the `Riclep\Storyblok\Support\ImageTransformers\StoryblokLegacy` transformer but it’s highly recommended to update. [View their docs](https://www.storyblok.com/docs/image-service) for more details on resizing, cropping etc.
+
+The package includes a driver for Imgix’s web proxy allowing you to take advantage of their more powerful transformations, simply change the transformer to `Riclep\Storyblok\Support\ImageTransformers\Imgix`. It is also possible to implement custom transformers by extending the `Riclep\Storyblok\Support\ImageTransformers\BaseTransformer` class.
+
+There are two ways to user a transformer - set the default transformer class in your Storyblok configuration file with the `image_transformer` key or pass a transformer class to the `transformer()` method before calling `transform()`.
+
+
+```php
+// resize the image and rotate it 99 degrees - ‘rot’ is a feature of Imgix 
+$image->transformer(\Riclep\Storyblok\Support\ImageTransformers\Imgix::class)->transform()->resize(200, 100)->option(['rot' => 99]);
+```
+
+> {info} As each transformer can support different services with different capabilities the methods available on each may vary.
+
 ### Predefined transformations
 
 Rather than defining your transformations every time you use them they can be added directly to an Image class as follows. Make a class extending `Riclep\Storyblok\Fields\Image` and define a `transformations()` method that sets the `transformations` property. This property should be an array of named arrays with two keys: `src` - a transformation and `media` - a `<picture>` element media string (this can be left empty). Each outer array is the name of the transformation, an example will make it clearer.
@@ -80,7 +87,7 @@ class HeroImage extends Image
 				'media' => '',
 			],
             'desktop' => [
-				'src' => $this->transform()->resize(500, 400),
+				'src' => $this->transformer(\Riclep\Storyblok\Support\ImageTransformers\Imgix::class)->transform()->resize(500, 400),
 				'media' => '(min-width: 1000px)',
 			],
 		];
@@ -88,14 +95,14 @@ class HeroImage extends Image
 }
 ```
 
-> {info} The default `<picture>` and `srcset` templates expect your `transformations` array to list images from small to largest and use `min-width` for media queries. If you need different functionality then use a custom Blade view.
-
-They can now be accessed by name returning the `ImageTransform` object exactly like the manual transformations above and will return the image URL when cast to a string.
+They can now be accessed using the transformations key and further transformed or returned as an image URL when cast to a string.
 
 ```php
 $image->transform('mobile');
 $image->transform('desktop');
 ```
+
+> {info} The default `<picture>` and `srcset` templates expect your `transformations` array to list images from smallest to largest and use `min-width` for media queries. If you need different functionality then use a custom Blade view.
 
 <a name="picture-elements">
 ## Picture elements

@@ -31,7 +31,7 @@ Listed below is how we transform each of the built in fieldtypes. The Field clas
 | single option (stories)  | None           | Is not cast. Original value returned                                      |
 | single options (stories) | [`Block`]      | If [relations are resolve](/{{route}}/{{version}}/requesting-pages#resolving-related-stories) the correct Block type is cast |
 | asset                    | `Asset`\|`Image` | Checks the file extension and casts to the appropiate class             |
-| multi-asset              | `MultiAsset`   | Contains a Collection of Asset and/or Image Fields                        |
+| multi-asset              | `MultiAsset`   | Contains a Collection of Asset and/or Image Fields. `__toString` retuns a comma delimited list of filenames                        |
 | link (story)             | `StoryLink`    |                                                                           |
 | link (url)               | `UrlLink`      | `toString()` prints the URL                                               |
 | link (email)             | `EmailLink`    | `toString()` prints the email address                                     |
