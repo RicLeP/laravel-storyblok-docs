@@ -112,7 +112,7 @@ return [
                 'index' => ['h2', 'h3']
             ],
             'algolia'   => [
-                'key'   => 'a03819ec7a0e0b84b5c10e7fed8c8cba',
+                'key'   => '6c431fd6bc06b3c97f76a29273d34963',
                 'index' => 'laravel-storyblok'
             ]
         ]

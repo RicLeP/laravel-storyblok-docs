@@ -1,7 +1,7 @@
 setTimeout(() => {
 	docsearch({
-		appId: "BH4D9OD16A",
-		apiKey: "a03819ec7a0e0b84b5c10e7fed8c8cba",
+		appId: "KW36DU0MAY",
+		apiKey: "6c431fd6bc06b3c97f76a29273d34963",
 		indexName: "laravel-storyblok",
 		container: ".js-search",
 		debug: false

@@ -17,7 +17,7 @@ class ThemeServiceProvider extends ServiceProvider
         LaRecipe::style('laravel-storyblok', __DIR__.'/../resources/css/theme.css');
         LaRecipe::style('laravel-storyblok-2', 'https://cdn.jsdelivr.net/npm/@docsearch/css@alpha');
         LaRecipe::script('laravel-storyblok', 'https://cdn.jsdelivr.net/npm/@docsearch/js@alpha');
-        LaRecipe::script('laravel-storyblok-2', asset('js/algolia.js'));
+        LaRecipe::script('laravel-storyblok-2', asset('js/algolia.js?v=2'));
     }
 
     /**

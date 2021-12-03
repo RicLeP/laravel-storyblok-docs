@@ -51,11 +51,17 @@ Transformations can be chained but not all combinations will work well together 
 $image->transform()->resize(800, 450)->format('webp');
 ```
 
-### Using alternate transformer
+### Using alternate transformers
+
+**Storyblok**
 
 Since version 2.8 it is possible to define a ‘transformer’ to use when transforming images. The default transformer is `Riclep\Storyblok\Support\ImageTransformers\Storyblok` which uses [Storyblok’s new image transformation URLs](https://www.storyblok.com/docs/image-service#migrating-from-the-previous-version-of-the-service). It’s also possible to use the old URL structure with the `Riclep\Storyblok\Support\ImageTransformers\StoryblokLegacy` transformer but it’s highly recommended to update. [View their docs](https://www.storyblok.com/docs/image-service) for more details on resizing, cropping etc.
 
+**Imgix**
+
 The package includes a driver for Imgix’s web proxy allowing you to take advantage of their more powerful transformations, simply change the transformer to `Riclep\Storyblok\Support\ImageTransformers\Imgix`. It is also possible to implement custom transformers by extending the `Riclep\Storyblok\Support\ImageTransformers\BaseTransformer` class.
+
+**Specifying the transformer**
 
 There are two ways to user a transformer - set the default transformer class in your Storyblok configuration file with the `image_transformer` key or pass a transformer class to the `transformer()` method before calling `transform()`.
 
