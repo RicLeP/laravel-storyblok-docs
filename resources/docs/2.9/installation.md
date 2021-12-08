@@ -34,7 +34,7 @@ STORYBLOK_WEBHOOK_SECRET=someComplexKeySuchAsAHash
 
 ### Webhooks
 
-The webhook handler responds to `publish`, `unpublish` and `delete` Story webhooks. You need to listen for this by updating the `App\Providers\EventServiceProvider` and configuring the webhook URL in Storyblok’s. In Storyblok’s settings add the ‘Story published & unpublished’ [webhook URL](https://www.storyblok.com/docs/guide/in-depth/webhooks) as so: https://[yourdomain]/api/laravel-storyblok/webhook/publish. Make sure this is the exact URL as the webhook will not follow redirections on your server such as going from www to non-www. Next create your webhook secret in Storyblok and copy this to your `.env` file. Finally register the event listeners in `App\Providers\EventServiceProvider`. See the [Laravel docs](https://laravel.com/docs/8.x/events#registering-events-and-listeners).
+The webhook handler responds to `publish`, `unpublish` and `delete` Story webhooks. In Storyblok’s settings add the ‘Story published & unpublished’ [webhook URL](https://www.storyblok.com/docs/guide/in-depth/webhooks) as so: https://[yourdomain]/api/laravel-storyblok/webhook/publish. Make sure this is the exact URL as the webhook will not follow redirections on your server such as going from www to non-www. Next create your webhook secret in Storyblok and copy this to your `.env` file. Finally register the event listeners in `App\Providers\EventServiceProvider`. See the [Laravel docs for more on events](https://laravel.com/docs/8.x/events#registering-events-and-listeners).
 
 ```php
 use Riclep\Storyblok\Events\StoryblokPublished;
@@ -57,7 +57,7 @@ protected $listen = [
 ];
 ```
 
-> {info} The default webhook only clears the Laravel cache of the saved API responses. If you need something more sophisticated implement your own functionality. See the [Storyblok webhook docs](https://www.storyblok.com/docs/Guides/using-storyblok-webhooks). The listeners receive the webhook JSON in the as so: `$event->webhookPayload`.
+> {info} The default webhook only clears the Laravel cache of the saved API responses. If you need something more sophisticated implement your own functionality. See the [Storyblok webhook docs](https://www.storyblok.com/docs/Guides/using-storyblok-webhooks). The listeners receive the webhook JSON in the `handle(PublishingEvent $event)` method as so: `$event->webhookPayload`.
 
 ### Artisan commands
 
