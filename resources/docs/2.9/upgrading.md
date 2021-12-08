@@ -19,6 +19,9 @@ protected $listen = [
     StoryblokPublished::class => [
         ClearCache::class,
     ],
+    StoryblokUnpublished::class => [
+		ClearCache::class
+	]
 ];
 ```
 

@@ -23,9 +23,7 @@ composer require riclep/laravel-storyblok
 ## Configuration
 </a>
 
-After installing the package update your .env file with your Storyblok Content Delivery API keys and specify if you want to receive draft content.
-
-In Storyblok’s settings add the ‘Story published & unpublished’ [webhook URL](https://www.storyblok.com/docs/guide/in-depth/webhooks) as so: https://[yourdomain]/api/laravel-storyblok/webhook/publish. Make sure this is the exact URL as the webhook will not follow redirections on your server such as going from www to non-www. Next add your webhook secret in both the settings and your .env file.
+After installing the package update your `.env` file with your Storyblok Content Delivery API keys and specify if you want to receive draft content.
 
 ```php
 STORYBLOK_PREVIEW_API_KEY=your_preview_key
@@ -34,7 +32,9 @@ STORYBLOK_DRAFT=true
 STORYBLOK_WEBHOOK_SECRET=someComplexKeySuchAsAHash
 ```
 
-The webhook handler fire the `StoryblokPublished` event. You need to listen for this by updating the `App\Providers\EventServiceProvider`.
+### Webhooks
+
+The webhook handler responds to `publish`, `unpublish` and `delete` Story webhooks. You need to listen for this by updating the `App\Providers\EventServiceProvider` and configuring the webhook URL in Storyblok’s. In Storyblok’s settings add the ‘Story published & unpublished’ [webhook URL](https://www.storyblok.com/docs/guide/in-depth/webhooks) as so: https://[yourdomain]/api/laravel-storyblok/webhook/publish. Make sure this is the exact URL as the webhook will not follow redirections on your server such as going from www to non-www. Next create your webhook secret in Storyblok and copy this to your `.env` file. Finally register the event listeners in `App\Providers\EventServiceProvider`. See the [Laravel docs](https://laravel.com/docs/8.x/events#registering-events-and-listeners).
 
 ```php
 use Riclep\Storyblok\Events\StoryblokPublished;
@@ -46,13 +46,20 @@ use Riclep\Storyblok\Listeners\ClearCache;
  * @var array
  */
 protected $listen = [
+    // published webhook
     StoryblokPublished::class => [
-        ClearCache::class,
-    ],
+		ClearCache::class
+	],
+	// unpublished / deleted webhook
+	StoryblokUnpublished::class => [
+		ClearCache::class
+	]
 ];
 ```
 
-> {info} The default webhook only clears the Laravel cache of the saved API responses. If you need something more sophisticated implement your own functionality.
+> {info} The default webhook only clears the Laravel cache of the saved API responses. If you need something more sophisticated implement your own functionality. See the [Storyblok webhook docs](https://www.storyblok.com/docs/Guides/using-storyblok-webhooks). The listeners receive the webhook JSON in the as so: `$event->webhookPayload`.
+
+### Artisan commands
 
 To use the Artisan generator commands you’ll also need to specify your Space ID and OAuth Token.
 
@@ -60,7 +67,6 @@ To use the Artisan generator commands you’ll also need to specify your Space I
 STORYBLOK_SPACE_ID=your_space_id
 STORYBLOK_OAUTH_TOKEN=your_oauth_token
 ```
-
 
 
 > {info} Not sure where to find your API keys? [Check the Storyblok FAQs](https://www.storyblok.com/faq/where-to-find-my-content-delivery-api-key)
