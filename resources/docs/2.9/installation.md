@@ -59,6 +59,8 @@ protected $listen = [
 
 > {info} The default webhook only clears the Laravel cache of the saved API responses. If you need something more sophisticated implement your own functionality. See the [Storyblok webhook docs](https://www.storyblok.com/docs/Guides/using-storyblok-webhooks). The listeners receive the webhook JSON in the `handle(PublishingEvent $event)` method as so: `$event->webhookPayload`.
 
+If you need to test or debug your webhooks locally I highly recommend [ngrok](https://ngrok.com/).
+
 ### Artisan commands
 
 To use the Artisan generator commands you’ll also need to specify your Space ID and OAuth Token.
