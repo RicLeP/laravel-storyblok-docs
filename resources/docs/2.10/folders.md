@@ -63,7 +63,7 @@ The package uses Laravel’s `LengthAwarePaginator` [see the Laravel docs](https
 To display the standard pagination links in your view do the following:
 
 ```blade
-{!! $news->paginate()->links() !!}
+{!! $stories->paginate()->links() !!}
 ```
 
 ---
