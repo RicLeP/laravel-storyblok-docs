@@ -241,6 +241,26 @@ Each transformation key is converted to a variable with a value of the transform
 }
 ```
 
+
+### Focal-point and object-fit
+
+**Since 2.10.5**
+
+The image focal-point in Storyblok is great but sometimes you want to do more than use it for cropping via their CDN. Perhaps you want to use the full original image and object-position for alignment - great for responsive websites! Call `focalPointAlignment()` on your image and the focal-point will be used to make a string compatible with CSS object-position;
+
+```html
+// --object-position: 30% 22%;
+<img style="--object-position: {{ $block->image->focalPointAlignment() }};" src="{{ $block->image }}" alt class="object-position">
+
+// --object-position: bottom right; - default when no focal-point is set
+<img style="--object-position: {{ $block->image->focalPointAlignment('bottom right') }};" src="{{ $block->image }}" alt class="object-position">
+
+
+// --object-position: left top; - use hard alignment, not %
+<img style="--object-position: {{ $block->image->focalPointAlignment('center', true) }};" src="{{ $block->image }}" alt class="object-position">
+```
+
+
 ### Getting your CDN URL
 
 Image transformations implement `__toString()` and will be converted into a Storyblok Image Service URL when used in Blade etc.
