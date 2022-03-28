@@ -3,6 +3,7 @@
 ---
 
 
+- [Version 2.11.0](#2-11-0)
 - [Version 2.10.0](#2-10-0)
 - [Version 2.9.0](#2-9-0)
 - [Version 2.8.0](#2-8-0)
@@ -18,6 +19,15 @@
 - [Version 1.1.0](#1-1-0)
 
 
+<a name="2-11-0">
+## Version 2.11.0
+</a>
+
+- Add `with()` method to `Field`s allowing data to be passed in
+- `Block`’s `render()` method can now take an array of additional data that is passed to the view
+- `Folders`s no longer default to 10 stories - they will load the maximum possible Set `$perPage = 10` on your folders to restore the old functionality 
+
+
 <a name="2-10-0">
 ## Version 2.10.0
 </a>
@@ -25,7 +35,6 @@
 - Folders now support pagination out-of-the-box
 - **2.10.5** The Storyblok API is now called using SSL by default - can be changed in config file
 - **2.10.5** `Image` field focal-point alignment CSS helper
-- **2.10.7** Add `with()` method to `Field`s allowing data to be passed in
 
 <a name="2-9-0">
 ## Version 2.9.0

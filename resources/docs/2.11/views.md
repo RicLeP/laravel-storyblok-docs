@@ -121,6 +121,17 @@ Alternatively a block can render itself by implementing the `Renderable` trait a
 @endsection
 ```
 
+You can send additional content to the Blade view rendered by passing an array to the `render()` method.
+
+```php
+
+$block->render(['some_content' => 'some value'])
+
+// Usage in the Block’s Blade
+{{ $some_content }}
+
+```
+
 <a name="creating-css-class-names">
 ## Creating CSS class names
 </a>
