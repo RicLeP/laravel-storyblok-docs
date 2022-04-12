@@ -20,5 +20,8 @@
     - [Extending](/{{route}}/{{version}}/traits)
     - [Linking to the editor](/{{route}}/{{version}}/linking-the-visual-editor)
     
+- ## Packages
+    - [Form Builder](/{{route}}/{{version}}/laravel-storyblok-forms)
+    
 - ## Making Content Sing
     - [Typography](/{{route}}/{{version}}/typography)
