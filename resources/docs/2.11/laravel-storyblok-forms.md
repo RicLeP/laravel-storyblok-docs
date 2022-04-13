@@ -5,6 +5,16 @@
 - [Installation](#installation)
 - [Building forms](#building-forms)
 
+An addon package for Laravel Storyblok that lets you use the Storyblok headless CMS as a form builder.
+
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/riclep/laravel-storyblok-forms.svg?style=flat-square)](https://packagist.org/packages/riclep/laravel-storyblok-forms)
+[![Build](https://img.shields.io/scrutinizer/build/g/riclep/laravel-storyblok-forms?style=flat-square)](https://scrutinizer-ci.com/g/riclep/laravel-storyblok-forms)
+[![Quality Score](https://img.shields.io/scrutinizer/quality/g/riclep/laravel-storyblok-forms?style=flat-square)](https://scrutinizer-ci.com/g/riclep/laravel-storyblok-forms)
+[![Total Downloads](https://img.shields.io/packagist/dt/riclep/laravel-storyblok-forms.svg?style=flat-square)](https://packagist.org/packages/riclep/laravel-storyblok-forms)
+[![Twitter](https://img.shields.io/twitter/follow/riclep.svg?style=social&label=Follow)](https://twitter.com/intent/follow?screen_name=riclep)
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/M4M2C42W6)
+
 <a name="installation">
 ## Installation
 </a>
