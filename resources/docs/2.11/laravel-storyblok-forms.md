@@ -19,19 +19,21 @@ An addon package for Laravel Storyblok that lets you use the Storyblok headless 
 ## Installation
 </a>
 
-Install using Composer
+Install the package using Composer
 
 `composer require riclep/laravel-storyblok-forms`
 
-Publish the package assets selecting Laravel Storyblok Forms - this will copy stub views for each form component
+Publish the package assets selecting Laravel Storyblok Forms - this will copy stub views for each form component.
 
 `php artisan vendor:publish`
 
-Install the Storyblok Components - this will create the required components and component groups in Storyblok. Ensure you have your management key and space ID set up in the `.env`, see [Laravel Storyblok installation docs](https://github.com/RicLeP/laravel-storyblok) installation for details.
+> {warning} Currently this can fail. If it does manually copy the views from `vendor/riclep/laravel-storyblok-forms/stubs/views/blocks` to your ap’s `resources/views/storyblok` folder.
 
 Tell Laravel Storyblok where to find the Form Block classes but editing your `laravel-storyblok` config file and adding the `Riclep\StoryblokForms` namespace.
 
 `'component_class_namespace' => ['Riclep\StoryblokForms\\', 'App\Storyblok\\'],`
+
+Install the Storyblok Components - this will create the required components and component groups in Storyblok. Ensure you have your management key and space ID set up in the `.env`, see [Laravel Storyblok installation docs](https://github.com/RicLeP/laravel-storyblok) installation for details.
 
 `php artisan lsf:install`
 
