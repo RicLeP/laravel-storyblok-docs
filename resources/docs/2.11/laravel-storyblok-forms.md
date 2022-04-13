@@ -29,6 +29,10 @@ Publish the package assets selecting Laravel Storyblok Forms - this will copy st
 
 Install the Storyblok Components - this will create the required components and component groups in Storyblok. Ensure you have your management key and space ID set up in the `.env`, see [Laravel Storyblok installation docs](https://github.com/RicLeP/laravel-storyblok) installation for details.
 
+Tell Laravel Storyblok where to find the Form Block classes but editing your `laravel-storyblok` config file and adding the `Riclep\StoryblokForms` namespace.
+
+`'component_class_namespace' => ['Riclep\StoryblokForms\\', 'App\Storyblok\\'],`
+
 `php artisan lsf:install`
 
 <a name="building-forms">
