@@ -78,7 +78,7 @@ STORYBLOK_OAUTH_TOKEN=your_oauth_token
 Next you need to publish the default Page and Block classes. These will be used for all your Storyblok Pages and Components but can be overridden by your own classes. The default classes are published to `app/Storyblok`. This will also publish a `storyblok.php` configuration file.
 
 ```php
-php artisan vendor:publish
+php artisan vendor:publish --tag=storyblok
 ```
 
 ---
