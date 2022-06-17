@@ -26,6 +26,9 @@ class Kittens extends Page
 
 > {info} If you want to define defaults for all your Page classes then add them to `App\Storyblok\Page\` class and extend this instead of `Riclep\Storyblok\Page`.
 
+To request multiple pages, such as a list of news articles, look at [`Folders`](/{{route}}/{{version}}/folders).
+
+
 <a name="rendering">
 ## Rendering pages
 </a>

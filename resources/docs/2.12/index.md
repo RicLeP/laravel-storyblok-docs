@@ -10,11 +10,11 @@
     
 - ## Advanced Usage
     - [Pages](/{{route}}/{{version}}/pages)
+    - [Folders](/{{route}}/{{version}}/folders)
     - [Blocks](/{{route}}/{{version}}/blocks)
     - [Fields](/{{route}}/{{version}}/fields)
     - [Assets](/{{route}}/{{version}}/assets)
     - [Images](/{{route}}/{{version}}/images)
-    - [Folders](/{{route}}/{{version}}/folders)
     - [Views](/{{route}}/{{version}}/views)
     - [Embedding media](/{{route}}/{{version}}/embedding-media)
     - [Extending](/{{route}}/{{version}}/traits)
