@@ -25,6 +25,8 @@
 </a>
 
 - The config setting `component_class_namespace` now correctly checks multiple namespaces before loading package defaults
+- **2.12.1** Added `renderUsing()` to Blocks
+- **2.12.2** Added ‘auto’ to image transformations
 
 
 <a name="2-11-0">

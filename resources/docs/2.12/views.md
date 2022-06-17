@@ -129,8 +129,11 @@ $block->render(['some_content' => 'some value'])
 
 // Usage in the Block’s Blade
 {{ $some_content }}
-
 ```
+
+**Since 2.12.1**
+
+If you wish to use a specific view for rendering the Block use the `$block->renderUsing('pass.view.name')` method. You can pass an array of views and the first matching one will be used. Additional content can be passed by supplying an array for the second argument: `$block->renderUsing('pass.view.name', ['extra' => 'content])`.
 
 <a name="creating-css-class-names">
 ## Creating CSS class names

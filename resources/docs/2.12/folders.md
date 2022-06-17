@@ -58,6 +58,32 @@ $stories->perPage(10)->read();
 
 > {warning} If you change the `per_page` value in the `$settings` array make sure you match the value in `perPage()`. `perPage() does update `settings` so it’s recommended to only use the method.
 
+Folder’s don’t know what page they are on, you need to tell them by passing the `page` number to their `settings`.
+
+```php
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Storyblok\Folders\News;
+use Illuminate\Http\Request;
+
+class NewsController extends Controller
+{
+	public function index(Request $request)
+	{
+		$news = new News();
+		$news->settings([
+			'page' => (int)$request->get('page') ?: 1,
+		]);
+
+		return view('pages.news', [
+			'stories' => $news->perPage(10)->read(),
+		]);
+	}
+}
+```
+
 The package uses Laravel’s `LengthAwarePaginator` [see the Laravel docs](https://laravel.com/docs/9.x/pagination#displaying-pagination-results) for customisation options. 
 
 To display the standard pagination links in your view do the following:

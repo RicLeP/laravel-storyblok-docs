@@ -8,6 +8,8 @@
 Pages in Storyblok can be requested via their slug or UUID. If using the [catch-all route](/{{route}}/{{version}}/installation#routing) we do the following:
 
 ```php
+// use Riclep\Storyblok\StoryblokFacade as StoryBlok;
+
 public function show($slug = 'home')
 {
 	return Storyblok::read($slug)->render();

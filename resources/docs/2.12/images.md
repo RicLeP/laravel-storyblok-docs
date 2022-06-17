@@ -7,7 +7,19 @@
 - [CSS variables](#css-variables)
 - [Image meta](#image-meta)
 
-All Storyblok Image fields are automatically converted to Image fields. Legacy image fields and any text fields containing the URL to an image at another domaain are also ‘upgraded’ to Image classes and given stub Block content matching regular images.
+All Storyblok Image fields are automatically converted to Image field classes. This class gives a number of special features such as resizing and cropping using the [Storyblok image service](https://www.storyblok.com/docs/image-service). You can also load custom image services.
+
+
+Legacy image fields and any text fields containing just a URL to an image at another domain are also ‘upgraded’ to Image classes and given stub Block content matching regular images. Images extend the default [Asset class](/{{route}}/{{version}}/assets).
+
+
+## Checking for an image
+
+To check if an image has been uploaded in Storyblok call `hasFile()` on the Image.
+
+```php
+$myImage->hasFile();
+```
 
 <a name="transforming-images">
 ## Transforming images
@@ -27,6 +39,9 @@ $image->transform()->resize(234, 432, 'focal-point');
 
 // scales the image and crops using Storyblok’s Smart Crop feature for detecting faces
 $image->transform()->resize(234, 432, 'smart');
+
+// **Since 2.12.2** uses focal-point if set or falls back to smart
+$image->transform()->resize(234, 432, 'auto');
 
 
 // scales the image to fit inside the dimensions and set the background colour (width, height, [background colour]), 
