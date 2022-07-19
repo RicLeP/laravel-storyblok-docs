@@ -27,6 +27,7 @@
 - The config setting `component_class_namespace` now correctly checks multiple namespaces before loading package defaults
 - **2.12.1** Added `renderUsing()` to Blocks
 - **2.12.2** Added ‘auto’ to image transformations
+- **2.12.5** Added `hasChildBlock()` to Blocks
 
 
 <a name="2-11-0">

@@ -6,6 +6,7 @@
 - [Accessing Fields](#accessing-fields)
 - [Accessors](#accessors)
 - [Getting a Block’s position](#getting-a-blocks-position)
+- [Checking a Block contains specific items](#checking-block-content)
 - [Casting Fields](#casting-fields)
 - [Linking to the visual editor](#editable-comment-link)
 - [Meta and Schema.org data](#schema-org-data)
@@ -220,6 +221,27 @@ $currentComponent->isAncestorOf('ancestor-component'); // true
 ```
 
 Wouldn’t it be great to be able to create CSS classes when working in Blade that help you style nested Blocks? Don’t worry, [we have you covered](/{{route}}/{{version}}/views#creating-css-class-names).
+
+
+---
+
+<a name="checking-block-content">
+## Checking a Block contains specific items
+</a>
+
+If you want to see if a Block contains a specific field use the `has()` method.
+
+```php
+$block->has('field'); // true / false
+```
+
+**Since 2.12.5**
+
+If you have field that can take ‘blocks’ created in Storyblok it can be useful to check if a certain type of component has been added. You can do this with the `hasChildBlock()` method. First pass the name of the field that holds the blocks then pass the component type to check for.
+
+```php
+$block->hasChildBlock('blocks_field', 'component'); // true / false
+```
 
 ---
 
