@@ -28,6 +28,7 @@
 - **2.12.1** Added `renderUsing()` to Blocks
 - **2.12.2** Added ‘auto’ to image transformations
 - **2.12.5** Added `hasChildBlock()` to Blocks
+- **2.12.6** Added `ls:import` and `ls:export` artisan commands
 
 
 <a name="2-11-0">

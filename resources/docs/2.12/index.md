@@ -19,6 +19,7 @@
     - [Embedding media](/{{route}}/{{version}}/embedding-media)
     - [Extending](/{{route}}/{{version}}/traits)
     - [Linking to the editor](/{{route}}/{{version}}/linking-the-visual-editor)
+    - [Artisan Commands](/{{route}}/{{version}}/artisan)
     
 - ## Packages
     - [Form Builder](/{{route}}/{{version}}/laravel-storyblok-forms)
