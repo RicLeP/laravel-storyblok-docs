@@ -3,6 +3,7 @@
 ---
 
 
+- [Version 2.13.0](#2-13-0)
 - [Version 2.12.0](#2-12-0)
 - [Version 2.11.0](#2-11-0)
 - [Version 2.10.0](#2-10-0)
@@ -18,6 +19,15 @@
 - [Version 2.0.0](#2-0-0)
 - [Version 1.2.0](#1-2-0)
 - [Version 1.1.0](#1-1-0)
+
+
+<a name="2-13-0">
+## Version 2.13.0
+</a>
+
+- Updated Storyblok php client to v2.2, this had the effect of moving from v1 to v2 of their content API. This should be a seemless upgrade
+- Updated to Storyblok Richtext Renderer v2
+- Added support for selecting Storyblok API region in the config file
 
 
 <a name="2-12-0">
