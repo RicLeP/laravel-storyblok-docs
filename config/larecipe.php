@@ -32,9 +32,9 @@ return [
     |
     */
 
-    'versions'      => [
-        'default'   => '2.13',
-        'published' => [
+	'versions'      => [
+		'default'   => '2.13',
+		'published' => [
 			'2.13',
 			'2.12',
 			'2.11',
@@ -52,8 +52,8 @@ return [
 			'1.2',
 			'1.1',
 			'1.0',
-        ]
-    ],
+		]
+	],
 
     /*
     |--------------------------------------------------------------------------
@@ -72,7 +72,8 @@ return [
 
     'settings'       => [
         'auth'       => false,
-        'ga_id'      => 'UA-2354848-2',
+        'guard'      => null,
+	    'ga_id'      => 'UA-2354848-2',
         'middleware' => [
             'web',
         ]
@@ -92,7 +93,7 @@ return [
     */
 
     'cache'       => [
-        'enabled' => true,
+        'enabled' => false,
         'period'  => 5
     ],
 
@@ -109,19 +110,19 @@ return [
     |
     */
 
-    'search'            => [
-        'enabled'       => true,
-        'default'       => 'algolia',
-        'engines'       => [
-            'internal'  => [
-                'index' => ['h2', 'h3']
-            ],
-            'algolia'   => [
-                'key'   => '6c431fd6bc06b3c97f76a29273d34963',
-                'index' => 'laravel-storyblok'
-            ]
-        ]
-    ],
+	'search'            => [
+		'enabled'       => true,
+		'default'       => 'algolia',
+		'engines'       => [
+			'internal'  => [
+				'index' => ['h2', 'h3']
+			],
+			'algolia'   => [
+				'key'   => '6c431fd6bc06b3c97f76a29273d34963',
+				'index' => 'laravel-storyblok'
+			]
+		]
+	],
 
     /*
     |--------------------------------------------------------------------------
@@ -141,8 +142,8 @@ return [
         'fa_v4_shims'    => true, // Add FontAwesome v4 shims prevent BC break
         'show_side_bar'  => true,
         'colors'         => [
-            'primary'    => '#00b3b0',
-            'secondary'  => '#ff2d20'
+	        'primary'    => '#00b3b0',
+	        'secondary'  => '#ff2d20'
         ],
 
         'theme_order'    => null // ['LaRecipeDarkTheme', 'customTheme']
@@ -161,15 +162,15 @@ return [
     */
 
     'seo'                 => [
-        'author'          => '',
-        'description'     => '',
-        'keywords'        => '',
+        'author'          => 'Richard Le Poidevin',
+        'description'     => 'A package to use the Storyblok CMS with Laravel. It’s designed to feel like the Laravel way of doing things making it simple to take your Storyblok JSON and use it in your Laravel Blade views.',
+        'keywords'        => 'cms content management system laravel storyblok',
         'og'              => [
-            'title'       => '',
+            'title'       => 'Laravel Storyblok - A package to use the Storyblok CMS with Laravel',
             'type'        => 'article',
-            'url'         => '',
+            'url'         => 'https://ls.sirric.co.uk',
             'image'       => '',
-            'description' => '',
+            'description' => 'A package to use the Storyblok CMS with Laravel. It’s designed to feel like the Laravel way of doing things making it simple to take your Storyblok JSON and use it in your Laravel Blade views.',
         ]
     ],
 
@@ -210,5 +211,14 @@ return [
 
     'packages' => [
         'path' => 'larecipe-components',
+    ],
+
+    'blade-parser' => [
+        'regex' => [
+            'code-blocks' => [
+                'match' => '/\<pre\>(.|\n)*?<\/pre\>/',
+                'replacement' => '<code-block>',
+            ]
+        ]
     ]
 ];

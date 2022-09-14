@@ -1,5 +1,5 @@
 {
-    "name": "riclep/laravel-storyblok",
+    "name": "riclep/larecipe",
     "description": "A LaRecipe theme.",
     "keywords": [
         "laravel",
@@ -11,13 +11,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Riclep\\LaravelStoryblok\\": "src/"
+            "Riclep\\Larecipe\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Riclep\\LaravelStoryblok\\ThemeServiceProvider"
+                "Riclep\\Larecipe\\ThemeServiceProvider"
             ]
         }
     },
