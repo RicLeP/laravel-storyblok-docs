@@ -162,15 +162,15 @@ return [
     */
 
     'seo'                 => [
-        'author'          => '',
-        'description'     => '',
-        'keywords'        => '',
+        'author'          => 'Richard Le Poidevin',
+        'description'     => 'A package to use the Storyblok CMS with Laravel. It’s designed to feel like the Laravel way of doing things making it simple to take your Storyblok JSON and use it in your Laravel Blade views.',
+        'keywords'        => 'cms content management system laravel storyblok',
         'og'              => [
-            'title'       => '',
+            'title'       => 'Laravel Storyblok - A package to use the Storyblok CMS with Laravel',
             'type'        => 'article',
-            'url'         => '',
+            'url'         => 'https://ls.sirric.co.uk',
             'image'       => '',
-            'description' => '',
+            'description' => 'A package to use the Storyblok CMS with Laravel. It’s designed to feel like the Laravel way of doing things making it simple to take your Storyblok JSON and use it in your Laravel Blade views.',
         ]
     ],
 
