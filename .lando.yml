@@ -1,4 +1,4 @@
-name: laravel-storyblok-docs
+name: lsd
 recipe: laravel
 config:
   webroot: public

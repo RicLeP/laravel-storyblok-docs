@@ -55,6 +55,7 @@ If you discover any security related issues, please email <a href="mailto:ric@si
 ## Credits and thanks
 
 - Richard Le Poidevin [GitHub](https://github.com/riclep) / [Twitter](https://twitter.com/riclep)
+- [The contributors](https://github.com/RicLeP/laravel-storyblok/graphs/contributors) 😍
 - [Storyblok](https://www.storyblok.com/) 😻
 - [Laravel](https://laravel.com/) 🥰
 
@@ -65,3 +66,5 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 ## Laravel Package Boilerplate
 
 This package was generated using the [Laravel Package Boilerplate](https://laravelpackageboilerplate.com).
+
+> {info.fa-podcast} I make a podcast with my son called The Curiosity of a Child. It’s about the world around us. We’ve covered corpse medicine, the first man to photograph the sun, pigments, oxen, gone ghost hunting, audio perception and more! [Check it out](https://www.curiosityofachild.com/)!

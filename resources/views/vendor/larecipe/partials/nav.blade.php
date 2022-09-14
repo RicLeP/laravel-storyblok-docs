@@ -4,11 +4,11 @@
     <nav class="flex items-center justify-between text-black bg-navbar shadow-xs h-16">
         <div class="flex items-center flex-no-shrink">
             <a href="{{ url('/') }}" class="flex items-center flex-no-shrink text-black mx-4">
-                <img src="{{ asset('img/l-sb.svg') }}" alt="">
+	            <img src="{{ asset('img/l-sb.svg') }}" alt="">
 
-                <p class="inline-block font-semibold mx-1 text-grey-dark">
-                    Laravel Storyblok
-                </p>
+	            <p class="inline-block font-semibold mx-1 text-grey-dark">
+		            Laravel Storyblok
+	            </p>
             </a>
 
             <div class="switch">
@@ -18,13 +18,13 @@
         </div>
 
         <div class="block mx-4 flex items-center">
-            @if(config('larecipe.search.enabled'))
+	        @if(config('larecipe.search.enabled'))
 		        <div class="js-search"></div>
-            @endif
+	        @endif
 
-            <larecipe-button tag="a" href="https://github.com/RicLeP/laravel-storyblok/" target="_blank" type="black" class="mx-2 px-4">
-                <i class="fab fa-github"></i>
-            </larecipe-button>
+	        <larecipe-button tag="a" href="https://github.com/RicLeP/laravel-storyblok/" target="_blank" type="black" class="mx-2 px-4">
+		        <i class="fab fa-github"></i>
+	        </larecipe-button>
 
             {{-- versions dropdown --}}
             <larecipe-dropdown>
