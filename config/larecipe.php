@@ -33,8 +33,9 @@ return [
     */
 
 	'versions'      => [
-		'default'   => '2.13',
+		'default'   => '2.14',
 		'published' => [
+			'2.14',
 			'2.13',
 			'2.12',
 			'2.11',
