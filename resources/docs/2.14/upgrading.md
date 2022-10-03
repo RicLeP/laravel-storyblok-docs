@@ -2,6 +2,13 @@
 
 ---
 
+## 2.13.0 -> 2.14.0
+
+If you use either the `AppliesTypography` or `CssClasses` traits these have been moved to separate packages and must be installed and the namespace updated. see:
+- [AppliesTypography](/{{route}}/{{version}}/typography)
+- [CSSClasses](/{{route}}/{{version}}/css-classes)
+
+
 ## 2.9.0 -> 2.10.0
 
 Folders have been reworked with the stories now sitting under the `stories` property. They also now support pagination.

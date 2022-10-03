@@ -23,5 +23,5 @@
     
 - ## Packages
     - [Form Builder](/{{route}}/{{version}}/laravel-storyblok-forms)
-    - [Typography](/{{route}}/{{version}}/typography)
+    - [Typography Helpers](/{{route}}/{{version}}/typography)
     - [CSS Classes](/{{route}}/{{version}}/css-classes)
