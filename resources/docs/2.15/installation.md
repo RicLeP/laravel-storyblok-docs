@@ -13,7 +13,7 @@
 
 You can install the package via composer by running the following command.
 
-```php
+```bash
 composer require riclep/laravel-storyblok
 ```
 

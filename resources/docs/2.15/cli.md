@@ -15,7 +15,7 @@ Artisan commands for working with the Storyblok API in Laravel.
 
 You can install the package via composer:
 
-```
+```bash
 composer require riclep/laravel-storyblok-cli
 ```
 
@@ -25,14 +25,14 @@ composer require riclep/laravel-storyblok-cli
 
 You can save the JSON representation of your story with the export command. The resulting JSON will be placed in your storage folder.
 
-```
+```bash
 php artisan ls:export-story slug/of/story
 ```
 
 
 To import a Story’s JSON from your storage folder use the import command passing the filename and the slug you want to use. It will be placed in the root of your Space with (Imported) suffixed to the title. You are then free to move and edit it as required.
 
-```
+```bash
 php artisan ls:import-story name-of-file.json the-new-slug
 ```
 
@@ -45,7 +45,7 @@ php artisan ls:import-story name-of-file.json the-new-slug
 
 You can view a list of all the components in the space with this command.
 
-```
+```bash
 php artisan ls:component-list
 
 php artisan ls:component-list --additional-fields=id,created_at
@@ -55,19 +55,19 @@ php artisan ls:component-list --additional-fields=id,created_at
 
 To export the JSON schema of a component use the `export-component` command. You will be asked to select the component to export. All exports are saved as JSON files in your storage folder.
 
-```
+```bash
 php artisan ls:export-component
 ```
 
 If you know the component’s name you can pass it as an argument.
 
-```
+```bash
 php artisan ls:export-component name-of-component
 ```
 
 To export all components pass the `--all` option.
 
-```
+```bash
 php artisan ls:export-component --all
 ```
 
@@ -76,13 +76,13 @@ php artisan ls:export-component --all
 
 To import a component’s JSON from your storage folder use the `import-component` command passing the filename and the slug you want to use. You are then free to move and edit it as required.
 
-```
+```bash
 php artisan ls:import-component name-of-file.json
 ```
 
 If you want to import the component with a new name pass the `--as` option.
 
-```
+```bash
 php artisan ls:import-component name-of-file.json --as=new-name
 ```
 

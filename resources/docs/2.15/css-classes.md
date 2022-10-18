@@ -13,7 +13,7 @@ A helper to create CSS class names from a Block’s properties.
 
 Install the package using Composer
 
-```
+```bash
 composer require riclep/laravel-storyblok-css
 ```
 
