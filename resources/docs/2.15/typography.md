@@ -14,7 +14,7 @@ A packaging to use the power of [PHP-Typography](https://github.com/mundschenk-a
 
 Install the package using Composer
 
-```
+```bash
 composer require riclep/laravel-storyblok-typography
 ```
 
