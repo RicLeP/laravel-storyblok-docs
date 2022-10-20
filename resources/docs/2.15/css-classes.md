@@ -4,6 +4,12 @@
 
 - [Creating CSS class names](#creating-css-class-names)
 
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/riclep/laravel-storyblok-css.svg?style=flat-square)](https://packagist.org/packages/riclep/laravel-storyblok-css)
+[![Total Downloads](https://img.shields.io/packagist/dt/riclep/laravel-storyblok-css.svg?style=flat-square)](https://packagist.org/packages/riclep/laravel-storyblok-css)
+[![Twitter](https://img.shields.io/twitter/follow/riclep.svg?style=social&label=Follow)](https://twitter.com/intent/follow?screen_name=riclep)
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/M4M2C42W6)
+
 
 A helper to create CSS class names from a Block’s properties.
 

@@ -6,6 +6,12 @@
 - [Exporting & importing components](#export-import-components)
 
 
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/riclep/laravel-storyblok-cli.svg?style=flat-square)](https://packagist.org/packages/riclep/laravel-storyblok-cli)
+[![Total Downloads](https://img.shields.io/packagist/dt/riclep/laravel-storyblok-cli.svg?style=flat-square)](https://packagist.org/packages/riclep/laravel-storyblok-cli)
+[![Twitter](https://img.shields.io/twitter/follow/riclep.svg?style=social&label=Follow)](https://twitter.com/intent/follow?screen_name=riclep)
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/M4M2C42W6)
+
 Artisan commands for working with the Storyblok API in Laravel.
 
 > {info} Since version 2.15.0 of Laravel Storyblok Artisan commands for working with the API are separate package. Any commands for generating classes for Laravel Storyblok are still part of that package.
