@@ -1,4 +1,4 @@
-# Typography
+# Laravel Storyblok Typography Helpers
 
 ---
 
