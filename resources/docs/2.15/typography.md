@@ -5,6 +5,11 @@
 - [Applying typography](#applying-typography)
 - [Customising the settings](#customising-the-settings)
 
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/riclep/laravel-storyblok-typography.svg?style=flat-square)](https://packagist.org/packages/riclep/laravel-storyblok-typography)
+[![Total Downloads](https://img.shields.io/packagist/dt/riclep/laravel-storyblok-typography.svg?style=flat-square)](https://packagist.org/packages/riclep/laravel-storyblok-typography)
+[![Twitter](https://img.shields.io/twitter/follow/riclep.svg?style=social&label=Follow)](https://twitter.com/intent/follow?screen_name=riclep)
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/M4M2C42W6)
 
 A packaging to use the power of [PHP-Typography](https://github.com/mundschenk-at/php-typography) to make your content sing and look the best it can.
 
