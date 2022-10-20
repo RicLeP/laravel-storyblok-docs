@@ -1,4 +1,4 @@
-# CSS Class helpers
+# Laravel Storyblok CSS Class helpers
 
 ---
 

@@ -1,4 +1,4 @@
-# Command Line Interface (CLI)
+# Laravel Storyblok Command Line Interface (CLI)
 
 ---
 
