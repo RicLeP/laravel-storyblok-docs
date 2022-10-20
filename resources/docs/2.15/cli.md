@@ -86,3 +86,13 @@ If you want to import the component with a new name pass the `--as` option.
 php artisan ls:import-component name-of-file.json --as=new-name
 ```
 
+If you want to import the component into a group pass the `--group` option, leave it blank to choose from a list or pass group ID or UUID.
+
+```bash
+php artisan ls:import-component name-of-file.json --group
+
+php artisan ls:import-component name-of-file.json --group=12345
+
+php artisan ls:import-component name-of-file.json --group=8c8b1a9c-2ffa-46e8-9146-50dcc193f11e
+```
+
