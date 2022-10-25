@@ -26,9 +26,9 @@ This package allows you to use fantastic [Storyblok](https://www.storyblok.com/)
 - Blocks and fields know where they sit in relation to their ancestors and CSS classes can be created to help your styling.
 - The structure of the JSON data is preserved but super powered making it simple to loop over in your views.
 - It’s simple to link to the Storyblok visual composer by including one view and calling a method for each block in your Blade.
-- Request ‘[Folders](/{{route}}/{{version}}/folders)’ of content such as a list of articles or a team of people.
+- Request ‘[Folders](/{{route}}/{{version}}/folders)’ of content such as a list of articles or a team of people complete with pagination.
 - Feels like Laravel - use date casting and accessors exactly as you would with models.
-- Richer Typography with [PHP Typography](https://github.com/mundschenk-at/php-typography) baked in.
+- Richer Typography with a supporting package that utilities [PHP Typography](https://github.com/mundschenk-at/php-typography).
 - Live preview of text changes in the visual editor! [Live view](/{{route}}/{{version}}/linking-the-visual-editor#live-preview)
 - [Image transformations](/{{route}}/{{version}}/images) and picture element generation
 
