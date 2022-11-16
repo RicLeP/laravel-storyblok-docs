@@ -111,6 +111,8 @@ class EpisodeController extends Controller
 
 If you’re not using a custom controller you can specify which relations you wish to resolve using the `$_resolveRelations` property on your Block. Simply create an array of the Storyblok field names containing the relations you wish to resolve. They will be requested and converted into Blocks for you.
 
+By default the relationship’s component name will be used to determine which Class to use. If you want to use a different class you can specify it in the array.
+
 ```php
 <?php
 
@@ -122,6 +124,7 @@ class Postcast extends Block
 {
     public $_resolveRelations = [
        'hosts',
+       'guests' => App\Storyblok\Blocks\Guest::class,
     ];
 }
 ```
@@ -135,7 +138,7 @@ class Postcast extends Block
 
 If you link to an unpublished Story in one of your Multi-Option relations they are filtered out of the Collection of related Pages. If you need to know if a relation was removed from a Block set it’s `$_filterRelations` property to false. This wil return all valid relations as normal and `null` for failed relations. You can now handle this as required in your code.
 
-For Single-Option relations `null` will be returned if the relation could not be resolved. 
+For Single-Option relations `null` will be returned if the relation could not be resolved.
 
 ```php
 <?php
