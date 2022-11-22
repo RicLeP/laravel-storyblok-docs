@@ -30,7 +30,7 @@
 </a>
 
 Added the ability to specify the class to be used [when resolving related stories](/{{route}}/{{version}}/requesting-pages#resolving-related-stories).
-Class properties have had type added - any classes that extend these classes will need to be updated to match. For example if you’re using `preotected $_resolveRelations = ['something]` you’ll need to change it to `protected array $_resolveRelations = ['something]`.
+Class properties have had type added - any classes that extend these classes will need to be updated to match. For example if you’re using `protected $_resolveRelations = ['something]` you’ll need to change it to `protected array $_resolveRelations = ['something]`.
 
 
 <a name="2-16-0">
