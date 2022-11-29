@@ -40,6 +40,7 @@ Folders sort order and field can now be separately set
 Folders have `asc()` and `desc()` methods for setting sort order
 Folders have `toArray()` method
 Many folder methods now return $this for chaining
+Updated Embed/Embed to version 4
 
 <a name="2-17-0">
 ## Version 2.17.0

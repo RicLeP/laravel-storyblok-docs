@@ -16,12 +16,12 @@
     - [Assets](/{{route}}/{{version}}/assets)
     - [Images](/{{route}}/{{version}}/images)
     - [Views](/{{route}}/{{version}}/views)
-    - [Embedding media](/{{route}}/{{version}}/embedding-media)
     - [Extending](/{{route}}/{{version}}/traits)
     - [Linking to the editor](/{{route}}/{{version}}/linking-the-visual-editor)
-    
+
 - ## Packages
     - [CLI & Artisan Commands](/{{route}}/{{version}}/cli)
+    - [Embedding media](/{{route}}/{{version}}/embedding-media)
     - [Typography Helpers](/{{route}}/{{version}}/typography)
     - [CSS Classes](/{{route}}/{{version}}/css-classes)
     - [Form Builder (Beta)](/{{route}}/{{version}}/laravel-storyblok-forms)
