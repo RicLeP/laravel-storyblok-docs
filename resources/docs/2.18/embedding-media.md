@@ -2,53 +2,102 @@
 
 ---
 
-We take advantage of the fantastic [Embed package by Óscar Otero](https://github.com/oscarotero/Embed/tree/v3.x) to embed nearly anything in your website - YouTube videos, Tweets, Google Maps etc. The trait implements a `__toString()` method returning the embed code.
+- [Code based embeds](#code-based-embeds)
+- [Customising the embeds](#customising-the-embeds)
 
-To make a [Field](/{{route}}/{{version}}/fields) embeddable simply add the `EmbedsMedia trait`. Your field’s `content` will need to return a URL.
+
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/riclep/laravel-storyblok-embed.svg?style=flat-square)](https://packagist.org/packages/riclep/laravel-storyblok-embed)
+[![Total Downloads](https://img.shields.io/packagist/dt/riclep/laravel-storyblok-embed.svg?style=flat-square)](https://packagist.org/packages/riclep/laravel-storyblok-embed)
+[![Twitter](https://img.shields.io/twitter/follow/riclep.svg?style=social&label=Follow)](https://twitter.com/intent/follow?screen_name=riclep)
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/M4M2C42W6)
+
+Use the fantastic [Embed package by Óscar Otero](https://github.com/oscarotero/Embed) to embed nearly anything in your website - YouTube videos, Tweets, Instagram images etc.
+
+This is a simple wrapper to get you started.
+
+## Installation
+
+You can install the package via composer:
+
+```bash
+composer require riclep/laravel-storyblok-embed
+```
+
+
+To make a [Field](/{{route}}/{{version}}/fields) embeddable simply add the `EmbedsMedia` trait. Your field should be of type ‘text’ and return a URL of what you’re wanting to embed.
+
+Requested media responses are cached so save requested them on every page load, by default the duration is identical to that of your Laravel Storyblok cache settings but can be overridden in the config file if published.
+
+
 
 ```php
 <?php
 
 namespace App\Storyblok\Fields;
 
-use Riclep\Storyblok\Traits\EmbedsMedia;
+use Riclep\StoryblokEmbed\Traits\EmbedsMedia;
 
-class Embed extends \Riclep\Storyblok\Field
+class YouTubeVideo extends \Riclep\Storyblok\Field
 {
 	use EmbedsMedia;
 }
 ```
 
-> {info} We currently use version 3 of Embed due to it’s wider PHP version support.
+The `EmbedsMedia` trait adds a `render()` method to your field which will return the HTML for the embedded media. The returned HTML is generated using a Blade view which you can customise by publishing the package’s views.
 
-Each ‘embedding’ can have a custom view defined for it matching the provider’s name in lowercase. For YouTube create a Blade in `resources/views/storyblok/embeds` called `youtube.blade.php`. The complete Embed object is passed to the view, [see their docs for the available properties](https://github.com/oscarotero/Embed/tree/v3.x) you can use.
+> {warning} Embedding lots of media in a page can be slow as it needs to be requested when the page loads. Although the package will cache the response you may be better asynchronously loading the media after the page has loaded.
 
-The Trait adds a few additional methods to the field:
 
-```php
-<?php
+```blade
+// uses /vendor/riclep/laravel-storyblok-embed/src/resources/views/default.blade.php
 
-// returns the embedded HTML using the custom view if created - this is the same as the default __toString() method
-$field->html();
-
-// returns raw embed code from Embed
-$field->rawEmbed();
-
-// returns the Embed object
-$field->embed();
-
+{!! $block->you_tube_video->render() !!}
 ```
 
-If you want to define custom logic to find the Blade view implement a `embedView()` method on your field returning the path to the file. It’s best to check it exists and returning the base package views if not. You may also wish to check the providerName.
+Each different embedded source will return different fields - see the [Embed package documentation](https://github.com/oscarotero/Embed) for more information. As we can’t serialise the Embed object for caching for return a subset of the data. The following fields are available (depending on the media source):
 
 ```php
-protected function embedView() {
-    if (view()->exists('embeds.video') && strtolower($this->_embed->providerName) === 'youtube') {
-        return 'embeds.video';
-    }
-
-    return $this->baseEmbedView();
-}
+[
+    'title' => $response->title,
+    'description' => $response->description,
+    'url' => (string) $response->url,
+    'keywords' => $response->keywords,
+    'image' => $response->image,
+    'code' => $response->code,
+    'feeds' => $response->feeds,
+    'authorName' => $response->authorName,
+    'authorUrl' => (string) $response->authorUrl,
+    'providerName' => $response->providerName,
+    'publishedTime' => $response->publishedTime,
+    'language' => $response->language,
+];
 ```
 
-> {info} The package does not include any CSS for styling the embedded media. Some provides may include this in their embed code, or the package templates may include common styling hooks you can use.
+If you want to specify a different view to use for rendering the embed you can pass the view name as the first parameter to the `renderWith()` method.
+
+```
+{!! $block->you_tube_video->renderWith('some-view') !!}
+```
+
+```blade
+<a name="code-based-embeds">
+## Code based embeds
+</a>
+
+Some sources such as Twitter will return a `code` field which is the HTML for the embedded media. This is the default view used to render the media. Twitter and some other media require a `<script>` tag to render their code. As placing `<script>` tags willy-nilly throughout your HTML isn’t ideal and can causes errors if using libraries like Vue we extract them into a Laravel Stack called `ls-embed-scripts`. Remember to include the stack in your layout.
+
+```blade
+@stack('ls-embed-scripts')
+```
+
+
+<a name="customising-the-embeds">
+## Customising the embeds
+</a>
+
+You can publish the package’s view and config files with:
+
+```bash
+php artisan vendor:publish --provider="Riclep\StoryblokEmbed\StoryblokEmbedServiceProvider"
+```
