@@ -76,11 +76,10 @@ Each different embedded source will return different fields - see the [Embed pac
 
 If you want to specify a different view to use for rendering the embed you can pass the view name as the first parameter to the `renderWith()` method.
 
-```
+```blade
 {!! $block->you_tube_video->renderWith('some-view') !!}
 ```
 
-```blade
 <a name="code-based-embeds">
 ## Code based embeds
 </a>
