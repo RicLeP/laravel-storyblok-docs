@@ -30,31 +30,31 @@
 ## Version 2.18.0
 </a>
 
-Fixed: `stub-views` command now skips tabs
-Added: `stub-views` command now uses Block class for $block typehint in Blade if it exists
-Added: `stub-views` command now adds `transform()` default code for images
-Added: `$_defaults` property to Block class
-Added: Artisan commend for making folders 
-Folder’s can now have their cache-key prefix set
-Folders sort order and field can now be separately set
-Folders have `asc()` and `desc()` methods for setting sort order
-Folders have `toArray()` method
-Many folder methods now return $this for chaining
-Updated Embed/Embed to version 4
+- Fixed: `stub-views` command now skips tabs
+- Added: `stub-views` command now uses Block class for $block typehint in Blade if it exists
+- Added: `stub-views` command now adds `transform()` default code for images
+- Added: `$_defaults` property to Block class
+- Added: Artisan commend for making folders 
+- Folder’s can now have their cache-key prefix set
+- Folders sort order and field can now be separately set
+- Folders have `asc()` and `desc()` methods for setting sort order
+- Folders have `toArray()` method
+- Many folder methods now return $this for chaining
+- Updated Embed/Embed to version 4
 
 <a name="2-17-0">
 ## Version 2.17.0
 </a>
 
-Added the ability to specify the class to be used [when resolving related stories](/{{route}}/{{version}}/requesting-pages#resolving-related-stories).
-Class properties have had type added - any classes that extend these classes will need to be updated to match. For example if you’re using `protected $_resolveRelations = ['something]` you’ll need to change it to `protected array $_resolveRelations = ['something]`.
+- Added the ability to specify the class to be used [when resolving related stories](/{{route}}/{{version}}/requesting-pages#resolving-related-stories).
+- Class properties have had type added - any classes that extend these classes will need to be updated to match. For example if you’re using `protected $_resolveRelations = ['something]` you’ll need to change it to `protected array $_resolveRelations = ['something]`.
 
 
 <a name="2-16-0">
 ## Version 2.16.0
 </a>
 
-Added the ability to [request inverse relationships on Blocks](/{{route}}/{{version}}/requesting-pages#resolving-inverse-relationships).
+- Added the ability to [request inverse relationships on Blocks](/{{route}}/{{version}}/requesting-pages#resolving-inverse-relationships).
 
 
 <a name="2-15-0">
