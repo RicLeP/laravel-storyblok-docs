@@ -2,6 +2,11 @@
 
 ---
 
+## 2.17.0
+
+Class properties have had type added - any classes that extend these classes will need to be updated to match. For example if you’re using `protected $_resolveRelations = ['something]` you’ll need to change it to `protected array $_resolveRelations = ['something]`.
+
+
 ## 2.13.0 -> 2.14.0
 
 If you use either the `AppliesTypography` or `CssClasses` traits these have been moved to separate packages and must be installed and the namespace updated. see:

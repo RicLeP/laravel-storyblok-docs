@@ -3,6 +3,7 @@
 ---
 
 
+- [Version 2.19.0](#2-19-0)
 - [Version 2.18.0](#2-18-0)
 - [Version 2.17.0](#2-17-0)
 - [Version 2.16.0](#2-16-0)
@@ -26,6 +27,14 @@
 - [Version 1.1.0](#1-1-0)
 
 
+<a name="2-19-0">
+## Version 2.19.0
+</a>
+
+Updated `Storyblok\Client` to 2.3.0
+Added support for language and fullback language
+
+
 <a name="2-18-0">
 ## Version 2.18.0
 </a>
@@ -34,13 +43,14 @@
 - Added: `stub-views` command now uses Block class for $block typehint in Blade if it exists
 - Added: `stub-views` command now adds `transform()` default code for images
 - Added: `$_defaults` property to Block class
-- Added: Artisan commend for making folders 
+- Added: Artisan commend for making folders
 - Folder’s can now have their cache-key prefix set
 - Folders sort order and field can now be separately set
 - Folders have `asc()` and `desc()` methods for setting sort order
 - Folders have `toArray()` method
 - Many folder methods now return `$this` for chaining
 - Updated `Embed/Embed` to version 4
+
 
 <a name="2-17-0">
 ## Version 2.17.0
