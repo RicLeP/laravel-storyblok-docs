@@ -3,6 +3,7 @@
 ---
 
 
+- [Version 2.20.0](#2-20-0)
 - [Version 2.19.0](#2-19-0)
 - [Version 2.18.0](#2-18-0)
 - [Version 2.17.0](#2-17-0)
@@ -25,6 +26,16 @@
 - [Version 2.0.0](#2-0-0)
 - [Version 1.2.0](#1-2-0)
 - [Version 1.1.0](#1-1-0)
+
+
+<a name="2-20-0">
+## Version 2.20.0
+</a>
+
+- Added ls:page Artisan command to stub out a new page
+- Set default `DateTime` string format in config
+- Set `DateTime` format in `Field` class
+- Empty date time fields from Storyblok are cast to empty strings
 
 
 <a name="2-19-0">
