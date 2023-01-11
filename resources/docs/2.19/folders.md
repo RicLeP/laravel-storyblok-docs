@@ -161,7 +161,9 @@ class News extends \App\Storyblok\Folder
 }
 ```
 
-And in your controller you simply need to instantiate your Folder class - no need to call any methods. This handy if you need to reuse a Folder in several locations. Of course you can still override individual settings by calling the above methods if needed.
+> {warning} Warning, if you specify `$settings` in the constructor and later call `$folder->settings([...])` in your code those from your constructor will be lost. You may be better setting the properties directly in the constructor.
+
+And in your controller you simply need to instantiate your Folder class - no need to call any methods. This is handy if you need to reuse a Folder in several locations. Of course you can still override individual settings by calling the above methods if needed.
 
 ```php
 <?php
