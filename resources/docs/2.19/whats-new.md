@@ -31,8 +31,11 @@
 ## Version 2.19.0
 </a>
 
-Updated `Storyblok\Client` to 2.3.0
-Added support for language and fullback language
+- Updated `Storyblok\Client` to 2.3.0
+- Added support for language and fullback language
+- **2.19.4** Set default `DateTime` string format in config
+- **2.19.4** Set `DateTime` format in `Field` class
+- **2.19.4** Empty date time fields from Storyblok are cast to empty strings
 
 
 <a name="2-18-0">

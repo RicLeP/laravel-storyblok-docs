@@ -6,6 +6,7 @@
 - [Custom Fields](#custom-fields)
 - [The Rich Text Field](#rich-text-field)
 - [The Table Field](#table-field)
+- [The DateTime Field](#datetime-field)
 - [Passing data to fields](#passing-data)
 - [Embedding media](#embedding-media)
 
@@ -203,6 +204,29 @@ Ideally all tables would include a descriptive caption, this is important for ac
 > {info} If you need more control over formatting then implement a custom `toHtml()` method on your Table class, this must return a string. Alternatively you could deal directly with the data from Storyblok in your Blade view.
 
 
+
+<a name="datetime-field">
+## The DateTime field
+</a>
+
+You can cast a DateTime field to the built-in `DateTime` Field. This will convert the date to a Carbon instance.
+
+**Since 2.19.4**
+
+You can specify a default date format in the package configuration using the `date_format` key. You can override the default format in custom `DateTime` fields by adding a `$format` property.
+
+```php
+<?php
+
+namespace App\Storyblok\Fields;
+
+use Riclep\Storyblok\Fields\DateTime;
+
+class CustomDate extends DateTime
+{
+	protected string $format = 'd/m/Y';
+}
+```
 
 <a name="passing-data">
 ## Passing data to fields
