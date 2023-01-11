@@ -54,7 +54,9 @@ If you discover any security related issues, please email <a href="mailto:ric@si
 
 ## Credits and thanks
 
-- Richard Le Poidevin [GitHub](https://github.com/riclep) / [Twitter](https://twitter.com/riclep)
+- Richard Le Poidevin [GitHub](https://github.com/riclep) / [Twitter](https://twitter.com/riclep) ![image](/img/storyblok-ambassador-asset-vert-color.svg)
+
+
 - [The contributors](https://github.com/RicLeP/laravel-storyblok/graphs/contributors) 😍
 - [Storyblok](https://www.storyblok.com/) 😻
 - [Laravel](https://laravel.com/) 🥰
