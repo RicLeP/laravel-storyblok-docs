@@ -211,6 +211,20 @@ Ideally all tables would include a descriptive caption, this is important for ac
 
 You can cast a DateTime field to the built-in `DateTime` Field. This will convert the date to a Carbon instance.
 
+You can specify a default date format for all fields in the package configuration using the `date_format` key. You can override and set the default format in custom `DateTime` fields by adding a `$format` property.
+
+```php
+<?php
+
+namespace App\Storyblok\Fields;
+
+use Riclep\Storyblok\Fields\DateTime;
+
+class CustomDate extends DateTime
+{
+	protected string $format = 'd/m/Y';
+}
+```
 
 <a name="passing-data">
 ## Passing data to fields
