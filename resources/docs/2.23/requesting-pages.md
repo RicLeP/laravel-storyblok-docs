@@ -190,13 +190,9 @@ You can specify the component types to return using the third argument which sho
 
 Finally the last argument allows you to send additional parameters to the API call, for example `['per_page' => 10]`. See the [Storyblok API docs](https://www.storyblok.com/docs/api/content-delivery/v2) for more information.
 
-```php
-// $story is a Host component
-// podcast has a Multi-Option relationship field called hosts
-@foreach($story->block()->inverseRelation('hosts', 'multi')['stories'] as $podcast)
-	{{ $podcast['name'] }}
-@endforeach
+The returned data will match that if you requested the pages with a [Folder](/{{route}}/{{version}}/folders).
 
+```php
 // requesting the inverse of a Single-Option relation
 $block->inverseRelation('foreign_relationship_field', 'single');
 
