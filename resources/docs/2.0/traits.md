@@ -19,7 +19,7 @@ use Illuminate\Support\Str;
 
 trait TruncateStrings
 {
-	protected $toTruncate = [];
+	protected array $toTruncate = [];
 
 	/**
      * A fairly pointless method to truncate selected content to 10 words.

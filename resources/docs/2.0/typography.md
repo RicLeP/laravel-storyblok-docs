@@ -1,17 +1,33 @@
-# Typography
+# Laravel Storyblok Typography Helpers
 
 ---
 
 - [Applying typography](#applying-typography)
 - [Customising the settings](#customising-the-settings)
 
-A lot of people will probably be using Storyblok for brochureware style websites or rich, stylised content. We want to help make your text look as beautiful as possible - you might not be able to rely on clients or content editors to use proper curly quotes or find variable length content is leaving widows all over our breakpoints! For that reason we built in some handy typographical features to really make your content sing. We do this by piggybacking on top of [PHP-Typography](https://github.com/mundschenk-at/php-typography).
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/riclep/laravel-storyblok-typography.svg?style=flat-square)](https://packagist.org/packages/riclep/laravel-storyblok-typography)
+[![Total Downloads](https://img.shields.io/packagist/dt/riclep/laravel-storyblok-typography.svg?style=flat-square)](https://packagist.org/packages/riclep/laravel-storyblok-typography)
+[![Twitter](https://img.shields.io/twitter/follow/riclep.svg?style=social&label=Follow)](https://twitter.com/intent/follow?screen_name=riclep)
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/M4M2C42W6)
+
+A packaging to use the power of [PHP-Typography](https://github.com/mundschenk-at/php-typography) to make your content sing and look the best it can.
+
+<a name="installation">
+## Installation
+</a>
+
+Install the package using Composer
+
+```bash
+composer require riclep/laravel-storyblok-typography
+```
 
 <a name="applying-typography">
 ## Applying typography
 </a>
 
-To use the typographic features your Block must use the `AppliesTypography` trait. This exposes a couple of new properties and methods. Add an `$applyTypography` property to your class with an array of the fields. Now call the `applyTypography()` method - a good place to do this is in the `init()` method that will be called when the Block is newed up. This will run PHP-Typography over all the chosen fields using some sensible defaults.
+To use the typographic features your Block must use the `AppliesTypography` trait. This exposes a couple of new properties and methods. Add an `$applyTypography` property to your class with an array of the fields. This will run PHP-Typography over all the chosen fields using some sensible defaults.
 
 ```php
 <?php
@@ -19,17 +35,14 @@ To use the typographic features your Block must use the `AppliesTypography` trai
 namespace App\Storyblok\Blocks;
 
 use Riclep\Storyblok\Block;
-use Riclep\Storyblok\Traits\AppliesTypography;
+use Riclep\StoryblokTypography\Traits\AppliesTypography;
 
 class TypoCat extends Block
 {
     use AppliesTypography;
 
-	private $applyTypography = ['cats_name', 'biography'];
-
-	public function init() {
-		$this->applyTypography();
-	}
+    // the fields to apply typographic fixes to
+	private array $applyTypography = ['cats_name', 'biography'];
 }
 ```
 
@@ -47,23 +60,23 @@ You don’t have to use our settings, you can supply your own. Create a new `Typ
 namespace App\Storyblok\Blocks;
 
 use Riclep\Storyblok\Block;
-use Riclep\Storyblok\Traits\AppliesTypography;
+use Riclep\StoryblokTypography\Traits\AppliesTypography;
 use PHP_Typography\Settings as TypographySettings;
 
 class TypoKitten extends Block
 {
     use AppliesTypography;
 
-	private $applyTypography = ['cats_name', 'biography'];
+	private array $applyTypography = ['cats_name', 'biography'];
 
-	public function init() {
+    // called after fields have been processed but before the trait is initialised
+	public function fieldsProcessed() {
         $settings = new TypographySettings();
         $settings->set_classes_to_ignore('.whiskers');
         $settings->set_hyphenation(true);
         $settings->set_smart_quotes(false);
 
         $this->setTypographySettings($settings);
-		$this->applyTypography();
 	}
 }
 ```

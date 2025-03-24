@@ -2,10 +2,12 @@
 
 ---
 
-- [Running methods upon creation](#running-methods-upon-creation)
+- [Artisan commands](#artisan-commands)
+- [Determining the view](#determining-the-view)
 - [Accessing Fields](#accessing-fields)
 - [Accessors](#accessors)
 - [Getting a Block’s position](#getting-a-blocks-position)
+- [Checking a Block contains specific items](#checking-block-content)
 - [Casting Fields](#casting-fields)
 - [Linking to the visual editor](#editable-comment-link)
 - [Meta and Schema.org data](#schema-org-data)
@@ -29,11 +31,119 @@ class CatImages extends Block
 
 Blocks borrow some concepts from Laravel’s Eloquent models to make using them feel familiar such as creating accessors or casting variables to dates, but we don’t stop there, we also have a bunch of helpful features for Storyblok content. 
 
+---
+
+<a name="artisan-commands">
+## Artisan commands
+</a>
+
+You can generate Block classes using the built-in the Artisan command. The Block’s name should match the name used in Storyblok but converted to StudlyCase so my-component becomes MyComponent. This will create a new class in App\Storyblok\Blocks. The component’s fields are read from Storyblok and the PHPDoc block updated to include them to allow IDE completion of the magic getters.
+
+```console
+php artisan ls:block MyComponent
+```
+
+Will become something like:
+
+```php
+<?php
+
+namespace App\Storyblok\Blocks;
+
+use Riclep\Storyblok\Block as BaseBlock;
+
+/**
+ * @property-read string title
+ * @property-read string text
+ * @property-read string buttons
+ * @property-read string image
+ * @property-read string overview
+ */
+class MyComponent extends BaseBlock
+{
+    //
+}
+```
+
+> {warning} Ensure you have set your Space ID and OAUTH Token in the .env file.
+
+You can also generate Blade and SCSS files readily configured with the Block’s name by passing a `-s` or `-b` argument to the command.
+
+```console
+php artisan ls:block MyComponent -b
+```
+
+Creates `resources/views/storyblok/components/my-component.blade.php`
+
+```php
+<?php
+/** @var \App\Storyblok\Blocks\MyComponent $content */
+// dd($content);
+?>
+
+<div class="my-component">
+	
+</div>
+```
+
+```console
+php artisan ls:block MyComponent -s
+```
+
+Creates `resources/sass/blocks/_my-component.scss` and updates the app.scss file.
+
+```scss
+.my-component {
+
+}
+```
+
+### Custom generator stubs
+
+You can customise any of the stubs used for creating files by making a `/resources/stubs/storyblok` folder containing the following files. You only need to create those you wish to customise.
+
+* `/resources/stubs/storyblok/block.stub` - Block class template
+* `/resources/stubs/storyblok/block.blade.stub` - Block Blade template
+* `/resources/stubs/storyblok/block.scss.stub` - Block SCSS template
+
+Each stub contains ‘Dummy’ references that get replaced during generation so it’s recommended you copy and adpt the files from [GitHub](https://github.com/RicLeP/laravel-storyblok/tree/master/src/Console/stubs).
+
+---
+
+<a name="determining-the-view">
+## Determining the view
+</a>
+
+When calling `render()` on a `Block` it’s `views()` method will be called. The default behaviour is to check the `Page` the `Block` is part of then it’s ancestor Blocks to build an array of possible views. The first view that exists will be used. For example if you have a `Page` with a content type of `podcast` first it’ll check for a matching view in `storyblok.pages.podcast` then fall back to the more generic blocks. Here’s an example of the views that would be checked for a `Block` with a nested component path of `podcast/episodes/episode`.
+
+```php
+<?php
+
+// taking the following component path. ‘page’ is a generic root item
+// the actual content type is ‘podcast’
+$componentPath = ['page', 'podcast', 'episodes', 'episode'];
+
+// it becomes
+[
+    "storyblok.pages.podcast.blocks.episodes.episode",
+    "storyblok.pages.podcast.blocks.episode",
+    "storyblok.blocks.episodes.episode",
+    "storyblok.blocks.podcast.episode",
+    "storyblok.blocks.episode",
+]
+```
+
+> {info}  It’s recommended to create the most generic views first such as `storyblok.blocks.episode` in our example above as this will capture all instances of that Block and add more specific views as and when needed.
+
+---
+
 <a name="accessing-fields">
 ## Accessing fields
 </a>
 
-Blocks store all their fields in a Laravel Collection on the `$_fields` property. You can access them directly on the Block’s object however.
+Blocks store their fields in a Laravel Collection on the `$_fields` property. You can access them directly on the Block’s object. See the [fields documentation](/{{route}}/{{version}}/fields) for more information on how to access them and their transformations.
+
+```php
 
 ```php
 echo $someBlock->someField;
@@ -142,13 +252,34 @@ $currentComponent->isAncestorOf('ancestor-component'); // true
 
 Wouldn’t it be great to be able to create CSS classes when working in Blade that help you style nested Blocks? Don’t worry, [we have you covered](/{{route}}/{{version}}/views#creating-css-class-names).
 
+
+---
+
+<a name="checking-block-content">
+## Checking a Block contains specific items
+</a>
+
+If you want to see if a Block contains a specific field use the `has()` method.
+
+```php
+$block->has('field'); // true / false
+```
+
+**Since 2.12.5**
+
+If you have field that can take ‘blocks’ created in Storyblok it can be useful to check if a certain type of component has been added. You can do this with the `hasChildBlock()` method. First pass the name of the field that holds the blocks then pass the component type to check for.
+
+```php
+$block->hasChildBlock('blocks_field', 'component'); // true / false
+```
+
 ---
 
 <a name="casting-fields">
 ## Casting Fields
 </a>
 
-You can cast a Block’s field to any Field class you want with the `$casts` property. This is an array mapping a field name to a Class. The field’s data is passed to the Classes constructor. For more details see the [Fields documentation](/{{route}}/{{version}}/fields).
+You can cast a Block’s field to any Field class you want with the `$_casts` property. This is an array mapping a field name to a Class. The field’s data is passed to the Classes constructor. For more details see the [Fields documentation](/{{route}}/{{version}}/fields).
 
 ```php
 <?php
@@ -161,17 +292,43 @@ use App\Storyblok\Fields\HeroImage;
 
 class Custom extends Block
 {
-	protected $casts = [
+	protected array $_casts = [
 		'datetime' => DateTime::class,
 		'image' => HeroImage::class,
 	];
 }
 ```
 
-> {warning} When casting fields to custom Classes make sure you extend `Riclep\Storyblok\Field` or a an existing Field and implement the `__toString()` method.
+> {warning} When casting fields to custom Classes make sure you extend an existing Field type such as `Riclep\Storyblok\Field` or `Riclep\Storyblok\Fields\Image`  and implement the `__toString()` method.
+
+> {info} $casts was renamed to $_casts in version 2.2.1 to advoid field name classes
 
 ---
 
+
+### Default values
+
+If you want to set a default value for a field you can use the `$_defaults` property. This is an array mapping a field name to a default value. The default value will be used if the field is not set in Storyblok.
+
+```php
+<?php
+
+namespace App\Storyblok\Blocks;
+
+use Riclep\Storyblok\Fields\DateTime;
+use Riclep\Storyblok\Block;
+use App\Storyblok\Fields\HeroImage;
+
+class Custom extends Block
+{
+	protected array $_defaults = [
+		'field_2' => 'default value',
+	];
+}
+
+```
+
+---
 
 <a name="editable-comment-link">
 ## Linking to the visual editor
@@ -220,7 +377,7 @@ $block->meta('missing_item', 'default value'); // returns the default if the ite
 
 We use the super [Spatie Schema.org](https://github.com/spatie/schema-org) package.
 
-To add Schema.org to the Block implement a `schemaOrg()` method returning a Spatie Schema.org object. This schema will be automatically added to any Pages this Block is added to.
+To use Schema.org add the `Riclep\Storyblok\Traits\SchemaOrg` trait to the Block and implement a `schemaOrg()` method returning a Spatie Schema.org object. This schema will be automatically added to any Pages this Block is added to.
 
 ```php
 <?php
@@ -229,9 +386,12 @@ namespace App\Storyblok\Blocks;
 
 use Riclep\Storyblok\Block;
 use Spatie\SchemaOrg\Schema;
+use Riclep\Storyblok\Traits\SchemaOrg;
 
 class Business extends Block
 {
+	use SchemaOrg;
+
 	protected function schemaOrg() {
 		return Schema::localBusiness()
 			->name($this->_fields->name)

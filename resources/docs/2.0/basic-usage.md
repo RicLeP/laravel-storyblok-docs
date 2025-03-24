@@ -12,6 +12,8 @@ Once [installed](/{{route}}/{{version}}/installation) you can start working with
 
 The package will consume Storyblok’s JSON responses and automatically convert them to nested PHP objects. The type of object created can be set just by matching the filename to that of the Storyblok component. This is covered in more detail in the [blocks documentation](/{{route}}/{{version}}/blocks).
 
+The best way to understand this is to `dd($story)` in Blade file and check out the document structure.
+
 Create the following folder `resources/views/storyblok/pages`, this is the default location where you will store all of your Blade views but you are free to use any structure you want. You can read more about how the package selects which view is loaded and how to define your own rules in the [views documentation](/{{route}}/{{version}}/views).
 
 > {info} You can change the default view path in the `storyblok.php` configuration file
@@ -25,6 +27,8 @@ Create the following folder `resources/views/storyblok/pages`, this is the defau
 Every `Page` has a `views()` method that returns an array of possible views to pass to Laravel’s `view()->first()` function ([see the Laravel docs](https://laravel.com/docs/7.x/views)). The package looks for a Blade file matching the name of the [Content Type](https://www.storyblok.com/docs/the-key-concept#content-types) component used for the current page in Storyblok, that doesn’t exist then `page.blade.php` will be tried.
 
 If you have a Content Type component called `episode` being used for the page then it will look for an `episode.blade.php` file in `resources/views/storyblok/pages`.
+
+Each `Block` implements `views()` and  `render()` methods that will give you a list of possible views to use and render the block. You can read more about this in the [blocks documentation](/{{route}}/{{version}}/blocks).
 
 ---
 
@@ -101,3 +105,6 @@ STORYBLOK_DRAFT=true
 ```
 
 > {warning} Be careful not to use draft content in production! Either remove the env variable or set it to false.
+
+
+Every time you publish in Storyblok the webhook will clear Laravel’s cache but the package provides a `storyblok.clear-cache` route if you need to do this manually in your code. You can of course clear the cache with Artisan too. If you’re using a taggable Cache driver the package uses the `storyblok` tag.

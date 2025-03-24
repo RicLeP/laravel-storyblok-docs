@@ -13,7 +13,7 @@
 
 You can install the package via composer by running the following command.
 
-```php
+```bash
 composer require riclep/laravel-storyblok
 ```
 
@@ -23,13 +23,78 @@ composer require riclep/laravel-storyblok
 ## Configuration
 </a>
 
-After installing the package update your .env file with your Storyblok Content Delivery API keys and specify if you want to receive draft content in development:
+After installing the package update your `.env` file with your Storyblok Content Delivery API keys and specify if you want to receive draft content.
 
 ```php
 STORYBLOK_PREVIEW_API_KEY=your_preview_key
 STORYBLOK_PUBLIC_API_KEY=your_public_key
 STORYBLOK_DRAFT=true
+STORYBLOK_WEBHOOK_SECRET=someComplexKeySuchAsAHash
 ```
+
+### Webhooks
+
+The webhook handler responds to `publish`, `unpublish` and `delete` Story webhooks. In Storyblok’s settings add the ‘Story published & unpublished’ [webhook URL](https://www.storyblok.com/docs/guide/in-depth/webhooks) as so: https://[yourdomain]/api/laravel-storyblok/webhook/publish. Make sure this is the exact URL as the webhook will not follow redirections on your server such as going from www to non-www. Next create your webhook secret in Storyblok and copy this to your `.env` file.
+
+
+In **Laravel 11+** register the event listeners in `App\Providers\AppServiceProvider`. See the [Laravel docs for more on events](https://laravel.com/docs/12.x/events#registering-events-and-listeners).
+
+```php
+use Riclep\Storyblok\Events\StoryblokPublished;
+use Riclep\Storyblok\Events\StoryblokUnpublished;
+use Riclep\Storyblok\Listeners\ClearCache;
+
+public function boot(): void
+    {
+        Event::listen(
+            StoryblokPublished::class,
+            ClearCache::class,
+        );
+
+        Event::listen(
+            StoryblokUnpublished::class,
+            ClearCache::class,
+        );
+    }
+```
+
+In **Laravel 10** register the event listeners in `App\Providers\EventServiceProvider`. See the [Laravel docs for more on events](https://laravel.com/docs/10.x/events#registering-events-and-listeners).
+
+```php
+use Riclep\Storyblok\Events\StoryblokPublished;
+use Riclep\Storyblok\Events\StoryblokUnpublished;
+use Riclep\Storyblok\Listeners\ClearCache;
+
+/**
+ * The event listener mappings for the application.
+ *
+ * @var array
+ */
+protected $listen = [
+    // published webhook
+    StoryblokPublished::class => [
+		ClearCache::class
+	],
+	// unpublished / deleted webhook
+	StoryblokUnpublished::class => [
+		ClearCache::class
+	]
+];
+```
+
+> {info} The default webhook only clears the Laravel cache of the saved API responses. If you need something more sophisticated implement your own functionality. See the [Storyblok webhook docs](https://www.storyblok.com/docs/Guides/using-storyblok-webhooks). The listeners receive the webhook JSON in the `handle(PublishingEvent $event)` method as so: `$event->webhookPayload`.
+
+If you need to test or debug your webhooks locally I highly recommend [ngrok](https://ngrok.com/).
+
+### Artisan commands
+
+To use the Artisan generator commands you’ll also need to specify your Space ID and OAuth Token.
+
+```php
+STORYBLOK_SPACE_ID=your_space_id
+STORYBLOK_OAUTH_TOKEN=your_oauth_token
+```
+
 
 > {info} Not sure where to find your API keys? [Check the Storyblok FAQs](https://www.storyblok.com/faq/where-to-find-my-content-delivery-api-key)
 
@@ -38,7 +103,7 @@ STORYBLOK_DRAFT=true
 Next you need to publish the default Page and Block classes. These will be used for all your Storyblok Pages and Components but can be overridden by your own classes. The default classes are published to `app/Storyblok`. This will also publish a `storyblok.php` configuration file.
 
 ```php
-php artisan vendor:publish
+php artisan vendor:publish --tag=storyblok
 ```
 
 ---
@@ -55,7 +120,11 @@ Route::get('/{slug?}', '\Riclep\Storyblok\Http\Controllers\StoryblokController@s
 
 > {warning} If using the catch-all this should be your last route to stop it intercepting any other requests in your application.
 
-The package also creates a named route that posts to `clear-storyblok-cache` which is used when publishing in the visual editor. See [linking to the visual editor](/{{route}}/{{version}}/linking-the-visual-editor).
+The package also creates a named route that posts to `storyblok.clear-cache` which is used when publishing in the visual editor.
+
+### Link the visual editor
+
+To finalise setting up the package see [linking to the visual editor](/{{route}}/{{version}}/linking-the-visual-editor).
 
 <a name="vue-js">
 ## VueJS Configuration

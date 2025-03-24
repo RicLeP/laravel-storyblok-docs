@@ -4,10 +4,13 @@
 
 - [Passing additional data to views](#passing-additional-data-to-views)
 - [Resolving related stories](#resolving-related-stories)
+- [Resolving inverse relationship](#resolving-inverse-relationships)
 
 Pages in Storyblok can be requested via their slug or UUID. If using the [catch-all route](/{{route}}/{{version}}/installation#routing) we do the following:
 
 ```php
+// use Riclep\Storyblok\StoryblokFacade as StoryBlok;
+
 public function show($slug = 'home')
 {
 	return Storyblok::read($slug)->render();
@@ -106,7 +109,36 @@ class EpisodeController extends Controller
 
 ### Resolving relations via a Block
 
-If you’re not using a custom controller you can specify which relations you wish to resolve using the `$_resolveRelations` property on your Block. Simply create an array of the Storyblok fieldnames containing the relations you wish to resolve. They will be requested and converted into Blocks for you.
+If you’re not using a custom controller you can specify which relations you wish to resolve using the `$_resolveRelations` property on your Block. Simply create an array of the Storyblok field names containing the relations you wish to resolve. They will be requested and converted into Blocks for you.
+
+By default the relationship’s component name will be used to determine which Class to use. If you want to use a different class you can specify it in the array.
+
+```php
+<?php
+
+namespace App\Storyblok\Blocks;
+
+use App\Storyblok\Block;
+
+class Postcast extends Block
+{
+    public $_resolveRelations = [
+       'hosts',
+       'guests' => App\Storyblok\Blocks\Guest::class,
+    ];
+}
+```
+
+> {info} Using this mention of resolving relations will require additional API calls but the data will be cached after being requested.
+
+
+### Unpublished relations
+
+**Since 2.7.4**
+
+If you link to an unpublished Story in one of your Multi-Option relations they are filtered out of the Collection of related Pages. If you need to know if a relation was removed from a Block set it’s `$_filterRelations` property to false. This wil return all valid relations as normal and `null` for failed relations. You can now handle this as required in your code.
+
+For Single-Option relations `null` will be returned if the relation could not be resolved.
 
 ```php
 <?php
@@ -117,11 +149,9 @@ use App\Storyblok\Block;
 
 class Home extends Block
 {
-    public $_resolveRelations = ['field_name'];
+    public $_filterRelations = false;
 }
 ```
-
-> {info} Using this mention of resolving relations will require additional API calls that using the controller method above as we can only request the relationships only after first requesting the initial content.
 
 
 ### Automatically resolving relations
@@ -142,3 +172,33 @@ class Block extends BaseBlock
 ```
 
 > {danger} It’s not recommended to set all Blocks to automatically resolve their linked stories as doing so could return a lot of deeply linked content or cause loops where Stories reference one another. Use with care!
+
+
+<a name="resolving-inverse-relationships">
+## Resolving inverse relationships
+</a>
+
+In Storyblok when you add a Single-Option or Multi-Option Stories relationship field to a component that relationship is one direction. For example a Podcast may have a Hosts relationship defined on it, but if we have loaded a Host how do we get the Podcasts they are a part of - how do we load the inverse relationship? We don’t want to add a relationship field to Hosts as then we need to manage it in both directions.
+
+You can load an inverse relation using `inverseRelation('foreign_relation_field')` on a Block.
+
+The first argument is the name of the relationship field on the foreign component, for example `hosts` on the Podcast component.
+
+The second argument is the field type, `'multi'` (default) or `'single'`.
+
+You can specify the component types to return using the third argument which should be an comma delimited list of component names.
+
+Finally the last argument allows you to send additional parameters to the API call, for example `['per_page' => 10]`. See the [Storyblok API docs](https://www.storyblok.com/docs/api/content-delivery/v2) for more information.
+
+The returned data will match that if you requested the pages with a [Folder](/{{route}}/{{version}}/folders).
+
+```php
+// requesting the inverse of a Single-Option relation
+$block->inverseRelation('foreign_relationship_field', 'single');
+
+// requesting related stories of only specific component types
+$block->inverseRelation('foreign_relationship_field', 'multi', 'component1,component2');
+
+// requesting related stories of any type which start with the specificed slug
+$block->inverseRelation('foreign_relationship_field', 'multi', null, ['starts_with' => 'some_slug/']);
+```
