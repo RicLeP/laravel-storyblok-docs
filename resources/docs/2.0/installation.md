@@ -115,10 +115,30 @@ php artisan vendor:publish --tag=storyblok
 The easiest way to get started is to add a catchall route to your `routes/web.php` file that directs all traffic to the package. Of course you’re still free to decide on your own routing method if you prefer. The default catchall route will map your apps route to the matching route within Storyblok.
 
 ```php
+// routes/web.php
+
+// Catch-all route for Storyblok - this may lead to a lot of 404s from their API as it matches everything
 Route::get('/{slug?}', '\Riclep\Storyblok\Http\Controllers\StoryblokController@show')->where('slug', '(.*)');
+
+// Or a more specific route that doesn't match the img folder
+Route::get('/{slug?}', [StoryblokController::class, 'show'])->where('slug', '^(?!img).*$');
 ```
 
 > {warning} If using the catch-all this should be your last route to stop it intercepting any other requests in your application.
+
+**Since 2.40.0**
+
+For more control over which routes are excluded from the catch-all add a list of exclusions to the `storyblok.php` configuration file.
+The array can contain strings or regular expressions.
+
+```php
+'denylist' => [
+    '/^\.well-known\/.*$/',
+    'another-bad-slug',
+    '/^admin\/.*$/',
+    '/\.(php|sqt|exe)$/',
+],
+```
 
 The package also creates a named route that posts to `storyblok.clear-cache` which is used when publishing in the visual editor.
 
