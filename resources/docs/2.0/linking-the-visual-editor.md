@@ -89,9 +89,11 @@ Route::post('/{slug?}', '\Riclep\Storyblok\Http\Controllers\LiveContentControlle
     ->middleware([\Riclep\Storyblok\Http\Middleware\StoryblokEditor::class]);
 ```
 
-Finally, we need to disable the `TrimStrings` middleware for the `storyblok.live` route.
+Finally, we need to disable the `TrimStrings` middleware for the `storyblok.live` route by edting the `bootstrap/app.php` file.
 
 ```php
+use Illuminate\Http\Request;
+
 return Application::configure(basePath: dirname(__DIR__))
     ...
     ->withMiddleware(function (Middleware $middleware) {
