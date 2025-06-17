@@ -29,7 +29,16 @@ After installing the package update your `.env` file with your Storyblok Content
 STORYBLOK_PREVIEW_API_KEY=your_preview_key
 STORYBLOK_PUBLIC_API_KEY=your_public_key
 STORYBLOK_DRAFT=true
-STORYBLOK_WEBHOOK_SECRET=someComplexKeySuchAsAHash
+STORYBLOK_WEBHOOK_SECRET=someComplexKeySuchAsAHash #free Storyblok plans don’t use a secret
+```
+
+### Artisan commands
+
+To use the Artisan generator commands you’ll also need to specify your Space ID and OAuth Token.
+
+```php
+STORYBLOK_SPACE_ID=your_space_id
+STORYBLOK_OAUTH_TOKEN=your_oauth_token
 ```
 
 ### Webhooks
@@ -86,16 +95,6 @@ protected $listen = [
 
 If you need to test or debug your webhooks locally I highly recommend [ngrok](https://ngrok.com/).
 
-### Artisan commands
-
-To use the Artisan generator commands you’ll also need to specify your Space ID and OAuth Token.
-
-```php
-STORYBLOK_SPACE_ID=your_space_id
-STORYBLOK_OAUTH_TOKEN=your_oauth_token
-```
-
-
 > {info} Not sure where to find your API keys? [Check the Storyblok FAQs](https://www.storyblok.com/faq/where-to-find-my-content-delivery-api-key)
 
 ---
@@ -123,6 +122,8 @@ Route::get('/{slug?}', '\Riclep\Storyblok\Http\Controllers\StoryblokController@s
 // Or a more specific route that doesn't match the img folder
 Route::get('/{slug?}', [StoryblokController::class, 'show'])->where('slug', '^(?!img).*$');
 ```
+
+> {info} To stop the catch-all route from matching bot traffic you should configure the `denylist` in your `storyblok.php` configuration file.
 
 > {warning} If using the catch-all this should be your last route to stop it intercepting any other requests in your application.
 
