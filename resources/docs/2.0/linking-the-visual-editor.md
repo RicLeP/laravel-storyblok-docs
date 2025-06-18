@@ -84,12 +84,11 @@ You’ll need to create a route to process the requests from the Storyblok bridg
 ```php
 Route::post('/{slug?}', '\Riclep\Storyblok\Http\Controllers\LiveContentController@show')
     ->where('slug', '(.*)')
-    ->name('storyblok.live')
     ->withoutMiddleware([\App\Http\Middleware\VerifyCsrfToken::class])
     ->middleware([\Riclep\Storyblok\Http\Middleware\StoryblokEditor::class]);
 ```
 
-Finally, we need to disable the `TrimStrings` middleware for the `storyblok.live` route by edting the `bootstrap/app.php` file.
+Finally, we need to disable the `TrimStrings` middleware for the route by editing the `bootstrap/app.php` file and checking the request for the `sbLiveData` item.
 
 ```php
 use Illuminate\Http\Request;
@@ -98,7 +97,7 @@ return Application::configure(basePath: dirname(__DIR__))
     ...
     ->withMiddleware(function (Middleware $middleware) {
         $middleware->trimStrings(except: [
-            fn (Request $request) => $request->routeIs('storyblok.live'),
+            fn (Request $request) => $request->has('sbLiveData'),
         ]);
     ...
     })
