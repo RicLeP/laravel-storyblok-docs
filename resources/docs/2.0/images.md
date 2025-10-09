@@ -308,6 +308,28 @@ Every Image contains meta data that may be useful.
 $image->width();
 $image->height();
 
+// return the original dimensions before the file was transformed using the image service.
+$image->width(true);
+$image->height(true);
+
 // returns the mimetype
 $image->type();
+```
+
+**Since 2.46.0**
+
+Image fields expose the meta details, added in Storyblok, about the file they hold which can be easily accessed.
+
+```php
+<?php
+$field->alt();
+$field->copyright();
+$field->name();
+$field->source();
+$field->title();
+
+// All the methods can have default values when not are set in Storyblok
+$field->alt('Default alt');
+$field->copyright('Default copyright');
+...
 ```

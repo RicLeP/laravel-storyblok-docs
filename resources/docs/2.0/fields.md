@@ -7,6 +7,7 @@
 - [The Rich Text Field](#rich-text-field)
 - [The Table Field](#table-field)
 - [The DateTime Field](#datetime-field)
+- [The Image Field](#image-field)
 - [Passing data to fields](#passing-data)
 - [Embedding media](#embedding-media)
 
@@ -49,6 +50,16 @@ Listed below is how we transform each of the built in fieldtypes. The Field clas
 </a>
 
 Custom Fields can be used in several ways and must extend either an existing field or the `Riclep\Storyblok\Field` abstract class. If extending the abstract class be sure to implement the `toString()` method to allow this field to be easly used in Blade templates. A Field’s constructor takes the content from Storyblok and a reference to the Block it is part of. Fields are free to edit their contents any way you see fit.
+
+### Override the default field classes
+
+**Since 2.50.0**
+
+To override any of the default classes create a file in `App\Storyblok\Fields\Default` matching the type you wish to replace.
+
+For example `App\Storyblok\Fields\Default\Image.php` will be used for all image fields. You can still override fields on a case-by-case basis if needed.
+
+> {warning} Ensure your custom field extends the existing field or implements everything required to handle the data!
 
 The built-in Fields analyse the content from Storyblok when determining if they should be cast or not. With custom fields, like Pages and Blocks, they use a naming convention when determining if they should be used. Custom Fields are stored in the `App\Storyblok\Fields` namespace.
 
@@ -106,6 +117,53 @@ $field->content();
 ] 
 */
 ```
+### Loading TipTap extensions
+
+**Since 2.29.0**
+
+You load custom TipTap extensions to override how they rendered. To do so load them in a ServiceProvider boot method.
+
+Make sure you always load the Storyblok extension. The package in include a `<figure>` extension with support for caption and image
+resizing.
+
+```php
+// AppServiceProvider.php
+
+public function boot(): void
+{
+    if (!app()->runningInConsole()) {
+        $this->app->booted(function () {
+            config([
+                'storyblok.tiptap.extensions' => [
+                    new \Storyblok\Tiptap\Extension\Storyblok(), // always load this
+                    new \Riclep\Storyblok\Support\TipTapFigure(),
+                ]
+            ]);
+        });
+    }
+}
+```
+
+To resize images using the `TipTapFigure` extension pass the set your transformations to the config file. Do not load
+extensions directly in the config file as this will now allow you to cache your config.
+
+```php
+
+[
+    ...
+    'tiptap' => [
+        'extensions' => [
+        ],
+        'figure-transformation' => [
+            'width' => 1000,
+            'height' => null, // set to null to preserve ratio height when scaling
+            'filters' => 'filters:quality(60):format(webp)', // see: https://www.storyblok.com/docs/api/image-service
+        ]
+    ],
+    ...
+]
+```
+
 
 The Field’s `__toString()` method will loop over all the content and call the Block’s `render()` [method](/{{route}}/{{version}}/views#the-render-method). If you don’t use the `render()` method then look over `$field->content()` in your Blade file.
 
@@ -195,7 +253,7 @@ Will become the following:
 
 ### Adding captions
 
-Ideally all tables would include a descriptive caption, this is important for accessibility and just generally good practice. To do this use the `caption()` method passing in a string. If you also need to style the caption pass an array. 
+Ideally, all tables would include a descriptive caption, this is important for accessibility and just generally good practice. To do this use the `caption()` method passing in a string. If you also need to style the caption pass an array. 
 
 ```html
 {!! $table->caption('Title of the table') !!}
@@ -228,6 +286,12 @@ class CustomDate extends DateTime
 }
 ```
 
+<a name="image-field">
+## The Image field
+</a>
+
+See the [Image](/{{route}}/{{version}}/images) docs.
+
 <a name="passing-data">
 ## Passing data to fields
 </a>
@@ -258,4 +322,4 @@ class SomeField extends \Riclep\Storyblok\Field
 ## Embedding Media
 </a>
 
-You can embed many services and media providers such as YouTube and Twitter with a  [Field trait](/{{route}}/{{version}}/embedding-media).
+You can embed many services and media providers such as YouTube and Twitter with a [Field trait](/{{route}}/{{version}}/embedding-media).
