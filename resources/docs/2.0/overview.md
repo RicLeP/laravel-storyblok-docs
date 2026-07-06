@@ -2,7 +2,7 @@
 
 ---
 
-- Hello, if you find any problems let me know - <a href="mailto:ric@sirric.co.uk?subject=Laravel Storyblok">ric@sirric.co.uk</a>
+- Hello, if you find any problems let me know - <a href="mailto:ric@uandus.co.uk?subject=Laravel Storyblok">ric@uandus.co.uk</a>
 
 ### Use Storyblok’s amazing headless CMS in way that feels familiar to Laravel developers
 
@@ -11,6 +11,7 @@
 [![Quality Score](https://img.shields.io/scrutinizer/g/riclep/laravel-storyblok.svg?style=flat-square)](https://scrutinizer-ci.com/g/riclep/laravel-storyblok)
 [![Total Downloads](https://img.shields.io/packagist/dt/riclep/laravel-storyblok.svg?style=flat-square)](https://packagist.org/packages/riclep/laravel-storyblok)
 [![Twitter](https://img.shields.io/twitter/follow/riclep.svg?style=social&label=Follow)](https://twitter.com/intent/follow?screen_name=riclep)
+[![Twitter](https://img.shields.io/bluesky/posts/riclep.dev)](https://bsky.app/profile/riclep.dev)
 
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/M4M2C42W6)
@@ -42,13 +43,11 @@ Feel free to help out! 😀
 
 ### Security
 
-If you discover any security related issues, please email <a href="mailto:ric@sirric.co.uk?subject=Laravel Storyblok">ric@sirric.co.uk</a> instead of using the issue tracker.
+If you discover any security related issues, please email <a href="mailto:ric@uandus.co.uk?subject=Laravel Storyblok">ric@uandus.co.uk</a> instead of using the issue tracker.
 
 ## Credits and thanks
 
-**Richard Le Poidevin** [GitHub](https://github.com/riclep) / [Bluesky](https://bsky.app/profile/riclep.dev)  / [X](https://twitter.com/riclep)
-
-![image](/img/storyblok-ambassador-asset-vert-color.svg)
+**Ric Le Poidevin, Storyblok MVP Builder** [GitHub](https://github.com/riclep) / [Bluesky](https://bsky.app/profile/riclep.dev)  / [X](https://twitter.com/riclep)
 
 - [U&US](https://uandus.co.uk) - design, branding and development
 - [The contributors](https://github.com/RicLeP/laravel-storyblok/graphs/contributors) 😍
@@ -62,5 +61,3 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 ## Laravel Package Boilerplate
 
 This package was generated using the [Laravel Package Boilerplate](https://laravelpackageboilerplate.com).
-
-> {info.fa-podcast} I make a podcast with my son called The Curiosity of!? It’s about the world around us. We’ve covered corpse medicine, the first man to photograph the sun, pigments, oxen, gone ghost hunting, audio perception and more! [Check it out](https://www.curiosityofpod.com/)!
