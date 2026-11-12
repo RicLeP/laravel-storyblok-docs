@@ -24,6 +24,14 @@ return [
                 'mode' => 'public',
             ],
         ],
+        'integrations' => ['analytics' => [
+            'custom' => [
+                'attributes' => [
+                    'data-website-id' => 'e188b7fc-b00b-43e6-a8eb-10cb12d35467'
+                ],
+                'src' => 'https://cloud.umami.is/script.js',
+            ],
+        ]],
     ],
 
 ];
