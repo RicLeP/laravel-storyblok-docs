@@ -1,0 +1,21 @@
+{
+    "$schema": "https://larecipe.saleem.dev/schemas/3.x/larecipe.json",
+    "name": "Laravel",
+    "description": "A package to use the Storyblok CMS with Laravel. It’s designed to feel like the Laravel way of doing things making it simple to take your Storyblok JSON and use it in your Laravel Blade views.",
+    "theme": {
+        "accent": "#00b3b0"
+    },
+    "versions": [
+        {
+            "id": "3.0",
+            "default": true
+        },
+        {
+            "id": "2.0"
+        },
+        {
+            "id": "1.0"
+        }
+    ],
+    "landing": "overview"
+}

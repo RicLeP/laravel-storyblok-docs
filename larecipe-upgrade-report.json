@@ -1,0 +1,4626 @@
+{
+    "version": 1,
+    "generated_at": "2026-11-12T10:58:57+00:00",
+    "applied": true,
+    "docs": {
+        "from": "resources/docs",
+        "to": "docs"
+    },
+    "versions": [
+        "3.0",
+        "2.0",
+        "1.0"
+    ],
+    "summary": {
+        "pages": 64,
+        "files_written": 69,
+        "files_removed": 67,
+        "manual": 204,
+        "errors": 5,
+        "warnings": 177
+    },
+    "composer": [
+        "composer remove binarytorch/larecipe"
+    ],
+    "files": [
+        {
+            "operation": "write",
+            "path": "docs/3.0/assets.md",
+            "summary": "converted to v3 Markdown"
+        },
+        {
+            "operation": "write",
+            "path": "docs/3.0/basic-usage.md",
+            "summary": "converted to v3 Markdown"
+        },
+        {
+            "operation": "write",
+            "path": "docs/3.0/blocks.md",
+            "summary": "converted to v3 Markdown"
+        },
+        {
+            "operation": "write",
+            "path": "docs/3.0/cli.md",
+            "summary": "converted to v3 Markdown"
+        },
+        {
+            "operation": "write",
+            "path": "docs/3.0/configuration.md",
+            "summary": "converted to v3 Markdown"
+        },
+        {
+            "operation": "write",
+            "path": "docs/3.0/css-classes.md",
+            "summary": "converted to v3 Markdown"
+        },
+        {
+            "operation": "write",
+            "path": "docs/3.0/data-structure.md",
+            "summary": "converted to v3 Markdown"
+        },
+        {
+            "operation": "write",
+            "path": "docs/3.0/embedding-media.md",
+            "summary": "converted to v3 Markdown"
+        },
+        {
+            "operation": "write",
+            "path": "docs/3.0/exception-handling.md",
+            "summary": "converted to v3 Markdown"
+        },
+        {
+            "operation": "write",
+            "path": "docs/3.0/fields.md",
+            "summary": "converted to v3 Markdown"
+        },
+        {
+            "operation": "write",
+            "path": "docs/3.0/folders.md",
+            "summary": "converted to v3 Markdown"
+        },
+        {
+            "operation": "write",
+            "path": "docs/3.0/images.md",
+            "summary": "converted to v3 Markdown"
+        },
+        {
+            "operation": "write",
+            "path": "docs/3.0/installation.md",
+            "summary": "converted to v3 Markdown"
+        },
+        {
+            "operation": "write",
+            "path": "docs/3.0/laravel-storyblok-forms.md",
+            "summary": "converted to v3 Markdown"
+        },
+        {
+            "operation": "write",
+            "path": "docs/3.0/linking-the-visual-editor.md",
+            "summary": "converted to v3 Markdown"
+        },
+        {
+            "operation": "write",
+            "path": "docs/3.0/overview.md",
+            "summary": "converted to v3 Markdown"
+        },
+        {
+            "operation": "write",
+            "path": "docs/3.0/pages.md",
+            "summary": "converted to v3 Markdown"
+        },
+        {
+            "operation": "write",
+            "path": "docs/3.0/requesting-pages.md",
+            "summary": "converted to v3 Markdown"
+        },
+        {
+            "operation": "write",
+            "path": "docs/3.0/templates.md",
+            "summary": "converted to v3 Markdown"
+        },
+        {
+            "operation": "write",
+            "path": "docs/3.0/traits.md",
+            "summary": "converted to v3 Markdown"
+        },
+        {
+            "operation": "write",
+            "path": "docs/3.0/troubleshooting.md",
+            "summary": "converted to v3 Markdown"
+        },
+        {
+            "operation": "write",
+            "path": "docs/3.0/typography.md",
+            "summary": "converted to v3 Markdown"
+        },
+        {
+            "operation": "write",
+            "path": "docs/3.0/upgrading.md",
+            "summary": "converted to v3 Markdown"
+        },
+        {
+            "operation": "write",
+            "path": "docs/3.0/views.md",
+            "summary": "converted to v3 Markdown"
+        },
+        {
+            "operation": "write",
+            "path": "docs/3.0/whats-new.md",
+            "summary": "converted to v3 Markdown"
+        },
+        {
+            "operation": "write",
+            "path": "docs/3.0/navigation.json",
+            "summary": "the v2 sidebar as navigation.json"
+        },
+        {
+            "operation": "delete",
+            "path": "resources/docs/3.0/index.md",
+            "summary": "the sidebar now lives in navigation.json"
+        },
+        {
+            "operation": "write",
+            "path": "docs/2.0/assets.md",
+            "summary": "converted to v3 Markdown"
+        },
+        {
+            "operation": "write",
+            "path": "docs/2.0/basic-usage.md",
+            "summary": "converted to v3 Markdown"
+        },
+        {
+            "operation": "write",
+            "path": "docs/2.0/blocks.md",
+            "summary": "converted to v3 Markdown"
+        },
+        {
+            "operation": "write",
+            "path": "docs/2.0/cli.md",
+            "summary": "converted to v3 Markdown"
+        },
+        {
+            "operation": "write",
+            "path": "docs/2.0/configuration.md",
+            "summary": "converted to v3 Markdown"
+        },
+        {
+            "operation": "write",
+            "path": "docs/2.0/css-classes.md",
+            "summary": "converted to v3 Markdown"
+        },
+        {
+            "operation": "write",
+            "path": "docs/2.0/data-structure.md",
+            "summary": "converted to v3 Markdown"
+        },
+        {
+            "operation": "write",
+            "path": "docs/2.0/embedding-media.md",
+            "summary": "converted to v3 Markdown"
+        },
+        {
+            "operation": "write",
+            "path": "docs/2.0/exception-handling.md",
+            "summary": "converted to v3 Markdown"
+        },
+        {
+            "operation": "write",
+            "path": "docs/2.0/fields.md",
+            "summary": "converted to v3 Markdown"
+        },
+        {
+            "operation": "write",
+            "path": "docs/2.0/folders.md",
+            "summary": "converted to v3 Markdown"
+        },
+        {
+            "operation": "write",
+            "path": "docs/2.0/images.md",
+            "summary": "converted to v3 Markdown"
+        },
+        {
+            "operation": "write",
+            "path": "docs/2.0/installation.md",
+            "summary": "converted to v3 Markdown"
+        },
+        {
+            "operation": "write",
+            "path": "docs/2.0/laravel-storyblok-forms.md",
+            "summary": "converted to v3 Markdown"
+        },
+        {
+            "operation": "write",
+            "path": "docs/2.0/linking-the-visual-editor.md",
+            "summary": "converted to v3 Markdown"
+        },
+        {
+            "operation": "write",
+            "path": "docs/2.0/overview.md",
+            "summary": "converted to v3 Markdown"
+        },
+        {
+            "operation": "write",
+            "path": "docs/2.0/pages.md",
+            "summary": "converted to v3 Markdown"
+        },
+        {
+            "operation": "write",
+            "path": "docs/2.0/requesting-pages.md",
+            "summary": "converted to v3 Markdown"
+        },
+        {
+            "operation": "write",
+            "path": "docs/2.0/templates.md",
+            "summary": "converted to v3 Markdown"
+        },
+        {
+            "operation": "write",
+            "path": "docs/2.0/traits.md",
+            "summary": "converted to v3 Markdown"
+        },
+        {
+            "operation": "write",
+            "path": "docs/2.0/troubleshooting.md",
+            "summary": "converted to v3 Markdown"
+        },
+        {
+            "operation": "write",
+            "path": "docs/2.0/typography.md",
+            "summary": "converted to v3 Markdown"
+        },
+        {
+            "operation": "write",
+            "path": "docs/2.0/upgrading.md",
+            "summary": "converted to v3 Markdown"
+        },
+        {
+            "operation": "write",
+            "path": "docs/2.0/views.md",
+            "summary": "converted to v3 Markdown"
+        },
+        {
+            "operation": "write",
+            "path": "docs/2.0/whats-new.md",
+            "summary": "converted to v3 Markdown"
+        },
+        {
+            "operation": "write",
+            "path": "docs/2.0/navigation.json",
+            "summary": "the v2 sidebar as navigation.json"
+        },
+        {
+            "operation": "delete",
+            "path": "resources/docs/2.0/index.md",
+            "summary": "the sidebar now lives in navigation.json"
+        },
+        {
+            "operation": "write",
+            "path": "docs/1.0/basic-usage.md",
+            "summary": "converted to v3 Markdown"
+        },
+        {
+            "operation": "write",
+            "path": "docs/1.0/blocks.md",
+            "summary": "converted to v3 Markdown"
+        },
+        {
+            "operation": "write",
+            "path": "docs/1.0/configuration.md",
+            "summary": "converted to v3 Markdown"
+        },
+        {
+            "operation": "write",
+            "path": "docs/1.0/exception-handling.md",
+            "summary": "converted to v3 Markdown"
+        },
+        {
+            "operation": "write",
+            "path": "docs/1.0/folders.md",
+            "summary": "converted to v3 Markdown"
+        },
+        {
+            "operation": "write",
+            "path": "docs/1.0/images.md",
+            "summary": "converted to v3 Markdown"
+        },
+        {
+            "operation": "write",
+            "path": "docs/1.0/installation.md",
+            "summary": "converted to v3 Markdown"
+        },
+        {
+            "operation": "write",
+            "path": "docs/1.0/overview.md",
+            "summary": "converted to v3 Markdown"
+        },
+        {
+            "operation": "write",
+            "path": "docs/1.0/pages.md",
+            "summary": "converted to v3 Markdown"
+        },
+        {
+            "operation": "write",
+            "path": "docs/1.0/requesting-pages.md",
+            "summary": "converted to v3 Markdown"
+        },
+        {
+            "operation": "write",
+            "path": "docs/1.0/templates.md",
+            "summary": "converted to v3 Markdown"
+        },
+        {
+            "operation": "write",
+            "path": "docs/1.0/troubleshooting.md",
+            "summary": "converted to v3 Markdown"
+        },
+        {
+            "operation": "write",
+            "path": "docs/1.0/typography.md",
+            "summary": "converted to v3 Markdown"
+        },
+        {
+            "operation": "write",
+            "path": "docs/1.0/views.md",
+            "summary": "converted to v3 Markdown"
+        },
+        {
+            "operation": "write",
+            "path": "docs/1.0/navigation.json",
+            "summary": "the v2 sidebar as navigation.json"
+        },
+        {
+            "operation": "delete",
+            "path": "resources/docs/1.0/index.md",
+            "summary": "the sidebar now lives in navigation.json"
+        },
+        {
+            "operation": "delete",
+            "path": "resources/docs/3.0/assets.md",
+            "summary": "moved to docs/"
+        },
+        {
+            "operation": "delete",
+            "path": "resources/docs/3.0/basic-usage.md",
+            "summary": "moved to docs/"
+        },
+        {
+            "operation": "delete",
+            "path": "resources/docs/3.0/blocks.md",
+            "summary": "moved to docs/"
+        },
+        {
+            "operation": "delete",
+            "path": "resources/docs/3.0/cli.md",
+            "summary": "moved to docs/"
+        },
+        {
+            "operation": "delete",
+            "path": "resources/docs/3.0/configuration.md",
+            "summary": "moved to docs/"
+        },
+        {
+            "operation": "delete",
+            "path": "resources/docs/3.0/css-classes.md",
+            "summary": "moved to docs/"
+        },
+        {
+            "operation": "delete",
+            "path": "resources/docs/3.0/data-structure.md",
+            "summary": "moved to docs/"
+        },
+        {
+            "operation": "delete",
+            "path": "resources/docs/3.0/embedding-media.md",
+            "summary": "moved to docs/"
+        },
+        {
+            "operation": "delete",
+            "path": "resources/docs/3.0/exception-handling.md",
+            "summary": "moved to docs/"
+        },
+        {
+            "operation": "delete",
+            "path": "resources/docs/3.0/fields.md",
+            "summary": "moved to docs/"
+        },
+        {
+            "operation": "delete",
+            "path": "resources/docs/3.0/folders.md",
+            "summary": "moved to docs/"
+        },
+        {
+            "operation": "delete",
+            "path": "resources/docs/3.0/images.md",
+            "summary": "moved to docs/"
+        },
+        {
+            "operation": "delete",
+            "path": "resources/docs/3.0/installation.md",
+            "summary": "moved to docs/"
+        },
+        {
+            "operation": "delete",
+            "path": "resources/docs/3.0/laravel-storyblok-forms.md",
+            "summary": "moved to docs/"
+        },
+        {
+            "operation": "delete",
+            "path": "resources/docs/3.0/linking-the-visual-editor.md",
+            "summary": "moved to docs/"
+        },
+        {
+            "operation": "delete",
+            "path": "resources/docs/3.0/overview.md",
+            "summary": "moved to docs/"
+        },
+        {
+            "operation": "delete",
+            "path": "resources/docs/3.0/pages.md",
+            "summary": "moved to docs/"
+        },
+        {
+            "operation": "delete",
+            "path": "resources/docs/3.0/requesting-pages.md",
+            "summary": "moved to docs/"
+        },
+        {
+            "operation": "delete",
+            "path": "resources/docs/3.0/templates.md",
+            "summary": "moved to docs/"
+        },
+        {
+            "operation": "delete",
+            "path": "resources/docs/3.0/traits.md",
+            "summary": "moved to docs/"
+        },
+        {
+            "operation": "delete",
+            "path": "resources/docs/3.0/troubleshooting.md",
+            "summary": "moved to docs/"
+        },
+        {
+            "operation": "delete",
+            "path": "resources/docs/3.0/typography.md",
+            "summary": "moved to docs/"
+        },
+        {
+            "operation": "delete",
+            "path": "resources/docs/3.0/upgrading.md",
+            "summary": "moved to docs/"
+        },
+        {
+            "operation": "delete",
+            "path": "resources/docs/3.0/views.md",
+            "summary": "moved to docs/"
+        },
+        {
+            "operation": "delete",
+            "path": "resources/docs/3.0/whats-new.md",
+            "summary": "moved to docs/"
+        },
+        {
+            "operation": "delete",
+            "path": "resources/docs/2.0/assets.md",
+            "summary": "moved to docs/"
+        },
+        {
+            "operation": "delete",
+            "path": "resources/docs/2.0/basic-usage.md",
+            "summary": "moved to docs/"
+        },
+        {
+            "operation": "delete",
+            "path": "resources/docs/2.0/blocks.md",
+            "summary": "moved to docs/"
+        },
+        {
+            "operation": "delete",
+            "path": "resources/docs/2.0/cli.md",
+            "summary": "moved to docs/"
+        },
+        {
+            "operation": "delete",
+            "path": "resources/docs/2.0/configuration.md",
+            "summary": "moved to docs/"
+        },
+        {
+            "operation": "delete",
+            "path": "resources/docs/2.0/css-classes.md",
+            "summary": "moved to docs/"
+        },
+        {
+            "operation": "delete",
+            "path": "resources/docs/2.0/data-structure.md",
+            "summary": "moved to docs/"
+        },
+        {
+            "operation": "delete",
+            "path": "resources/docs/2.0/embedding-media.md",
+            "summary": "moved to docs/"
+        },
+        {
+            "operation": "delete",
+            "path": "resources/docs/2.0/exception-handling.md",
+            "summary": "moved to docs/"
+        },
+        {
+            "operation": "delete",
+            "path": "resources/docs/2.0/fields.md",
+            "summary": "moved to docs/"
+        },
+        {
+            "operation": "delete",
+            "path": "resources/docs/2.0/folders.md",
+            "summary": "moved to docs/"
+        },
+        {
+            "operation": "delete",
+            "path": "resources/docs/2.0/images.md",
+            "summary": "moved to docs/"
+        },
+        {
+            "operation": "delete",
+            "path": "resources/docs/2.0/installation.md",
+            "summary": "moved to docs/"
+        },
+        {
+            "operation": "delete",
+            "path": "resources/docs/2.0/laravel-storyblok-forms.md",
+            "summary": "moved to docs/"
+        },
+        {
+            "operation": "delete",
+            "path": "resources/docs/2.0/linking-the-visual-editor.md",
+            "summary": "moved to docs/"
+        },
+        {
+            "operation": "delete",
+            "path": "resources/docs/2.0/overview.md",
+            "summary": "moved to docs/"
+        },
+        {
+            "operation": "delete",
+            "path": "resources/docs/2.0/pages.md",
+            "summary": "moved to docs/"
+        },
+        {
+            "operation": "delete",
+            "path": "resources/docs/2.0/requesting-pages.md",
+            "summary": "moved to docs/"
+        },
+        {
+            "operation": "delete",
+            "path": "resources/docs/2.0/templates.md",
+            "summary": "moved to docs/"
+        },
+        {
+            "operation": "delete",
+            "path": "resources/docs/2.0/traits.md",
+            "summary": "moved to docs/"
+        },
+        {
+            "operation": "delete",
+            "path": "resources/docs/2.0/troubleshooting.md",
+            "summary": "moved to docs/"
+        },
+        {
+            "operation": "delete",
+            "path": "resources/docs/2.0/typography.md",
+            "summary": "moved to docs/"
+        },
+        {
+            "operation": "delete",
+            "path": "resources/docs/2.0/upgrading.md",
+            "summary": "moved to docs/"
+        },
+        {
+            "operation": "delete",
+            "path": "resources/docs/2.0/views.md",
+            "summary": "moved to docs/"
+        },
+        {
+            "operation": "delete",
+            "path": "resources/docs/2.0/whats-new.md",
+            "summary": "moved to docs/"
+        },
+        {
+            "operation": "delete",
+            "path": "resources/docs/1.0/basic-usage.md",
+            "summary": "moved to docs/"
+        },
+        {
+            "operation": "delete",
+            "path": "resources/docs/1.0/blocks.md",
+            "summary": "moved to docs/"
+        },
+        {
+            "operation": "delete",
+            "path": "resources/docs/1.0/configuration.md",
+            "summary": "moved to docs/"
+        },
+        {
+            "operation": "delete",
+            "path": "resources/docs/1.0/exception-handling.md",
+            "summary": "moved to docs/"
+        },
+        {
+            "operation": "delete",
+            "path": "resources/docs/1.0/folders.md",
+            "summary": "moved to docs/"
+        },
+        {
+            "operation": "delete",
+            "path": "resources/docs/1.0/images.md",
+            "summary": "moved to docs/"
+        },
+        {
+            "operation": "delete",
+            "path": "resources/docs/1.0/installation.md",
+            "summary": "moved to docs/"
+        },
+        {
+            "operation": "delete",
+            "path": "resources/docs/1.0/overview.md",
+            "summary": "moved to docs/"
+        },
+        {
+            "operation": "delete",
+            "path": "resources/docs/1.0/pages.md",
+            "summary": "moved to docs/"
+        },
+        {
+            "operation": "delete",
+            "path": "resources/docs/1.0/requesting-pages.md",
+            "summary": "moved to docs/"
+        },
+        {
+            "operation": "delete",
+            "path": "resources/docs/1.0/templates.md",
+            "summary": "moved to docs/"
+        },
+        {
+            "operation": "delete",
+            "path": "resources/docs/1.0/troubleshooting.md",
+            "summary": "moved to docs/"
+        },
+        {
+            "operation": "delete",
+            "path": "resources/docs/1.0/typography.md",
+            "summary": "moved to docs/"
+        },
+        {
+            "operation": "delete",
+            "path": "resources/docs/1.0/views.md",
+            "summary": "moved to docs/"
+        },
+        {
+            "operation": "write",
+            "path": "docs/larecipe.json",
+            "summary": "the set manifest"
+        },
+        {
+            "operation": "write",
+            "path": "config/larecipe.php",
+            "summary": "the LaRecipe 3 config (the v2 file is kept as config/larecipe.v2.php.bak)"
+        }
+    ],
+    "manual": [
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/assets.md",
+            "line": 23,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/basic-usage.md",
+            "line": 25,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/basic-usage.md",
+            "line": 37,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/basic-usage.md",
+            "line": 57,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/basic-usage.md",
+            "line": 99,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/blocks.md",
+            "line": 38,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/blocks.md",
+            "line": 115,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/blocks.md",
+            "line": 142,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/blocks.md",
+            "line": 156,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/blocks.md",
+            "line": 232,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/blocks.md",
+            "line": 260,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/blocks.md",
+            "line": 280,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/blocks.md",
+            "line": 335,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/blocks.md",
+            "line": 358,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/cli.md",
+            "line": 30,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/cli.md",
+            "line": 48,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/css-classes.md",
+            "line": 18,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/css-classes.md",
+            "line": 28,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/embedding-media.md",
+            "line": 85,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/embedding-media.md",
+            "line": 96,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/fields.md",
+            "line": 21,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/fields.md",
+            "line": 50,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/fields.md",
+            "line": 104,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/fields.md",
+            "line": 174,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/fields.md",
+            "line": 270,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/fields.md",
+            "line": 291,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/fields.md",
+            "line": 297,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/fields.md",
+            "line": 323,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/folders.md",
+            "line": 122,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/folders.md",
+            "line": 146,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/folders.md",
+            "line": 162,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/folders.md",
+            "line": 177,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/folders.md",
+            "line": 192,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/folders.md",
+            "line": 237,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/folders.md",
+            "line": 290,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/images.md",
+            "line": 26,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/images.md",
+            "line": 143,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/images.md",
+            "line": 246,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/images.md",
+            "line": 302,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/installation.md",
+            "line": 12,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/installation.md",
+            "line": 24,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/installation.md",
+            "line": 112,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/installation.md",
+            "line": 152,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/laravel-storyblok-forms.md",
+            "line": 23,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/laravel-storyblok-forms.md",
+            "line": 45,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/linking-the-visual-editor.md",
+            "line": 12,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/linking-the-visual-editor.md",
+            "line": 58,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: - Hello, if you find any problems let me know - <a href=\"mailto:ric@uandus.co.uk?subject=Laravel Storyblok\">ric@uandus.co.uk</a>",
+            "file": "docs/3.0/overview.md",
+            "line": 5,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: If you discover any security related issues, please email <a href=\"mailto:ric@uandus.co.uk?subject=Laravel Storyblok\">ric@uandus.co.uk</a> instead of using the issue tracker.",
+            "file": "docs/3.0/overview.md",
+            "line": 46,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/pages.md",
+            "line": 34,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/pages.md",
+            "line": 44,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/pages.md",
+            "line": 53,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/pages.md",
+            "line": 65,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/pages.md",
+            "line": 99,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/requesting-pages.md",
+            "line": 34,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/requesting-pages.md",
+            "line": 87,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/requesting-pages.md",
+            "line": 179,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/troubleshooting.md",
+            "line": 10,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/troubleshooting.md",
+            "line": 18,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/typography.md",
+            "line": 18,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/typography.md",
+            "line": 28,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/typography.md",
+            "line": 53,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/views.md",
+            "line": 72,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/views.md",
+            "line": 98,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/whats-new.md",
+            "line": 36,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/whats-new.md",
+            "line": 43,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/whats-new.md",
+            "line": 53,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/whats-new.md",
+            "line": 61,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/whats-new.md",
+            "line": 78,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/whats-new.md",
+            "line": 86,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/whats-new.md",
+            "line": 93,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/whats-new.md",
+            "line": 99,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/whats-new.md",
+            "line": 111,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/whats-new.md",
+            "line": 120,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/whats-new.md",
+            "line": 131,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/whats-new.md",
+            "line": 140,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/whats-new.md",
+            "line": 148,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/whats-new.md",
+            "line": 155,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/whats-new.md",
+            "line": 163,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/whats-new.md",
+            "line": 172,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/whats-new.md",
+            "line": 179,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/whats-new.md",
+            "line": 187,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/whats-new.md",
+            "line": 194,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/whats-new.md",
+            "line": 203,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/whats-new.md",
+            "line": 210,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/whats-new.md",
+            "line": 218,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/whats-new.md",
+            "line": 228,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/3.0/whats-new.md",
+            "line": 238,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/assets.md",
+            "line": 23,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/basic-usage.md",
+            "line": 25,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/basic-usage.md",
+            "line": 37,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/basic-usage.md",
+            "line": 57,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/basic-usage.md",
+            "line": 99,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/blocks.md",
+            "line": 38,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/blocks.md",
+            "line": 115,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/blocks.md",
+            "line": 142,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/blocks.md",
+            "line": 156,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/blocks.md",
+            "line": 232,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/blocks.md",
+            "line": 260,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/blocks.md",
+            "line": 280,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/blocks.md",
+            "line": 335,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/blocks.md",
+            "line": 358,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/cli.md",
+            "line": 30,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/cli.md",
+            "line": 48,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/css-classes.md",
+            "line": 18,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/css-classes.md",
+            "line": 28,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/embedding-media.md",
+            "line": 85,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/embedding-media.md",
+            "line": 96,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/fields.md",
+            "line": 21,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/fields.md",
+            "line": 50,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/fields.md",
+            "line": 104,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/fields.md",
+            "line": 174,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/fields.md",
+            "line": 270,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/fields.md",
+            "line": 291,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/fields.md",
+            "line": 297,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/fields.md",
+            "line": 323,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/folders.md",
+            "line": 84,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/folders.md",
+            "line": 133,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/folders.md",
+            "line": 192,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/images.md",
+            "line": 26,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/images.md",
+            "line": 143,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/images.md",
+            "line": 246,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/images.md",
+            "line": 302,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/installation.md",
+            "line": 12,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/installation.md",
+            "line": 24,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/installation.md",
+            "line": 112,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/installation.md",
+            "line": 152,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/laravel-storyblok-forms.md",
+            "line": 23,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/laravel-storyblok-forms.md",
+            "line": 45,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/linking-the-visual-editor.md",
+            "line": 12,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/linking-the-visual-editor.md",
+            "line": 58,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: - Hello, if you find any problems let me know - <a href=\"mailto:ric@uandus.co.uk?subject=Laravel Storyblok\">ric@uandus.co.uk</a>",
+            "file": "docs/2.0/overview.md",
+            "line": 5,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: If you discover any security related issues, please email <a href=\"mailto:ric@uandus.co.uk?subject=Laravel Storyblok\">ric@uandus.co.uk</a> instead of using the issue tracker.",
+            "file": "docs/2.0/overview.md",
+            "line": 44,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/pages.md",
+            "line": 34,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/pages.md",
+            "line": 44,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/pages.md",
+            "line": 53,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/pages.md",
+            "line": 65,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/pages.md",
+            "line": 99,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/requesting-pages.md",
+            "line": 34,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/requesting-pages.md",
+            "line": 87,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/requesting-pages.md",
+            "line": 179,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/troubleshooting.md",
+            "line": 10,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/troubleshooting.md",
+            "line": 18,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/typography.md",
+            "line": 18,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/typography.md",
+            "line": 28,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/typography.md",
+            "line": 53,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/views.md",
+            "line": 72,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/views.md",
+            "line": 98,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/whats-new.md",
+            "line": 36,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/whats-new.md",
+            "line": 43,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/whats-new.md",
+            "line": 53,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/whats-new.md",
+            "line": 61,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/whats-new.md",
+            "line": 78,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/whats-new.md",
+            "line": 86,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/whats-new.md",
+            "line": 93,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/whats-new.md",
+            "line": 99,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/whats-new.md",
+            "line": 111,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/whats-new.md",
+            "line": 120,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/whats-new.md",
+            "line": 131,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/whats-new.md",
+            "line": 140,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/whats-new.md",
+            "line": 148,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/whats-new.md",
+            "line": 155,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/whats-new.md",
+            "line": 163,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/whats-new.md",
+            "line": 172,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/whats-new.md",
+            "line": 179,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/whats-new.md",
+            "line": 187,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/whats-new.md",
+            "line": 194,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/whats-new.md",
+            "line": 203,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/whats-new.md",
+            "line": 210,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/whats-new.md",
+            "line": 218,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/whats-new.md",
+            "line": 228,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/2.0/whats-new.md",
+            "line": 238,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/1.0/basic-usage.md",
+            "line": 22,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/1.0/basic-usage.md",
+            "line": 51,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/1.0/basic-usage.md",
+            "line": 204,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/1.0/blocks.md",
+            "line": 31,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/1.0/blocks.md",
+            "line": 45,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/1.0/blocks.md",
+            "line": 57,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/1.0/blocks.md",
+            "line": 70,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/1.0/blocks.md",
+            "line": 85,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/1.0/blocks.md",
+            "line": 98,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/1.0/blocks.md",
+            "line": 211,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/1.0/folders.md",
+            "line": 49,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/1.0/folders.md",
+            "line": 105,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/1.0/installation.md",
+            "line": 12,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/1.0/installation.md",
+            "line": 24,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/1.0/installation.md",
+            "line": 48,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/1.0/installation.md",
+            "line": 60,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: - Hello, if you find any problems let me know - <a href=\"mailto:ric@sirric.co.uk?subject=Laravel Storyblok\">ric@sirric.co.uk</a>",
+            "file": "docs/1.0/overview.md",
+            "line": 5,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: If you discover any security related issues, please email <a href=\"mailto:ric@sirric.co.uk?subject=Laravel Storyblok\">ric@sirric.co.uk</a> instead of using the issue tracker.",
+            "file": "docs/1.0/overview.md",
+            "line": 46,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/1.0/pages.md",
+            "line": 32,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/1.0/pages.md",
+            "line": 51,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/1.0/pages.md",
+            "line": 58,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/1.0/pages.md",
+            "line": 68,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/1.0/troubleshooting.md",
+            "line": 10,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/1.0/troubleshooting.md",
+            "line": 18,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/1.0/typography.md",
+            "line": 12,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/1.0/typography.md",
+            "line": 40,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/1.0/views.md",
+            "line": 71,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "html",
+            "message": "Raw HTML is shown as text in v3: </a>",
+            "file": "docs/1.0/views.md",
+            "line": 97,
+            "fix": "Use Markdown or a component instead, leave it as text, or set html_input to allow for this repository set in config/larecipe.php."
+        },
+        {
+            "kind": "manual",
+            "category": "views",
+            "message": "Published v2 views are not used by v3.",
+            "file": "resources/views/vendor/larecipe/partials/404.blade.php",
+            "fix": "Replace it with a slot override (NotFound, Logo, Header, Sidebar) or LaRecipe::head(), then delete the folder."
+        },
+        {
+            "kind": "manual",
+            "category": "views",
+            "message": "Published v2 views are not used by v3.",
+            "file": "resources/views/vendor/larecipe/partials/logo.blade.php",
+            "fix": "Replace it with a slot override (NotFound, Logo, Header, Sidebar) or LaRecipe::head(), then delete the folder."
+        },
+        {
+            "kind": "manual",
+            "category": "views",
+            "message": "Published v2 views are not used by v3.",
+            "file": "resources/views/vendor/larecipe/partials/nav.blade.php",
+            "fix": "Replace it with a slot override (NotFound, Logo, Header, Sidebar) or LaRecipe::head(), then delete the folder."
+        },
+        {
+            "kind": "manual",
+            "category": "views",
+            "message": "Published v2 views are not used by v3.",
+            "file": "resources/views/vendor/larecipe/partials/sidebar.blade.php",
+            "fix": "Replace it with a slot override (NotFound, Logo, Header, Sidebar) or LaRecipe::head(), then delete the folder."
+        }
+    ],
+    "changed": [
+        {
+            "kind": "changed",
+            "category": "config",
+            "message": "The docs keep their route prefix (/docs) and middleware (web).",
+            "file": "config/larecipe.php"
+        },
+        {
+            "kind": "changed",
+            "category": "config",
+            "message": "Access mode is \"public\".",
+            "file": "config/larecipe.php"
+        },
+        {
+            "kind": "changed",
+            "category": "manifest",
+            "message": "Versions (3.0, 2.0, 1.0), the landing page, the favicon, the primary color (as theme.accent) and the description moved to larecipe.json.",
+            "file": "docs/larecipe.json"
+        },
+        {
+            "kind": "changed",
+            "category": "manifest",
+            "message": "Google Analytics (settings.ga_id) is now a GA4 integration in larecipe.json.",
+            "file": "docs/larecipe.json"
+        },
+        {
+            "kind": "changed",
+            "category": "content",
+            "message": "2 alerts became GitHub alerts, 1 anchor became a heading id, 1 link became a relative .md link.",
+            "file": "docs/3.0/assets.md"
+        },
+        {
+            "kind": "changed",
+            "category": "toc",
+            "message": "Removed the hand-written table of contents. v3 builds one from the headings.",
+            "file": "docs/3.0/assets.md",
+            "line": 5
+        },
+        {
+            "kind": "changed",
+            "category": "content",
+            "message": "2 alerts became GitHub alerts, 4 anchors became heading ids, 4 links became relative .md links.",
+            "file": "docs/3.0/basic-usage.md"
+        },
+        {
+            "kind": "changed",
+            "category": "toc",
+            "message": "Removed the hand-written table of contents. v3 builds one from the headings.",
+            "file": "docs/3.0/basic-usage.md",
+            "line": 5
+        },
+        {
+            "kind": "changed",
+            "category": "content",
+            "message": "6 alerts became GitHub alerts, 9 anchors became heading ids, 4 links became relative .md links.",
+            "file": "docs/3.0/blocks.md"
+        },
+        {
+            "kind": "changed",
+            "category": "toc",
+            "message": "Removed the hand-written table of contents. v3 builds one from the headings.",
+            "file": "docs/3.0/blocks.md",
+            "line": 5
+        },
+        {
+            "kind": "changed",
+            "category": "content",
+            "message": "1 alert became a GitHub alert, 2 anchors became heading ids.",
+            "file": "docs/3.0/cli.md"
+        },
+        {
+            "kind": "changed",
+            "category": "toc",
+            "message": "Removed the hand-written table of contents. v3 builds one from the headings.",
+            "file": "docs/3.0/cli.md",
+            "line": 5
+        },
+        {
+            "kind": "changed",
+            "category": "content",
+            "message": "1 link became a relative .md link.",
+            "file": "docs/3.0/configuration.md"
+        },
+        {
+            "kind": "changed",
+            "category": "content",
+            "message": "2 alerts became GitHub alerts, 2 anchors became heading ids, 2 links became relative .md links.",
+            "file": "docs/3.0/css-classes.md"
+        },
+        {
+            "kind": "changed",
+            "category": "toc",
+            "message": "Removed the hand-written table of contents. v3 builds one from the headings.",
+            "file": "docs/3.0/css-classes.md",
+            "line": 5
+        },
+        {
+            "kind": "changed",
+            "category": "content",
+            "message": "1 alert became a GitHub alert, 2 anchors became heading ids, 1 link became a relative .md link.",
+            "file": "docs/3.0/embedding-media.md"
+        },
+        {
+            "kind": "changed",
+            "category": "toc",
+            "message": "Removed the hand-written table of contents. v3 builds one from the headings.",
+            "file": "docs/3.0/embedding-media.md",
+            "line": 5
+        },
+        {
+            "kind": "changed",
+            "category": "content",
+            "message": "6 alerts became GitHub alerts, 8 anchors became heading ids, 5 links became relative .md links.",
+            "file": "docs/3.0/fields.md"
+        },
+        {
+            "kind": "changed",
+            "category": "toc",
+            "message": "Removed the hand-written table of contents. v3 builds one from the headings.",
+            "file": "docs/3.0/fields.md",
+            "line": 5
+        },
+        {
+            "kind": "changed",
+            "category": "content",
+            "message": "1 alert became a GitHub alert, 7 anchors became heading ids.",
+            "file": "docs/3.0/folders.md"
+        },
+        {
+            "kind": "changed",
+            "category": "toc",
+            "message": "Removed the hand-written table of contents. v3 builds one from the headings.",
+            "file": "docs/3.0/folders.md",
+            "line": 5
+        },
+        {
+            "kind": "changed",
+            "category": "content",
+            "message": "6 alerts became GitHub alerts, 4 anchors became heading ids, 1 link became a relative .md link.",
+            "file": "docs/3.0/images.md"
+        },
+        {
+            "kind": "changed",
+            "category": "content",
+            "message": "5 alerts became GitHub alerts, 4 anchors became heading ids, 2 links became relative .md links.",
+            "file": "docs/3.0/installation.md"
+        },
+        {
+            "kind": "changed",
+            "category": "toc",
+            "message": "Removed the hand-written table of contents. v3 builds one from the headings.",
+            "file": "docs/3.0/installation.md",
+            "line": 5
+        },
+        {
+            "kind": "changed",
+            "category": "content",
+            "message": "2 alerts became GitHub alerts, 2 anchors became heading ids.",
+            "file": "docs/3.0/laravel-storyblok-forms.md"
+        },
+        {
+            "kind": "changed",
+            "category": "toc",
+            "message": "Removed the hand-written table of contents. v3 builds one from the headings.",
+            "file": "docs/3.0/laravel-storyblok-forms.md",
+            "line": 5
+        },
+        {
+            "kind": "changed",
+            "category": "content",
+            "message": "3 alerts became GitHub alerts, 2 anchors became heading ids, 1 link became a relative .md link.",
+            "file": "docs/3.0/linking-the-visual-editor.md"
+        },
+        {
+            "kind": "changed",
+            "category": "toc",
+            "message": "Removed the hand-written table of contents. v3 builds one from the headings.",
+            "file": "docs/3.0/linking-the-visual-editor.md",
+            "line": 5
+        },
+        {
+            "kind": "changed",
+            "category": "content",
+            "message": "8 links became relative .md links.",
+            "file": "docs/3.0/overview.md"
+        },
+        {
+            "kind": "changed",
+            "category": "content",
+            "message": "3 alerts became GitHub alerts, 5 anchors became heading ids, 1 link became a relative .md link.",
+            "file": "docs/3.0/pages.md"
+        },
+        {
+            "kind": "changed",
+            "category": "toc",
+            "message": "Removed the hand-written table of contents. v3 builds one from the headings.",
+            "file": "docs/3.0/pages.md",
+            "line": 5
+        },
+        {
+            "kind": "changed",
+            "category": "content",
+            "message": "3 alerts became GitHub alerts, 3 anchors became heading ids, 2 links became relative .md links.",
+            "file": "docs/3.0/requesting-pages.md"
+        },
+        {
+            "kind": "changed",
+            "category": "toc",
+            "message": "Removed the hand-written table of contents. v3 builds one from the headings.",
+            "file": "docs/3.0/requesting-pages.md",
+            "line": 5
+        },
+        {
+            "kind": "changed",
+            "category": "content",
+            "message": "1 alert became a GitHub alert, 1 link became a relative .md link.",
+            "file": "docs/3.0/traits.md"
+        },
+        {
+            "kind": "changed",
+            "category": "content",
+            "message": "2 anchors became heading ids.",
+            "file": "docs/3.0/troubleshooting.md"
+        },
+        {
+            "kind": "changed",
+            "category": "toc",
+            "message": "Removed the hand-written table of contents. v3 builds one from the headings.",
+            "file": "docs/3.0/troubleshooting.md",
+            "line": 5
+        },
+        {
+            "kind": "changed",
+            "category": "content",
+            "message": "1 alert became a GitHub alert, 3 anchors became heading ids.",
+            "file": "docs/3.0/typography.md"
+        },
+        {
+            "kind": "changed",
+            "category": "toc",
+            "message": "Removed the hand-written table of contents. v3 builds one from the headings.",
+            "file": "docs/3.0/typography.md",
+            "line": 5
+        },
+        {
+            "kind": "changed",
+            "category": "content",
+            "message": "4 links became relative .md links.",
+            "file": "docs/3.0/upgrading.md"
+        },
+        {
+            "kind": "changed",
+            "category": "content",
+            "message": "1 alert became a GitHub alert, 2 anchors became heading ids.",
+            "file": "docs/3.0/views.md"
+        },
+        {
+            "kind": "changed",
+            "category": "toc",
+            "message": "Removed the hand-written table of contents. v3 builds one from the headings.",
+            "file": "docs/3.0/views.md",
+            "line": 5
+        },
+        {
+            "kind": "changed",
+            "category": "content",
+            "message": "24 anchors became heading ids, 9 links became relative .md links.",
+            "file": "docs/3.0/whats-new.md"
+        },
+        {
+            "kind": "changed",
+            "category": "toc",
+            "message": "Removed the hand-written table of contents. v3 builds one from the headings.",
+            "file": "docs/3.0/whats-new.md",
+            "line": 6
+        },
+        {
+            "kind": "changed",
+            "category": "navigation",
+            "message": "The sidebar became navigation.json (22 entries).",
+            "file": "resources/docs/3.0/index.md"
+        },
+        {
+            "kind": "changed",
+            "category": "content",
+            "message": "2 alerts became GitHub alerts, 1 anchor became a heading id, 1 link became a relative .md link.",
+            "file": "docs/2.0/assets.md"
+        },
+        {
+            "kind": "changed",
+            "category": "toc",
+            "message": "Removed the hand-written table of contents. v3 builds one from the headings.",
+            "file": "docs/2.0/assets.md",
+            "line": 5
+        },
+        {
+            "kind": "changed",
+            "category": "content",
+            "message": "2 alerts became GitHub alerts, 4 anchors became heading ids, 4 links became relative .md links.",
+            "file": "docs/2.0/basic-usage.md"
+        },
+        {
+            "kind": "changed",
+            "category": "toc",
+            "message": "Removed the hand-written table of contents. v3 builds one from the headings.",
+            "file": "docs/2.0/basic-usage.md",
+            "line": 5
+        },
+        {
+            "kind": "changed",
+            "category": "content",
+            "message": "6 alerts became GitHub alerts, 9 anchors became heading ids, 4 links became relative .md links.",
+            "file": "docs/2.0/blocks.md"
+        },
+        {
+            "kind": "changed",
+            "category": "toc",
+            "message": "Removed the hand-written table of contents. v3 builds one from the headings.",
+            "file": "docs/2.0/blocks.md",
+            "line": 5
+        },
+        {
+            "kind": "changed",
+            "category": "content",
+            "message": "1 alert became a GitHub alert, 2 anchors became heading ids.",
+            "file": "docs/2.0/cli.md"
+        },
+        {
+            "kind": "changed",
+            "category": "toc",
+            "message": "Removed the hand-written table of contents. v3 builds one from the headings.",
+            "file": "docs/2.0/cli.md",
+            "line": 5
+        },
+        {
+            "kind": "changed",
+            "category": "content",
+            "message": "1 link became a relative .md link.",
+            "file": "docs/2.0/configuration.md"
+        },
+        {
+            "kind": "changed",
+            "category": "content",
+            "message": "2 alerts became GitHub alerts, 2 anchors became heading ids, 2 links became relative .md links.",
+            "file": "docs/2.0/css-classes.md"
+        },
+        {
+            "kind": "changed",
+            "category": "toc",
+            "message": "Removed the hand-written table of contents. v3 builds one from the headings.",
+            "file": "docs/2.0/css-classes.md",
+            "line": 5
+        },
+        {
+            "kind": "changed",
+            "category": "content",
+            "message": "1 alert became a GitHub alert, 2 anchors became heading ids, 1 link became a relative .md link.",
+            "file": "docs/2.0/embedding-media.md"
+        },
+        {
+            "kind": "changed",
+            "category": "toc",
+            "message": "Removed the hand-written table of contents. v3 builds one from the headings.",
+            "file": "docs/2.0/embedding-media.md",
+            "line": 5
+        },
+        {
+            "kind": "changed",
+            "category": "content",
+            "message": "6 alerts became GitHub alerts, 8 anchors became heading ids, 5 links became relative .md links.",
+            "file": "docs/2.0/fields.md"
+        },
+        {
+            "kind": "changed",
+            "category": "toc",
+            "message": "Removed the hand-written table of contents. v3 builds one from the headings.",
+            "file": "docs/2.0/fields.md",
+            "line": 5
+        },
+        {
+            "kind": "changed",
+            "category": "content",
+            "message": "3 alerts became GitHub alerts, 3 anchors became heading ids.",
+            "file": "docs/2.0/folders.md"
+        },
+        {
+            "kind": "changed",
+            "category": "toc",
+            "message": "Removed the hand-written table of contents. v3 builds one from the headings.",
+            "file": "docs/2.0/folders.md",
+            "line": 5
+        },
+        {
+            "kind": "changed",
+            "category": "content",
+            "message": "6 alerts became GitHub alerts, 4 anchors became heading ids, 1 link became a relative .md link.",
+            "file": "docs/2.0/images.md"
+        },
+        {
+            "kind": "changed",
+            "category": "content",
+            "message": "5 alerts became GitHub alerts, 4 anchors became heading ids, 2 links became relative .md links.",
+            "file": "docs/2.0/installation.md"
+        },
+        {
+            "kind": "changed",
+            "category": "toc",
+            "message": "Removed the hand-written table of contents. v3 builds one from the headings.",
+            "file": "docs/2.0/installation.md",
+            "line": 5
+        },
+        {
+            "kind": "changed",
+            "category": "content",
+            "message": "2 alerts became GitHub alerts, 2 anchors became heading ids.",
+            "file": "docs/2.0/laravel-storyblok-forms.md"
+        },
+        {
+            "kind": "changed",
+            "category": "toc",
+            "message": "Removed the hand-written table of contents. v3 builds one from the headings.",
+            "file": "docs/2.0/laravel-storyblok-forms.md",
+            "line": 5
+        },
+        {
+            "kind": "changed",
+            "category": "content",
+            "message": "3 alerts became GitHub alerts, 2 anchors became heading ids, 1 link became a relative .md link.",
+            "file": "docs/2.0/linking-the-visual-editor.md"
+        },
+        {
+            "kind": "changed",
+            "category": "toc",
+            "message": "Removed the hand-written table of contents. v3 builds one from the headings.",
+            "file": "docs/2.0/linking-the-visual-editor.md",
+            "line": 5
+        },
+        {
+            "kind": "changed",
+            "category": "content",
+            "message": "8 links became relative .md links.",
+            "file": "docs/2.0/overview.md"
+        },
+        {
+            "kind": "changed",
+            "category": "content",
+            "message": "3 alerts became GitHub alerts, 5 anchors became heading ids, 1 link became a relative .md link.",
+            "file": "docs/2.0/pages.md"
+        },
+        {
+            "kind": "changed",
+            "category": "toc",
+            "message": "Removed the hand-written table of contents. v3 builds one from the headings.",
+            "file": "docs/2.0/pages.md",
+            "line": 5
+        },
+        {
+            "kind": "changed",
+            "category": "content",
+            "message": "3 alerts became GitHub alerts, 3 anchors became heading ids, 2 links became relative .md links.",
+            "file": "docs/2.0/requesting-pages.md"
+        },
+        {
+            "kind": "changed",
+            "category": "toc",
+            "message": "Removed the hand-written table of contents. v3 builds one from the headings.",
+            "file": "docs/2.0/requesting-pages.md",
+            "line": 5
+        },
+        {
+            "kind": "changed",
+            "category": "content",
+            "message": "1 alert became a GitHub alert, 1 link became a relative .md link.",
+            "file": "docs/2.0/traits.md"
+        },
+        {
+            "kind": "changed",
+            "category": "content",
+            "message": "2 anchors became heading ids.",
+            "file": "docs/2.0/troubleshooting.md"
+        },
+        {
+            "kind": "changed",
+            "category": "toc",
+            "message": "Removed the hand-written table of contents. v3 builds one from the headings.",
+            "file": "docs/2.0/troubleshooting.md",
+            "line": 5
+        },
+        {
+            "kind": "changed",
+            "category": "content",
+            "message": "1 alert became a GitHub alert, 3 anchors became heading ids.",
+            "file": "docs/2.0/typography.md"
+        },
+        {
+            "kind": "changed",
+            "category": "toc",
+            "message": "Removed the hand-written table of contents. v3 builds one from the headings.",
+            "file": "docs/2.0/typography.md",
+            "line": 5
+        },
+        {
+            "kind": "changed",
+            "category": "content",
+            "message": "4 links became relative .md links.",
+            "file": "docs/2.0/upgrading.md"
+        },
+        {
+            "kind": "changed",
+            "category": "content",
+            "message": "1 alert became a GitHub alert, 2 anchors became heading ids.",
+            "file": "docs/2.0/views.md"
+        },
+        {
+            "kind": "changed",
+            "category": "toc",
+            "message": "Removed the hand-written table of contents. v3 builds one from the headings.",
+            "file": "docs/2.0/views.md",
+            "line": 5
+        },
+        {
+            "kind": "changed",
+            "category": "content",
+            "message": "24 anchors became heading ids, 9 links became relative .md links.",
+            "file": "docs/2.0/whats-new.md"
+        },
+        {
+            "kind": "changed",
+            "category": "toc",
+            "message": "Removed the hand-written table of contents. v3 builds one from the headings.",
+            "file": "docs/2.0/whats-new.md",
+            "line": 6
+        },
+        {
+            "kind": "changed",
+            "category": "navigation",
+            "message": "The sidebar became navigation.json (22 entries).",
+            "file": "resources/docs/2.0/index.md"
+        },
+        {
+            "kind": "changed",
+            "category": "content",
+            "message": "2 alerts became GitHub alerts, 3 anchors became heading ids, 3 links became relative .md links.",
+            "file": "docs/1.0/basic-usage.md"
+        },
+        {
+            "kind": "changed",
+            "category": "toc",
+            "message": "Removed the hand-written table of contents. v3 builds one from the headings.",
+            "file": "docs/1.0/basic-usage.md",
+            "line": 5
+        },
+        {
+            "kind": "changed",
+            "category": "content",
+            "message": "3 alerts became GitHub alerts, 7 anchors became heading ids, 1 link became a relative .md link.",
+            "file": "docs/1.0/blocks.md"
+        },
+        {
+            "kind": "changed",
+            "category": "toc",
+            "message": "Removed the hand-written table of contents. v3 builds one from the headings.",
+            "file": "docs/1.0/blocks.md",
+            "line": 5
+        },
+        {
+            "kind": "changed",
+            "category": "content",
+            "message": "1 link became a relative .md link.",
+            "file": "docs/1.0/configuration.md"
+        },
+        {
+            "kind": "changed",
+            "category": "content",
+            "message": "2 anchors became heading ids.",
+            "file": "docs/1.0/folders.md"
+        },
+        {
+            "kind": "changed",
+            "category": "toc",
+            "message": "Removed the hand-written table of contents. v3 builds one from the headings.",
+            "file": "docs/1.0/folders.md",
+            "line": 5
+        },
+        {
+            "kind": "changed",
+            "category": "content",
+            "message": "3 alerts became GitHub alerts, 4 anchors became heading ids, 1 link became a relative .md link.",
+            "file": "docs/1.0/installation.md"
+        },
+        {
+            "kind": "changed",
+            "category": "toc",
+            "message": "Removed the hand-written table of contents. v3 builds one from the headings.",
+            "file": "docs/1.0/installation.md",
+            "line": 5
+        },
+        {
+            "kind": "changed",
+            "category": "content",
+            "message": "4 links became relative .md links.",
+            "file": "docs/1.0/overview.md"
+        },
+        {
+            "kind": "changed",
+            "category": "content",
+            "message": "3 alerts became GitHub alerts, 4 anchors became heading ids, 1 link became a relative .md link.",
+            "file": "docs/1.0/pages.md"
+        },
+        {
+            "kind": "changed",
+            "category": "toc",
+            "message": "Removed the hand-written table of contents. v3 builds one from the headings.",
+            "file": "docs/1.0/pages.md",
+            "line": 5
+        },
+        {
+            "kind": "changed",
+            "category": "content",
+            "message": "1 link became a relative .md link.",
+            "file": "docs/1.0/requesting-pages.md"
+        },
+        {
+            "kind": "changed",
+            "category": "content",
+            "message": "2 anchors became heading ids.",
+            "file": "docs/1.0/troubleshooting.md"
+        },
+        {
+            "kind": "changed",
+            "category": "toc",
+            "message": "Removed the hand-written table of contents. v3 builds one from the headings.",
+            "file": "docs/1.0/troubleshooting.md",
+            "line": 5
+        },
+        {
+            "kind": "changed",
+            "category": "content",
+            "message": "1 alert became a GitHub alert, 2 anchors became heading ids.",
+            "file": "docs/1.0/typography.md"
+        },
+        {
+            "kind": "changed",
+            "category": "toc",
+            "message": "Removed the hand-written table of contents. v3 builds one from the headings.",
+            "file": "docs/1.0/typography.md",
+            "line": 5
+        },
+        {
+            "kind": "changed",
+            "category": "content",
+            "message": "2 anchors became heading ids.",
+            "file": "docs/1.0/views.md"
+        },
+        {
+            "kind": "changed",
+            "category": "toc",
+            "message": "Removed the hand-written table of contents. v3 builds one from the headings.",
+            "file": "docs/1.0/views.md",
+            "line": 5
+        },
+        {
+            "kind": "changed",
+            "category": "navigation",
+            "message": "The sidebar became navigation.json (12 entries).",
+            "file": "resources/docs/1.0/index.md"
+        },
+        {
+            "kind": "changed",
+            "category": "layout",
+            "message": "The docs move from resources/docs/ to docs/.",
+            "file": "docs"
+        }
+    ],
+    "dropped": [
+        {
+            "kind": "dropped",
+            "category": "config",
+            "message": "cache: rendered pages are always cached by content hash in v3.",
+            "file": "config/larecipe.php",
+            "fix": "Run php artisan larecipe:optimize on deploy (it runs with php artisan optimize)."
+        },
+        {
+            "kind": "dropped",
+            "category": "config",
+            "message": "search.engines.algolia: Algolia DocSearch is gone. Search is built in and works offline.",
+            "file": "config/larecipe.php",
+            "fix": "Remove the Algolia keys from your .env."
+        },
+        {
+            "kind": "dropped",
+            "category": "config",
+            "message": "ui.code_theme: code blocks follow the page theme, light and dark.",
+            "file": "config/larecipe.php"
+        },
+        {
+            "kind": "dropped",
+            "category": "config",
+            "message": "ui.colors.secondary: v3 themes have one accent color.",
+            "file": "config/larecipe.php",
+            "fix": "Fine-tune colors in a theme.css listed under assets.css in larecipe.json."
+        },
+        {
+            "kind": "dropped",
+            "category": "config",
+            "message": "ui.fa_v4_shims: Font Awesome is gone; v3 uses one icon set (Lucide).",
+            "file": "config/larecipe.php"
+        },
+        {
+            "kind": "dropped",
+            "category": "config",
+            "message": "ui.theme_order: there are no stacked theme packages in v3.",
+            "file": "config/larecipe.php"
+        },
+        {
+            "kind": "dropped",
+            "category": "config",
+            "message": "ui.show_side_bar: the sidebar is part of every page.",
+            "file": "config/larecipe.php",
+            "fix": "Set layout: wide or layout: full in a page's frontmatter for more room."
+        },
+        {
+            "kind": "dropped",
+            "category": "config",
+            "message": "seo.author, seo.keywords, seo.og: pages describe themselves through frontmatter (title, description), canonical URLs and JSON-LD.",
+            "file": "config/larecipe.php",
+            "fix": "Give every page a description in its frontmatter."
+        },
+        {
+            "kind": "dropped",
+            "category": "config",
+            "message": "blade-parser: v3 does not pre-process HTML with regular expressions.",
+            "file": "config/larecipe.php"
+        }
+    ],
+    "validation": {
+        "pages": 64,
+        "errors": 5,
+        "warnings": 177,
+        "issues": [
+            {
+                "page": "3.0/assets.md",
+                "level": "warning",
+                "rule": "frontmatter.description.missing",
+                "set": "docs",
+                "message": "Pages without a description get weaker llms.txt entries and search snippets.",
+                "fix": "Add a one-sentence description to the frontmatter."
+            },
+            {
+                "page": "3.0/assets.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 3,
+                "message": "Link to images.md: there is no page at \"images\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "3.0/basic-usage.md",
+                "level": "warning",
+                "rule": "frontmatter.description.missing",
+                "set": "docs",
+                "message": "Pages without a description get weaker llms.txt entries and search snippets.",
+                "fix": "Add a one-sentence description to the frontmatter."
+            },
+            {
+                "page": "3.0/basic-usage.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 3,
+                "message": "Link to installation.md: there is no page at \"installation\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "3.0/basic-usage.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 5,
+                "message": "Link to blocks.md: there is no page at \"blocks\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "3.0/basic-usage.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 9,
+                "message": "Link to views.md: there is no page at \"views\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "3.0/basic-usage.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 23,
+                "message": "Link to blocks.md: there is no page at \"blocks\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "3.0/blocks.md",
+                "level": "warning",
+                "rule": "frontmatter.description.missing",
+                "set": "docs",
+                "message": "Pages without a description get weaker llms.txt entries and search snippets.",
+                "fix": "Add a one-sentence description to the frontmatter."
+            },
+            {
+                "page": "3.0/blocks.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 129,
+                "message": "Link to fields.md: there is no page at \"fields\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "3.0/blocks.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 236,
+                "message": "Link to views.md#creating-css-class-names: there is no page at \"views\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "3.0/blocks.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 262,
+                "message": "Link to fields.md: there is no page at \"fields\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "3.0/blocks.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 332,
+                "message": "Link to troubleshooting.md#live-preview-not-reloading: there is no page at \"troubleshooting\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "3.0/cli.md",
+                "level": "warning",
+                "rule": "frontmatter.description.missing",
+                "set": "docs",
+                "message": "Pages without a description get weaker llms.txt entries and search snippets.",
+                "fix": "Add a one-sentence description to the frontmatter."
+            },
+            {
+                "page": "3.0/configuration.md",
+                "level": "warning",
+                "rule": "frontmatter.description.missing",
+                "set": "docs",
+                "message": "Pages without a description get weaker llms.txt entries and search snippets.",
+                "fix": "Add a one-sentence description to the frontmatter."
+            },
+            {
+                "page": "3.0/configuration.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 5,
+                "message": "Link to installation.md#configuration: there is no page at \"installation\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "3.0/css-classes.md",
+                "level": "warning",
+                "rule": "frontmatter.description.missing",
+                "set": "docs",
+                "message": "Pages without a description get weaker llms.txt entries and search snippets.",
+                "fix": "Add a one-sentence description to the frontmatter."
+            },
+            {
+                "page": "3.0/css-classes.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 23,
+                "message": "Link to blocks.md: there is no page at \"blocks\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "3.0/css-classes.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 23,
+                "message": "Link to blocks.md#getting-a-blocks-position: there is no page at \"blocks\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "3.0/data-structure.md",
+                "level": "error",
+                "rule": "page.empty",
+                "set": "docs",
+                "message": "The page has no content.",
+                "fix": "Write the page body, or delete the page."
+            },
+            {
+                "page": "3.0/data-structure.md",
+                "level": "warning",
+                "rule": "frontmatter.description.missing",
+                "set": "docs",
+                "message": "Pages without a description get weaker llms.txt entries and search snippets.",
+                "fix": "Add a one-sentence description to the frontmatter."
+            },
+            {
+                "page": "3.0/embedding-media.md",
+                "level": "warning",
+                "rule": "frontmatter.description.missing",
+                "set": "docs",
+                "message": "Pages without a description get weaker llms.txt entries and search snippets.",
+                "fix": "Add a one-sentence description to the frontmatter."
+            },
+            {
+                "page": "3.0/embedding-media.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 21,
+                "message": "Link to fields.md: there is no page at \"fields\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "3.0/exception-handling.md",
+                "level": "warning",
+                "rule": "frontmatter.description.missing",
+                "set": "docs",
+                "message": "Pages without a description get weaker llms.txt entries and search snippets.",
+                "fix": "Add a one-sentence description to the frontmatter."
+            },
+            {
+                "page": "3.0/fields.md",
+                "level": "warning",
+                "rule": "frontmatter.description.missing",
+                "set": "docs",
+                "message": "Pages without a description get weaker llms.txt entries and search snippets.",
+                "fix": "Add a one-sentence description to the frontmatter."
+            },
+            {
+                "page": "3.0/fields.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "message": "Link to requesting-pages.md#resolving-related-stories: there is no page at \"requesting-pages\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "3.0/fields.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "message": "Link to requesting-pages.md#resolving-related-stories: there is no page at \"requesting-pages\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "3.0/fields.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 156,
+                "message": "Link to views.md#the-render-method: there is no page at \"views\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "3.0/fields.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 277,
+                "message": "Link to images.md: there is no page at \"images\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "3.0/fields.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 307,
+                "message": "Link to embedding-media.md: there is no page at \"embedding-media\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "3.0/folders.md",
+                "level": "warning",
+                "rule": "frontmatter.description.missing",
+                "set": "docs",
+                "message": "Pages without a description get weaker llms.txt entries and search snippets.",
+                "fix": "Add a one-sentence description to the frontmatter."
+            },
+            {
+                "page": "3.0/images.md",
+                "level": "warning",
+                "rule": "frontmatter.description.missing",
+                "set": "docs",
+                "message": "Pages without a description get weaker llms.txt entries and search snippets.",
+                "fix": "Add a one-sentence description to the frontmatter."
+            },
+            {
+                "page": "3.0/images.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 12,
+                "message": "Link to assets.md: there is no page at \"assets\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "3.0/installation.md",
+                "level": "warning",
+                "rule": "frontmatter.description.missing",
+                "set": "docs",
+                "message": "Pages without a description get weaker llms.txt entries and search snippets.",
+                "fix": "Add a one-sentence description to the frontmatter."
+            },
+            {
+                "page": "3.0/installation.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 141,
+                "message": "Link to linking-the-visual-editor.md: there is no page at \"linking-the-visual-editor\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "3.0/installation.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 156,
+                "message": "Link to linking-the-visual-editor.md: there is no page at \"linking-the-visual-editor\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "3.0/laravel-storyblok-forms.md",
+                "level": "warning",
+                "rule": "frontmatter.description.missing",
+                "set": "docs",
+                "message": "Pages without a description get weaker llms.txt entries and search snippets.",
+                "fix": "Add a one-sentence description to the frontmatter."
+            },
+            {
+                "page": "3.0/linking-the-visual-editor.md",
+                "level": "warning",
+                "rule": "frontmatter.description.missing",
+                "set": "docs",
+                "message": "Pages without a description get weaker llms.txt entries and search snippets.",
+                "fix": "Add a one-sentence description to the frontmatter."
+            },
+            {
+                "page": "3.0/linking-the-visual-editor.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 44,
+                "message": "Link to troubleshooting.md: there is no page at \"troubleshooting\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "3.0/overview.md",
+                "level": "warning",
+                "rule": "frontmatter.description.missing",
+                "set": "docs",
+                "message": "Pages without a description get weaker llms.txt entries and search snippets.",
+                "fix": "Add a one-sentence description to the frontmatter."
+            },
+            {
+                "page": "3.0/overview.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 22,
+                "message": "Link to pages.md: there is no page at \"pages\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "3.0/overview.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 22,
+                "message": "Link to blocks.md: there is no page at \"blocks\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "3.0/overview.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 23,
+                "message": "Link to blocks.md: there is no page at \"blocks\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "3.0/overview.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 24,
+                "message": "Link to fields.md: there is no page at \"fields\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "3.0/overview.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 25,
+                "message": "Link to assets.md: there is no page at \"assets\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "3.0/overview.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 29,
+                "message": "Link to folders.md: there is no page at \"folders\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "3.0/overview.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 32,
+                "message": "Link to linking-the-visual-editor.md#live-preview: there is no page at \"linking-the-visual-editor\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "3.0/overview.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 33,
+                "message": "Link to images.md: there is no page at \"images\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "3.0/overview.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 58,
+                "message": "Link to LICENSE.md: there is no page at \"LICENSE\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "3.0/pages.md",
+                "level": "warning",
+                "rule": "frontmatter.description.missing",
+                "set": "docs",
+                "message": "Pages without a description get weaker llms.txt entries and search snippets.",
+                "fix": "Add a one-sentence description to the frontmatter."
+            },
+            {
+                "page": "3.0/pages.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 23,
+                "message": "Link to folders.md: there is no page at \"folders\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "3.0/requesting-pages.md",
+                "level": "warning",
+                "rule": "frontmatter.description.missing",
+                "set": "docs",
+                "message": "Pages without a description get weaker llms.txt entries and search snippets.",
+                "fix": "Add a one-sentence description to the frontmatter."
+            },
+            {
+                "page": "3.0/requesting-pages.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 3,
+                "message": "Link to installation.md#routing: there is no page at \"installation\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "3.0/requesting-pages.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 183,
+                "message": "Link to folders.md: there is no page at \"folders\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "3.0/templates.md",
+                "level": "warning",
+                "rule": "frontmatter.description.missing",
+                "set": "docs",
+                "message": "Pages without a description get weaker llms.txt entries and search snippets.",
+                "fix": "Add a one-sentence description to the frontmatter."
+            },
+            {
+                "page": "3.0/traits.md",
+                "level": "warning",
+                "rule": "frontmatter.description.missing",
+                "set": "docs",
+                "message": "Pages without a description get weaker llms.txt entries and search snippets.",
+                "fix": "Add a one-sentence description to the frontmatter."
+            },
+            {
+                "page": "3.0/traits.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 5,
+                "message": "Link to blocks.md: there is no page at \"blocks\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "3.0/troubleshooting.md",
+                "level": "warning",
+                "rule": "frontmatter.description.missing",
+                "set": "docs",
+                "message": "Pages without a description get weaker llms.txt entries and search snippets.",
+                "fix": "Add a one-sentence description to the frontmatter."
+            },
+            {
+                "page": "3.0/typography.md",
+                "level": "warning",
+                "rule": "frontmatter.description.missing",
+                "set": "docs",
+                "message": "Pages without a description get weaker llms.txt entries and search snippets.",
+                "fix": "Add a one-sentence description to the frontmatter."
+            },
+            {
+                "page": "3.0/upgrading.md",
+                "level": "warning",
+                "rule": "frontmatter.description.missing",
+                "set": "docs",
+                "message": "Pages without a description get weaker llms.txt entries and search snippets.",
+                "fix": "Add a one-sentence description to the frontmatter."
+            },
+            {
+                "page": "3.0/upgrading.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 12,
+                "message": "Link to typography.md: there is no page at \"typography\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "3.0/upgrading.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 13,
+                "message": "Link to css-classes.md: there is no page at \"css-classes\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "3.0/upgrading.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 60,
+                "message": "Link to linking-the-visual-editor.md#live-preview: there is no page at \"linking-the-visual-editor\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "3.0/upgrading.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 68,
+                "message": "Link to images.md: there is no page at \"images\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "3.0/views.md",
+                "level": "warning",
+                "rule": "frontmatter.description.missing",
+                "set": "docs",
+                "message": "Pages without a description get weaker llms.txt entries and search snippets.",
+                "fix": "Add a one-sentence description to the frontmatter."
+            },
+            {
+                "page": "3.0/whats-new.md",
+                "level": "warning",
+                "rule": "frontmatter.description.missing",
+                "set": "docs",
+                "message": "Pages without a description get weaker llms.txt entries and search snippets.",
+                "fix": "Add a one-sentence description to the frontmatter."
+            },
+            {
+                "page": "3.0/whats-new.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 43,
+                "message": "Link to requesting-pages.md#resolving-related-stories: there is no page at \"requesting-pages\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "3.0/whats-new.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 49,
+                "message": "Link to requesting-pages.md#resolving-inverse-relationships: there is no page at \"requesting-pages\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "3.0/whats-new.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 54,
+                "message": "Link to cli.md: there is no page at \"cli\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "3.0/whats-new.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 123,
+                "message": "Link to fields.md: there is no page at \"fields\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "3.0/whats-new.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 130,
+                "message": "Link to embedding-media.md: there is no page at \"embedding-media\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "3.0/whats-new.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 135,
+                "message": "Link to images.md: there is no page at \"images\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "3.0/whats-new.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 136,
+                "message": "Link to fields.md#table-field: there is no page at \"fields\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "3.0/whats-new.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 142,
+                "message": "Link to images.md: there is no page at \"images\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "3.0/whats-new.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 147,
+                "message": "Link to linking-the-visual-editor.md#live-view: there is no page at \"linking-the-visual-editor\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "2.0/assets.md",
+                "level": "warning",
+                "rule": "frontmatter.description.missing",
+                "set": "docs",
+                "message": "Pages without a description get weaker llms.txt entries and search snippets.",
+                "fix": "Add a one-sentence description to the frontmatter."
+            },
+            {
+                "page": "2.0/assets.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 3,
+                "message": "Link to images.md: there is no page at \"images\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "2.0/basic-usage.md",
+                "level": "warning",
+                "rule": "frontmatter.description.missing",
+                "set": "docs",
+                "message": "Pages without a description get weaker llms.txt entries and search snippets.",
+                "fix": "Add a one-sentence description to the frontmatter."
+            },
+            {
+                "page": "2.0/basic-usage.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 3,
+                "message": "Link to installation.md: there is no page at \"installation\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "2.0/basic-usage.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 5,
+                "message": "Link to blocks.md: there is no page at \"blocks\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "2.0/basic-usage.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 9,
+                "message": "Link to views.md: there is no page at \"views\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "2.0/basic-usage.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 23,
+                "message": "Link to blocks.md: there is no page at \"blocks\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "2.0/blocks.md",
+                "level": "warning",
+                "rule": "frontmatter.description.missing",
+                "set": "docs",
+                "message": "Pages without a description get weaker llms.txt entries and search snippets.",
+                "fix": "Add a one-sentence description to the frontmatter."
+            },
+            {
+                "page": "2.0/blocks.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 129,
+                "message": "Link to fields.md: there is no page at \"fields\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "2.0/blocks.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 236,
+                "message": "Link to views.md#creating-css-class-names: there is no page at \"views\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "2.0/blocks.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 262,
+                "message": "Link to fields.md: there is no page at \"fields\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "2.0/blocks.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 332,
+                "message": "Link to troubleshooting.md#live-preview-not-reloading: there is no page at \"troubleshooting\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "2.0/cli.md",
+                "level": "warning",
+                "rule": "frontmatter.description.missing",
+                "set": "docs",
+                "message": "Pages without a description get weaker llms.txt entries and search snippets.",
+                "fix": "Add a one-sentence description to the frontmatter."
+            },
+            {
+                "page": "2.0/configuration.md",
+                "level": "warning",
+                "rule": "frontmatter.description.missing",
+                "set": "docs",
+                "message": "Pages without a description get weaker llms.txt entries and search snippets.",
+                "fix": "Add a one-sentence description to the frontmatter."
+            },
+            {
+                "page": "2.0/configuration.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 5,
+                "message": "Link to installation.md#configuration: there is no page at \"installation\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "2.0/css-classes.md",
+                "level": "warning",
+                "rule": "frontmatter.description.missing",
+                "set": "docs",
+                "message": "Pages without a description get weaker llms.txt entries and search snippets.",
+                "fix": "Add a one-sentence description to the frontmatter."
+            },
+            {
+                "page": "2.0/css-classes.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 23,
+                "message": "Link to blocks.md: there is no page at \"blocks\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "2.0/css-classes.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 23,
+                "message": "Link to blocks.md#getting-a-blocks-position: there is no page at \"blocks\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "2.0/data-structure.md",
+                "level": "error",
+                "rule": "page.empty",
+                "set": "docs",
+                "message": "The page has no content.",
+                "fix": "Write the page body, or delete the page."
+            },
+            {
+                "page": "2.0/data-structure.md",
+                "level": "warning",
+                "rule": "frontmatter.description.missing",
+                "set": "docs",
+                "message": "Pages without a description get weaker llms.txt entries and search snippets.",
+                "fix": "Add a one-sentence description to the frontmatter."
+            },
+            {
+                "page": "2.0/embedding-media.md",
+                "level": "warning",
+                "rule": "frontmatter.description.missing",
+                "set": "docs",
+                "message": "Pages without a description get weaker llms.txt entries and search snippets.",
+                "fix": "Add a one-sentence description to the frontmatter."
+            },
+            {
+                "page": "2.0/embedding-media.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 21,
+                "message": "Link to fields.md: there is no page at \"fields\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "2.0/exception-handling.md",
+                "level": "warning",
+                "rule": "frontmatter.description.missing",
+                "set": "docs",
+                "message": "Pages without a description get weaker llms.txt entries and search snippets.",
+                "fix": "Add a one-sentence description to the frontmatter."
+            },
+            {
+                "page": "2.0/fields.md",
+                "level": "warning",
+                "rule": "frontmatter.description.missing",
+                "set": "docs",
+                "message": "Pages without a description get weaker llms.txt entries and search snippets.",
+                "fix": "Add a one-sentence description to the frontmatter."
+            },
+            {
+                "page": "2.0/fields.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "message": "Link to requesting-pages.md#resolving-related-stories: there is no page at \"requesting-pages\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "2.0/fields.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "message": "Link to requesting-pages.md#resolving-related-stories: there is no page at \"requesting-pages\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "2.0/fields.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 156,
+                "message": "Link to views.md#the-render-method: there is no page at \"views\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "2.0/fields.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 277,
+                "message": "Link to images.md: there is no page at \"images\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "2.0/fields.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 307,
+                "message": "Link to embedding-media.md: there is no page at \"embedding-media\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "2.0/folders.md",
+                "level": "warning",
+                "rule": "frontmatter.description.missing",
+                "set": "docs",
+                "message": "Pages without a description get weaker llms.txt entries and search snippets.",
+                "fix": "Add a one-sentence description to the frontmatter."
+            },
+            {
+                "page": "2.0/images.md",
+                "level": "warning",
+                "rule": "frontmatter.description.missing",
+                "set": "docs",
+                "message": "Pages without a description get weaker llms.txt entries and search snippets.",
+                "fix": "Add a one-sentence description to the frontmatter."
+            },
+            {
+                "page": "2.0/images.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 12,
+                "message": "Link to assets.md: there is no page at \"assets\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "2.0/installation.md",
+                "level": "warning",
+                "rule": "frontmatter.description.missing",
+                "set": "docs",
+                "message": "Pages without a description get weaker llms.txt entries and search snippets.",
+                "fix": "Add a one-sentence description to the frontmatter."
+            },
+            {
+                "page": "2.0/installation.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 141,
+                "message": "Link to linking-the-visual-editor.md: there is no page at \"linking-the-visual-editor\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "2.0/installation.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 156,
+                "message": "Link to linking-the-visual-editor.md: there is no page at \"linking-the-visual-editor\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "2.0/laravel-storyblok-forms.md",
+                "level": "warning",
+                "rule": "frontmatter.description.missing",
+                "set": "docs",
+                "message": "Pages without a description get weaker llms.txt entries and search snippets.",
+                "fix": "Add a one-sentence description to the frontmatter."
+            },
+            {
+                "page": "2.0/linking-the-visual-editor.md",
+                "level": "warning",
+                "rule": "frontmatter.description.missing",
+                "set": "docs",
+                "message": "Pages without a description get weaker llms.txt entries and search snippets.",
+                "fix": "Add a one-sentence description to the frontmatter."
+            },
+            {
+                "page": "2.0/linking-the-visual-editor.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 44,
+                "message": "Link to troubleshooting.md: there is no page at \"troubleshooting\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "2.0/overview.md",
+                "level": "warning",
+                "rule": "frontmatter.description.missing",
+                "set": "docs",
+                "message": "Pages without a description get weaker llms.txt entries and search snippets.",
+                "fix": "Add a one-sentence description to the frontmatter."
+            },
+            {
+                "page": "2.0/overview.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 20,
+                "message": "Link to pages.md: there is no page at \"pages\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "2.0/overview.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 20,
+                "message": "Link to blocks.md: there is no page at \"blocks\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "2.0/overview.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 21,
+                "message": "Link to blocks.md: there is no page at \"blocks\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "2.0/overview.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 22,
+                "message": "Link to fields.md: there is no page at \"fields\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "2.0/overview.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 23,
+                "message": "Link to assets.md: there is no page at \"assets\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "2.0/overview.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 27,
+                "message": "Link to folders.md: there is no page at \"folders\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "2.0/overview.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 30,
+                "message": "Link to linking-the-visual-editor.md#live-preview: there is no page at \"linking-the-visual-editor\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "2.0/overview.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 31,
+                "message": "Link to images.md: there is no page at \"images\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "2.0/overview.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 56,
+                "message": "Link to LICENSE.md: there is no page at \"LICENSE\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "2.0/pages.md",
+                "level": "warning",
+                "rule": "frontmatter.description.missing",
+                "set": "docs",
+                "message": "Pages without a description get weaker llms.txt entries and search snippets.",
+                "fix": "Add a one-sentence description to the frontmatter."
+            },
+            {
+                "page": "2.0/pages.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 23,
+                "message": "Link to folders.md: there is no page at \"folders\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "2.0/requesting-pages.md",
+                "level": "warning",
+                "rule": "frontmatter.description.missing",
+                "set": "docs",
+                "message": "Pages without a description get weaker llms.txt entries and search snippets.",
+                "fix": "Add a one-sentence description to the frontmatter."
+            },
+            {
+                "page": "2.0/requesting-pages.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 3,
+                "message": "Link to installation.md#routing: there is no page at \"installation\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "2.0/requesting-pages.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 183,
+                "message": "Link to folders.md: there is no page at \"folders\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "2.0/templates.md",
+                "level": "warning",
+                "rule": "frontmatter.description.missing",
+                "set": "docs",
+                "message": "Pages without a description get weaker llms.txt entries and search snippets.",
+                "fix": "Add a one-sentence description to the frontmatter."
+            },
+            {
+                "page": "2.0/traits.md",
+                "level": "warning",
+                "rule": "frontmatter.description.missing",
+                "set": "docs",
+                "message": "Pages without a description get weaker llms.txt entries and search snippets.",
+                "fix": "Add a one-sentence description to the frontmatter."
+            },
+            {
+                "page": "2.0/traits.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 5,
+                "message": "Link to blocks.md: there is no page at \"blocks\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "2.0/troubleshooting.md",
+                "level": "warning",
+                "rule": "frontmatter.description.missing",
+                "set": "docs",
+                "message": "Pages without a description get weaker llms.txt entries and search snippets.",
+                "fix": "Add a one-sentence description to the frontmatter."
+            },
+            {
+                "page": "2.0/typography.md",
+                "level": "warning",
+                "rule": "frontmatter.description.missing",
+                "set": "docs",
+                "message": "Pages without a description get weaker llms.txt entries and search snippets.",
+                "fix": "Add a one-sentence description to the frontmatter."
+            },
+            {
+                "page": "2.0/upgrading.md",
+                "level": "warning",
+                "rule": "frontmatter.description.missing",
+                "set": "docs",
+                "message": "Pages without a description get weaker llms.txt entries and search snippets.",
+                "fix": "Add a one-sentence description to the frontmatter."
+            },
+            {
+                "page": "2.0/upgrading.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 12,
+                "message": "Link to typography.md: there is no page at \"typography\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "2.0/upgrading.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 13,
+                "message": "Link to css-classes.md: there is no page at \"css-classes\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "2.0/upgrading.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 60,
+                "message": "Link to linking-the-visual-editor.md#live-preview: there is no page at \"linking-the-visual-editor\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "2.0/upgrading.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 68,
+                "message": "Link to images.md: there is no page at \"images\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "2.0/views.md",
+                "level": "warning",
+                "rule": "frontmatter.description.missing",
+                "set": "docs",
+                "message": "Pages without a description get weaker llms.txt entries and search snippets.",
+                "fix": "Add a one-sentence description to the frontmatter."
+            },
+            {
+                "page": "2.0/whats-new.md",
+                "level": "warning",
+                "rule": "frontmatter.description.missing",
+                "set": "docs",
+                "message": "Pages without a description get weaker llms.txt entries and search snippets.",
+                "fix": "Add a one-sentence description to the frontmatter."
+            },
+            {
+                "page": "2.0/whats-new.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 43,
+                "message": "Link to requesting-pages.md#resolving-related-stories: there is no page at \"requesting-pages\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "2.0/whats-new.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 49,
+                "message": "Link to requesting-pages.md#resolving-inverse-relationships: there is no page at \"requesting-pages\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "2.0/whats-new.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 54,
+                "message": "Link to cli.md: there is no page at \"cli\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "2.0/whats-new.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 123,
+                "message": "Link to fields.md: there is no page at \"fields\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "2.0/whats-new.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 130,
+                "message": "Link to embedding-media.md: there is no page at \"embedding-media\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "2.0/whats-new.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 135,
+                "message": "Link to images.md: there is no page at \"images\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "2.0/whats-new.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 136,
+                "message": "Link to fields.md#table-field: there is no page at \"fields\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "2.0/whats-new.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 142,
+                "message": "Link to images.md: there is no page at \"images\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "2.0/whats-new.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 147,
+                "message": "Link to linking-the-visual-editor.md#live-view: there is no page at \"linking-the-visual-editor\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "1.0/basic-usage.md",
+                "level": "warning",
+                "rule": "frontmatter.description.missing",
+                "set": "docs",
+                "message": "Pages without a description get weaker llms.txt entries and search snippets.",
+                "fix": "Add a one-sentence description to the frontmatter."
+            },
+            {
+                "page": "1.0/basic-usage.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 3,
+                "message": "Link to installation.md: there is no page at \"installation\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "1.0/basic-usage.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 5,
+                "message": "Link to blocks.md: there is no page at \"blocks\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "1.0/basic-usage.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 7,
+                "message": "Link to views.md: there is no page at \"views\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "1.0/blocks.md",
+                "level": "warning",
+                "rule": "frontmatter.description.missing",
+                "set": "docs",
+                "message": "Pages without a description get weaker llms.txt entries and search snippets.",
+                "fix": "Add a one-sentence description to the frontmatter."
+            },
+            {
+                "page": "1.0/blocks.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 211,
+                "message": "Link to troubleshooting.md#live-preview-not-reloading: there is no page at \"troubleshooting\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "1.0/configuration.md",
+                "level": "warning",
+                "rule": "frontmatter.description.missing",
+                "set": "docs",
+                "message": "Pages without a description get weaker llms.txt entries and search snippets.",
+                "fix": "Add a one-sentence description to the frontmatter."
+            },
+            {
+                "page": "1.0/configuration.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 5,
+                "message": "Link to installation.md#configuration: there is no page at \"installation\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "1.0/exception-handling.md",
+                "level": "warning",
+                "rule": "frontmatter.description.missing",
+                "set": "docs",
+                "message": "Pages without a description get weaker llms.txt entries and search snippets.",
+                "fix": "Add a one-sentence description to the frontmatter."
+            },
+            {
+                "page": "1.0/folders.md",
+                "level": "warning",
+                "rule": "frontmatter.description.missing",
+                "set": "docs",
+                "message": "Pages without a description get weaker llms.txt entries and search snippets.",
+                "fix": "Add a one-sentence description to the frontmatter."
+            },
+            {
+                "page": "1.0/images.md",
+                "level": "warning",
+                "rule": "frontmatter.description.missing",
+                "set": "docs",
+                "message": "Pages without a description get weaker llms.txt entries and search snippets.",
+                "fix": "Add a one-sentence description to the frontmatter."
+            },
+            {
+                "page": "1.0/installation.md",
+                "level": "warning",
+                "rule": "frontmatter.description.missing",
+                "set": "docs",
+                "message": "Pages without a description get weaker llms.txt entries and search snippets.",
+                "fix": "Add a one-sentence description to the frontmatter."
+            },
+            {
+                "page": "1.0/installation.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 63,
+                "message": "Link to blocks.md: there is no page at \"blocks\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "1.0/overview.md",
+                "level": "warning",
+                "rule": "frontmatter.description.missing",
+                "set": "docs",
+                "message": "Pages without a description get weaker llms.txt entries and search snippets.",
+                "fix": "Add a one-sentence description to the frontmatter."
+            },
+            {
+                "page": "1.0/overview.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 18,
+                "message": "Link to pages.md: there is no page at \"pages\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "1.0/overview.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 18,
+                "message": "Link to blocks.md: there is no page at \"blocks\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "1.0/overview.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 19,
+                "message": "Link to blocks.md: there is no page at \"blocks\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "1.0/overview.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 22,
+                "message": "Link to folders.md: there is no page at \"folders\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "1.0/overview.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 55,
+                "message": "Link to LICENSE.md: there is no page at \"LICENSE\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "1.0/pages.md",
+                "level": "warning",
+                "rule": "frontmatter.description.missing",
+                "set": "docs",
+                "message": "Pages without a description get weaker llms.txt entries and search snippets.",
+                "fix": "Add a one-sentence description to the frontmatter."
+            },
+            {
+                "page": "1.0/pages.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 3,
+                "message": "Link to blocks.md: there is no page at \"blocks\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "1.0/requesting-pages.md",
+                "level": "warning",
+                "rule": "frontmatter.description.missing",
+                "set": "docs",
+                "message": "Pages without a description get weaker llms.txt entries and search snippets.",
+                "fix": "Add a one-sentence description to the frontmatter."
+            },
+            {
+                "page": "1.0/requesting-pages.md",
+                "level": "warning",
+                "rule": "links.broken",
+                "set": "docs",
+                "line": 5,
+                "message": "Link to installation.md#routing: there is no page at \"installation\".",
+                "fix": "Fix the link, or write the page it points to."
+            },
+            {
+                "page": "1.0/templates.md",
+                "level": "warning",
+                "rule": "frontmatter.description.missing",
+                "set": "docs",
+                "message": "Pages without a description get weaker llms.txt entries and search snippets.",
+                "fix": "Add a one-sentence description to the frontmatter."
+            },
+            {
+                "page": "1.0/troubleshooting.md",
+                "level": "warning",
+                "rule": "frontmatter.description.missing",
+                "set": "docs",
+                "message": "Pages without a description get weaker llms.txt entries and search snippets.",
+                "fix": "Add a one-sentence description to the frontmatter."
+            },
+            {
+                "page": "1.0/typography.md",
+                "level": "warning",
+                "rule": "frontmatter.description.missing",
+                "set": "docs",
+                "message": "Pages without a description get weaker llms.txt entries and search snippets.",
+                "fix": "Add a one-sentence description to the frontmatter."
+            },
+            {
+                "page": "1.0/views.md",
+                "level": "warning",
+                "rule": "frontmatter.description.missing",
+                "set": "docs",
+                "message": "Pages without a description get weaker llms.txt entries and search snippets.",
+                "fix": "Add a one-sentence description to the frontmatter."
+            },
+            {
+                "level": "warning",
+                "rule": "links.anchor",
+                "page": "3.0/blocks.md",
+                "message": "Link to views.md#creating-css-class-names: no heading with the id #creating-css-class-names on views."
+            },
+            {
+                "level": "error",
+                "rule": "links.broken",
+                "page": "3.0/overview.md",
+                "message": "Link to LICENSE.md: there is no page LICENSE in version 3.0."
+            },
+            {
+                "level": "warning",
+                "rule": "links.anchor",
+                "page": "3.0/whats-new.md",
+                "message": "Link to linking-the-visual-editor.md#live-view: no heading with the id #live-view on linking-the-visual-editor."
+            },
+            {
+                "level": "warning",
+                "rule": "links.anchor",
+                "page": "2.0/blocks.md",
+                "message": "Link to views.md#creating-css-class-names: no heading with the id #creating-css-class-names on views."
+            },
+            {
+                "level": "error",
+                "rule": "links.broken",
+                "page": "2.0/overview.md",
+                "message": "Link to LICENSE.md: there is no page LICENSE in version 2.0."
+            },
+            {
+                "level": "warning",
+                "rule": "links.anchor",
+                "page": "2.0/whats-new.md",
+                "message": "Link to linking-the-visual-editor.md#live-view: no heading with the id #live-view on linking-the-visual-editor."
+            },
+            {
+                "level": "error",
+                "rule": "links.broken",
+                "page": "1.0/overview.md",
+                "message": "Link to LICENSE.md: there is no page LICENSE in version 1.0."
+            }
+        ]
+    }
+}
