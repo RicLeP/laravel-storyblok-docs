@@ -145,6 +145,16 @@
       <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher-contracts" />
       <path value="$PROJECT_DIR$/vendor/theseer/tokenizer" />
       <path value="$PROJECT_DIR$/vendor/_laravel_idea" />
+      <path value="$PROJECT_DIR$/vendor/laravel/mcp" />
+      <path value="$PROJECT_DIR$/vendor/larecipe/larecipe" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php86" />
+      <path value="$PROJECT_DIR$/vendor/symfony/html-sanitizer" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php82" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-time" />
+      <path value="$PROJECT_DIR$/vendor/opis/string" />
+      <path value="$PROJECT_DIR$/vendor/opis/uri" />
+      <path value="$PROJECT_DIR$/vendor/opis/json-schema" />
+      <path value="$PROJECT_DIR$/vendor/phiki/phiki" />
     </include_path>
   </component>
   <component name="PhpInterpreters">
@@ -192,7 +202,7 @@
       </interpreter>
     </interpreters>
   </component>
-  <component name="PhpProjectSharedConfiguration" php_language_level="8.2">
+  <component name="PhpProjectSharedConfiguration">
     <option name="suggestChangeDefaultLanguageLevel" value="false" />
   </component>
   <component name="PhpStan">
