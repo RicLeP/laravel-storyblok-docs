@@ -7,6 +7,115 @@ description: 'Upgrade guides and breaking changes for Laravel Storyblok releases
 
 ---
 
+## 2.x -> 3.0.0
+
+Version 3 updates Laravel Storyblok to use Storyblok's official Content API and Management API PHP clients (`storyblok/php-content-api-client` and `storyblok/php-management-api-client`). While most Page, Block, and Field implementations remain backward compatible, Folder classes and folder querying have been heavily reworked.
+
+### Updating dependencies
+
+Version 3 requires:
+- PHP 8.3, 8.4, or 8.5
+- Laravel 11, 12, or 13 (Laravel 10 support is dropped)
+
+Update your `composer.json` requirement:
+
+```json
+"riclep/laravel-storyblok": "^3.0"
+```
+
+Then run:
+
+```bash
+composer update riclep/laravel-storyblok -W
+```
+
+### Folder classes and `setDefaults()`
+
+In version 2, custom `Folder` classes set default query parameters using class properties (such as `protected string $slug` or `protected string $sortBy`) or by calling `$this->settings([...])` inside the constructor.
+
+In version 3, folder defaults must be configured inside a `protected function setDefaults(): void` method using fluent configuration methods:
+
+<CodeGroup>
+```php v2
+namespace App\Storyblok\Folders;
+
+use App\Storyblok\Folder;
+
+class Speakers extends Folder
+{
+    protected string $slug = 'speakers';
+    protected string $sortBy = 'content.year:desc, content.surname:asc';
+
+    public function __construct()
+    {
+        // $this->settings(['per_page' => 10]);
+    }
+}
+```
+
+```php v3
+namespace App\Storyblok\Folders;
+
+use App\Storyblok\Folder;
+use Storyblok\Api\Domain\Value\Dto\Direction;
+
+class Speakers extends Folder
+{
+    protected function setDefaults(): void
+    {
+        $this->slug('speakers')
+            ->startPage(false)
+            ->sort('content.year', Direction::Desc)
+            ->sort('content.surname', Direction::Asc)
+            ->perPage(11);
+    }
+}
+```
+</CodeGroup>
+
+### Fluent sorting and typed query parameters
+
+Sorting and filtering on `Folder` instances now use strongly typed methods and DTOs from the official Storyblok client:
+
+- **Sorting**: The `sort()` method accepts the field name and a `Storyblok\Api\Domain\Value\Dto\Direction` enum (`Direction::Asc` or `Direction::Desc`). Helper methods `asc($field)` and `desc($field)` remain available.
+- **Typed filters**: Filters accept parameter objects from `Storyblok\Api\Domain\Value\QueryParameter\*` (such as `PublishedAtGt`, `PublishedAtLt`, `FirstPublishedAtGt`, `FirstPublishedAtLt`, `UpdatedAtGt`, `UpdatedAtLt`, and `StoryLevel`).
+
+```php
+use Storyblok\Api\Domain\Value\Dto\Direction;
+use Storyblok\Api\Domain\Value\QueryParameter\PublishedAtGt;
+
+$folder = new Folder();
+$stories = $folder->slug('news')
+    ->sort('content.date', Direction::Desc)
+    ->publishedAtGt(new PublishedAtGt('2024-01-01 00:00'))
+    ->perPage(10)
+    ->read();
+```
+
+See the [Folders documentation](folders.md) for full details on querying folders.
+
+### Folder pagination
+
+Folder pagination is 1-indexed (page 1 is the initial page) and queries the requested page on demand. If your application customized pagination offsets or query parameters, ensure it expects 1-indexed page numbers with Laravel's `LengthAwarePaginator`.
+
+### Official Storyblok API clients
+
+Version 3 replaces `riclep/storyblok-php-client` with the official `storyblok/php-content-api-client` and `storyblok/php-management-api-client` packages.
+
+If your application accessed underlying client methods directly via `$storyblok->getStoryblok()`, update those calls to use the official Storyblok Content API client interface and value objects.
+
+### Multilingual caching and cache invalidation
+
+Story cache keys now include the requested language and fallback language to prevent collisions across translations. Folder responses are cached based on a hash of the serialized request parameters.
+
+Clear the application cache after upgrading:
+
+```bash
+php artisan cache:clear
+```
+
+---
+
 ## 2.17.0
 
 Class properties have had type added - any classes that extend these classes will need to be updated to match. For example if you’re using `protected $_resolveRelations = ['something]` you’ll need to change it to `protected array $_resolveRelations = ['something]`.

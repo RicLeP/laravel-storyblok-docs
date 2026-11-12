@@ -24,11 +24,11 @@ Listed below is how we transform each of the built in fieldtypes. The Field clas
 | datetime                 | None           | Is not cast. Original value returned. Can be manually cast to `Datetime`  |
 | boolean                  | None           | Is not cast. Original value returned                                      |
 | multi-options            | None           | Is not cast. Original value returned                                      |
-| multi-options (stories)  | [`Block`]      | If [relations are resolve](requesting-pages.md#resolving-related-stories) the correct Block type is cast |
+| multi-options (stories)  | [`Block`]      | If [relations are resolved](requesting-pages.md#resolving-related-stories) the correct Block type is cast |
 | single option (stories)  | None           | Is not cast. Original value returned                                      |
-| single options (stories) | [`Block`]      | If [relations are resolve](requesting-pages.md#resolving-related-stories) the correct Block type is cast |
-| asset                    | `Asset`\|`Image` | Checks the file extension and casts to the appropiate class             |
-| multi-asset              | `MultiAsset`   | Contains a Collection of Asset and/or Image Fields. `__toString` retuns a comma delimited list of filenames                        |
+| single options (stories) | [`Block`]      | If [relations are resolved](requesting-pages.md#resolving-related-stories) the correct Block type is cast |
+| asset                    | `Asset`\|`Image` | Checks the file extension and casts to the appropriate class             |
+| multi-asset              | `MultiAsset`   | Contains a Collection of Asset and/or Image Fields. `__toString` returns a comma delimited list of filenames                        |
 | link (story)             | `StoryLink`    |                                                                           |
 | link (url)               | `UrlLink`      | `toString()` prints the URL                                               |
 | link (email)             | `EmailLink`    | `toString()` prints the email address                                     |
@@ -38,7 +38,7 @@ Listed below is how we transform each of the built in fieldtypes. The Field clas
 
 ## Custom Fields {#custom-fields}
 
-Custom Fields can be used in several ways and must extend either an existing field or the `Riclep\Storyblok\Field` abstract class. If extending the abstract class be sure to implement the `toString()` method to allow this field to be easly used in Blade templates. A Field’s constructor takes the content from Storyblok and a reference to the Block it is part of. Fields are free to edit their contents any way you see fit.
+Custom Fields can be used in several ways and must extend either an existing field or the `Riclep\Storyblok\Field` abstract class. If extending the abstract class be sure to implement the `toString()` method to allow this field to be easily used in Blade templates. A Field’s constructor takes the content from Storyblok and a reference to the Block it is part of. Fields are free to edit their contents any way you see fit.
 
 ### Override the default field classes
 
@@ -69,7 +69,7 @@ A Class matching the Studly case version of the Block’s name then field’s na
 
 ### Manually casting Fields
 
-If you need more precise control you can manually cast a Block’s Fields using the Block’s `$cast` property. Below we cast `release_date` to the built-in `Datetime` Field and `image` to a custom `HeroImage` Field.
+If you need more precise control you can manually cast a Block’s Fields using the Block’s `$_casts` property. Below we cast `release_date` to the built-in `Datetime` Field and `image` to a custom `HeroImage` Field.
 
 ```php
 <?php
@@ -90,7 +90,7 @@ class Postcast extends Block
 ```
 
 > [!NOTE]
-> If you are making a custom Field for one of the built-in types it’s best to extend the built-in class to take advantage of any existing functionality such as converting rich-text content or ArrayAccess and Interator functionality on MultiAsset fields.
+> If you are making a custom Field for one of the built-in types it’s best to extend the built-in class to take advantage of any existing functionality such as converting rich-text content or ArrayAccess and Iterator functionality on MultiAsset fields.
 
 ## The Rich Text field {#rich-text-field}
 

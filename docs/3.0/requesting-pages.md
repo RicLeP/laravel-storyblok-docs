@@ -8,7 +8,7 @@ description: 'Methods for querying stories, folders, and relations from Storyblo
 Pages in Storyblok can be requested via their slug or UUID. If using the [catch-all route](installation.md#routing) we do the following:
 
 ```php
-// use Riclep\Storyblok\StoryblokFacade as StoryBlok;
+// use Riclep\Storyblok\StoryblokFacade as Storyblok;
 
 public function show($slug = 'home')
 {
@@ -39,7 +39,7 @@ If you need to pass more data to blade just pass an array of variables to the `r
 namespace App\Http\Controllers;
 
 use App\Storyblok\Folders\Episodes;
-use Riclep\Storyblok\StoryblokFacade as StoryBlok;
+use Riclep\Storyblok\StoryblokFacade as Storyblok;
 
 class EpisodeController extends Controller
 {
@@ -67,7 +67,7 @@ You don’t have to use the `render()` method, simply passing the Page object to
 namespace App\Http\Controllers;
 
 use App\Storyblok\Folders\Episodes;
-use Riclep\Storyblok\StoryblokFacade as StoryBlok;
+use Riclep\Storyblok\StoryblokFacade as Storyblok;
 
 class EpisodeController extends Controller
 {
@@ -89,7 +89,7 @@ When you link to other stories using single or multi-option fields in Storyblok 
 
 namespace App\Http\Controllers;
 
-use Riclep\Storyblok\StoryblokFacade as StoryBlok;
+use Riclep\Storyblok\StoryblokFacade as Storyblok;
 
 class EpisodeController extends Controller
 {
@@ -125,13 +125,13 @@ class Postcast extends Block
 ```
 
 > [!NOTE]
-> Using this mention of resolving relations will require additional API calls but the data will be cached after being requested.
+> Using this method of resolving relations will require additional API calls but the data will be cached after being requested.
 
 ### Unpublished relations
 
 **Since 2.7.4**
 
-If you link to an unpublished Story in one of your Multi-Option relations they are filtered out of the Collection of related Pages. If you need to know if a relation was removed from a Block set it’s `$_filterRelations` property to false. This wil return all valid relations as normal and `null` for failed relations. You can now handle this as required in your code.
+If you link to an unpublished Story in one of your Multi-Option relations they are filtered out of the Collection of related Pages. If you need to know if a relation was removed from a Block set it’s `$_filterRelations` property to false. This will return all valid relations as normal and `null` for failed relations. You can now handle this as required in your code.
 
 For Single-Option relations `null` will be returned if the relation could not be resolved.
 
@@ -150,7 +150,7 @@ class Home extends Block
 
 ### Automatically resolving relations
 
-It’s also possible to automatically resolve relations. On any Block class set `$_autoResolveRelations` to `true`. It’s recommended to pass the array of relations to the `read()` method instead of autoresolving them as this minimising the API calls.
+It’s also possible to automatically resolve relations. On any Block class set `$_autoResolveRelations` to `true`. It’s recommended to pass the array of relations to the `read()` method instead of autoresolving them as this minimising API calls.
 
 ```php
 <?php
@@ -191,6 +191,6 @@ $block->inverseRelation('foreign_relationship_field', 'single');
 // requesting related stories of only specific component types
 $block->inverseRelation('foreign_relationship_field', 'multi', 'component1,component2');
 
-// requesting related stories of any type which start with the specificed slug
+// requesting related stories of any type which start with the specified slug
 $block->inverseRelation('foreign_relationship_field', 'multi', null, ['starts_with' => 'some_slug/']);
 ```

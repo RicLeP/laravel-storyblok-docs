@@ -20,7 +20,7 @@ description: 'Overview of the Laravel Storyblok package for building headless CM
 
 This package allows you to use fantastic [Storyblok](https://www.storyblok.com/) headless CMS with the amazing [Laravel](https://laravel.com/) PHP framework. It’s designed to try and feel natural to Laravel developers and part of the ecosystem whilst also converting Storyblok’s API JSON responses into something powerful with minimal effort.
 
-Verions 3 is updated to use the new official Storyblok PHP libraries.
+Version 3 is updated to use the new official Storyblok PHP libraries.
 
 ## Key Features
 

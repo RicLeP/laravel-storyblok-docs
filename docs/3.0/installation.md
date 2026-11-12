@@ -39,49 +39,26 @@ STORYBLOK_OAUTH_TOKEN=your_oauth_token
 
 The webhook handler responds to `publish`, `unpublish` and `delete` Story webhooks. In Storyblok’s settings add the ‘Story published & unpublished’ [webhook URL](https://www.storyblok.com/docs/guide/in-depth/webhooks) as so: https://[yourdomain]/api/laravel-storyblok/webhook/publish. Make sure this is the exact URL as the webhook will not follow redirections on your server such as going from www to non-www. Next create your webhook secret in Storyblok and copy this to your `.env` file.
 
-In **Laravel 11+** register the event listeners in `App\Providers\AppServiceProvider`. See the [Laravel docs for more on events](https://laravel.com/docs/12.x/events#registering-events-and-listeners).
+In **Laravel 11+** register the event listeners in `App\Providers\AppServiceProvider`. See the [Laravel docs for more on events](https://laravel.com/docs/events#registering-events-and-listeners).
 
 ```php
+use Illuminate\Support\Facades\Event;
 use Riclep\Storyblok\Events\StoryblokPublished;
 use Riclep\Storyblok\Events\StoryblokUnpublished;
 use Riclep\Storyblok\Listeners\ClearCache;
 
 public function boot(): void
-    {
-        Event::listen(
-            StoryblokPublished::class,
-            ClearCache::class,
-        );
+{
+    Event::listen(
+        StoryblokPublished::class,
+        ClearCache::class,
+    );
 
-        Event::listen(
-            StoryblokUnpublished::class,
-            ClearCache::class,
-        );
-    }
-```
-
-In **Laravel 10** register the event listeners in `App\Providers\EventServiceProvider`. See the [Laravel docs for more on events](https://laravel.com/docs/10.x/events#registering-events-and-listeners).
-
-```php
-use Riclep\Storyblok\Events\StoryblokPublished;
-use Riclep\Storyblok\Events\StoryblokUnpublished;
-use Riclep\Storyblok\Listeners\ClearCache;
-
-/**
- * The event listener mappings for the application.
- *
- * @var array
- */
-protected $listen = [
-    // published webhook
-    StoryblokPublished::class => [
-		ClearCache::class
-	],
-	// unpublished / deleted webhook
-	StoryblokUnpublished::class => [
-		ClearCache::class
-	]
-];
+    Event::listen(
+        StoryblokUnpublished::class,
+        ClearCache::class,
+    );
+}
 ```
 
 > [!NOTE]

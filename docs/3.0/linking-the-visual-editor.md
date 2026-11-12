@@ -75,10 +75,14 @@ To enable live preview set `live_preview` to `true` and specify the wrapper `liv
 You’ll need to create a route to process the requests from the Storyblok bridge. It `POST`s the payload from Storyblok to the current URL and returns a new HTML stub of the changes.
 
 ```php
-Route::post('/{slug?}', '\Riclep\Storyblok\Http\Controllers\LiveContentController@show')
+use Illuminate\Foundation\Http\Middleware\ValidateCsrfToken;
+use Riclep\Storyblok\Http\Controllers\LiveContentController;
+use Riclep\Storyblok\Http\Middleware\StoryblokEditor;
+
+Route::post('/{slug?}', [LiveContentController::class, 'show'])
     ->where('slug', '(.*)')
-    ->withoutMiddleware([\App\Http\Middleware\VerifyCsrfToken::class])
-    ->middleware([\Riclep\Storyblok\Http\Middleware\StoryblokEditor::class]);
+    ->withoutMiddleware([ValidateCsrfToken::class])
+    ->middleware([StoryblokEditor::class]);
 ```
 
 Finally, we need to disable the `TrimStrings` middleware for the route by editing the `bootstrap/app.php` file and checking the request for the `sbLiveData` item.
@@ -99,7 +103,7 @@ return Application::configure(basePath: dirname(__DIR__))
 > [!NOTE]
 > Ensure this route is at the end of your `web.php` file so it doesn’t replace other routes in your application.
 
-As it needs to make a round trip to your server for each change it will be effected by latency but most modern hosting is fast enough for a good experience. You can disable this feature by setting `live_preview` to `false`.
+As it needs to make a round trip to your server for each change it will be affected by latency but most modern hosting is fast enough for a good experience. You can disable this feature by setting `live_preview` to `false`.
 
 > [!WARNING]
 > This is still an experimental feature and may not work in 100% of circumstances.

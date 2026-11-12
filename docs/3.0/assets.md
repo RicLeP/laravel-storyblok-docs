@@ -25,8 +25,8 @@ Storyblok allows you to serve assets from their platform using a custom domain. 
 ```php
 [
     // rest of configuration
-    `asset_domain` => 'custom.asset.domain',
-    `image_service_domain` => 'custom.imageservice.domain'
+    'asset_domain' => 'custom.asset.domain',
+    'image_service_domain' => 'custom.imageservice.domain'
 ]
 ```
 

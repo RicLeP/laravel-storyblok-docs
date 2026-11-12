@@ -7,6 +7,141 @@ description: 'Release notes and new feature highlights across Laravel Storyblok 
 
 See the [releases page](https://github.com/RicLeP/laravel-storyblok/releases) for more details.
 
+## Version 3.0.3 {#3-0-3}
+
+- Fixed 1-indexed pagination on `Folder` queries so requesting page 1 properly queries the first page from Storyblok.
+- Refined story cache keys to incorporate language and fallback language settings to prevent translation collisions.
+
+## Version 3.0.2 {#3-0-2}
+
+- Fixed folder cache keys by hashing serialized request DTO parameters.
+- Improved `StoriesApi` query execution when filtering by slug or UUID.
+
+## Version 3.0.1 {#3-0-1}
+
+- Fixed relationship resolving and link resolution when requesting stories in draft and published modes.
+- Fixed `_filterRelations` handling on related blocks with the official API client.
+
+## Version 3.0.0 {#3-0-0}
+
+- **Official Storyblok PHP Client**: Upgraded to use Storyblok's official Content API (`storyblok/php-content-api-client`) and Management API (`storyblok/php-management-api-client`) PHP packages.
+- **PHP & Laravel Requirements**: Added support for PHP 8.3, 8.4, and 8.5; requires Laravel 11, 12, or 13 (dropped Laravel 10).
+- **Reworked Folders**: Custom `Folder` classes now configure default query settings fluently inside `setDefaults()`.
+- **Strongly Typed Filtering & Sorting**: Folders use typed DTOs from `Storyblok\Api\Domain\Value\QueryParameter\*` (such as `PublishedAtGt`, `PublishedAtLt`, `UpdatedAtGt`, `StoryLevel`) and typed sort direction enums (`Direction::Asc`, `Direction::Desc`).
+- **1-Indexed Pagination**: Folder pagination is 1-indexed and requests only the required page on demand.
+- **Multilingual Caching**: Story and Folder cache keys now include language, fallback language, and request parameter hashes.
+
+## Version 2.54.0 {#2-54-0}
+
+- Enhanced TipTap RichText figure handling, captions, and attributes.
+- Added RichText field parsing inside Table field cells.
+- Fixed relation resolution for deeply nested multi-option fields.
+
+## Version 2.53.0 {#2-53-0}
+
+- Added support for Laravel 13.
+- Updated dependencies for PHP 8.4 compatibility.
+
+## Version 2.52.0 {#2-52-0}
+
+- Updated `storyblok/storyblok-php-client` to 2.9.0.
+- Improved link resolving with Storyblok API v2.
+
+## Version 2.51.0 {#2-51-0}
+
+- Added support for Laravel 12.
+
+## Version 2.50.0 {#2-50-0}
+
+- Added ability to override default field classes via `App\Storyblok\Fields\Default`.
+- Added support for custom default `Image`, `Asset`, `RichText`, and `Markdown` field implementations.
+
+## Version 2.49.0 {#2-49-0}
+
+- Added support for rich-text content inside Table fields.
+- Added TipTap figure extension enhancements and caption rendering.
+
+## Version 2.48.0 {#2-48-0}
+
+- Added Blade SVG and responsive `<picture>` element helpers.
+- Improved focal point alignment calculations for transformed images.
+
+## Version 2.47.0 {#2-47-0}
+
+- Added multi-assets sorting support.
+- Added support for nullable pages when requesting missing stories.
+
+## Version 2.46.0 {#2-46-0}
+
+- Added `storyblok:clear-cache` Artisan command.
+- Improved webhook event listeners and cache tags invalidation.
+
+## Version 2.45.0 {#2-45-0}
+
+- Enhanced visual editor bridge script with fallback loading for live preview.
+- Added support for custom editor bridge options.
+
+## Version 2.44.0 {#2-44-0}
+
+- Added configurable `DateTime` format strings and Carbon casting.
+- Added configurable schema depth for Spatie Schema.org integration.
+
+## Version 2.43.0 {#2-43-0}
+
+- Added support for taggable cache stores with automatic cache tag assignment (`storyblok`).
+
+## Version 2.42.0 {#2-42-0}
+
+- Added `resolve_links` configuration option (`story`, `url`, `link`).
+
+## Version 2.41.0 {#2-41-0}
+
+- Added support for HTML attribute-based editor links (`{!! $story->editorLink(true) !!}`).
+
+## Version 2.40.0 {#2-40-0}
+
+- Added configurable `denylist` in `storyblok.php` to prevent catch-all routes from handling bot or admin requests.
+
+## Version 2.30.0 {#2-30-0}
+
+- Enhanced inverse relationships to return full headers and transformed stories.
+
+## Version 2.29.0 {#2-29-0}
+
+- Added support for registering custom TipTap extensions in RichText fields.
+
+## Version 2.28.0 {#2-28-0}
+
+- Added support for custom asset domain (`asset_domain`) and custom image service domain (`image_service_domain`).
+
+## Version 2.27.0 {#2-27-0}
+
+- Added support for PHP 8.2, PHP 8.3, and Laravel 11.
+
+## Version 2.26.0 {#2-26-0}
+
+- Fixed nested block default values and custom casting resolution.
+
+## Version 2.25.0 {#2-25-0}
+
+- Added `TrimStrings` middleware exception handling for live preview requests.
+
+## Version 2.24.0 {#2-24-0}
+
+- Updated Storyblok Richtext Renderer dependency.
+
+## Version 2.23.0 {#2-23-0}
+
+- Added page-based component view resolution hierarchy (`storyblok.pages.page-type.blocks.block-name`).
+
+## Version 2.22.0 {#2-22-0}
+
+- Fixed default field values on `Block` instances using `$_defaults`.
+
+## Version 2.21.1 {#2-21-1}
+
+- Fixed case-sensitive file extension matching for multi-asset image fields.
+
 ## Version 2.21.0 {#2-21-0}
 
 - Laravel 10 support!

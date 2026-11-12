@@ -1,30 +1,51 @@
 ---
 title: 'Exception handling'
-description: 'How to handle API exceptions and display custom error pages for Storyblok content.'
+description: 'How to handle API exceptions and display custom error pages for Storyblok content in Laravel 11, 12, and 13.'
 ---
 
 # Exception handling
 
 ---
 
-There will be times when the Pages you request from Storyblok are not available. When this happens a `Storyblok\ApiException` is returned but you’ll probably want to show your visitors a 404 error page. This is easily done by editing the `render()` method found in the `app\Exceptions\Handler.php` class.
+When requesting stories or content from Storyblok, pages may occasionally be missing, unpublished, or blocked by a denylist. When this happens, exceptions such as `DenylistedUrlException` or Symfony HTTP client exceptions are thrown. To deliver the best user experience and keep error tracking clean, you should catch these exceptions and return custom error pages (such as a 404 view) while preventing error logging services from reporting routine missing pages.
 
-Here is a simple example that covers most use cases, first we check if debug mode is enabled - if it is we return the raw exception developers love. Next we check if a Storyblok exception is thrown and that the status code is 404 returning the 404 view. Finally, we return a generic error page that displays the error code and message setting the status code to 500 to ensure the browser renders it to the visitor.
+In **Laravel 11, 12, and 13**, all exception handling configuration is defined in `bootstrap/app.php` using the `withExceptions()` closure.
+
+## Configuring `bootstrap/app.php` {#configuring-bootstrap}
+
+You can configure exception reporting and rendering in `bootstrap/app.php` as shown below:
 
 ```php
-public function render($request, Exception $exception)
-    {
-		if (config('app.debug')) {
-			return parent::render($request, $exception);
-		}
+use Illuminate\Foundation\Application;
+use Illuminate\Foundation\Configuration\Exceptions;
+use Illuminate\Foundation\Configuration\Middleware;
+use Illuminate\Http\Request;
+use Riclep\Storyblok\Exceptions\DenylistedUrlException;
+use Symfony\Component\HttpClient\Exception\ClientException;
+use Throwable;
 
-		if ($exception instanceof Storyblok\ApiException && $exception->getCode() === 404) {
-			return response()->view('errors.404', [], $exception->getCode());
-		}
+return Application::configure(basePath: dirname(__DIR__))
+    ...
+    ->withExceptions(function (Exceptions $exceptions): void {
+        if (app()->isProduction()) {
+            $exceptions->render(function (DenylistedUrlException $exception) use ($renderError) {
+                // Render 404 for denylisted URLs
+            });
 
-        return response()->view('errors.generic', [
-        	'code' => $exception->getCode(),
-        	'message' => $exception->getMessage(),
-		], 500);
-    }
+            $exceptions->render(function (ClientException $exception) use ($renderError) {
+                // Render 404 when Storyblok API client returns 404 client exceptions
+            });
+        }
+    })->create();
 ```
+
+## Ignoring Expected Errors {#ignoring-expected-errors}
+
+When visitors or web crawlers attempt to access non-existent Storyblok pages or blocked URLs, Storyblok throws a `ClientException` or a `DenylistedUrlException`. Adding these classes to `$exceptions->dontReport([...])` ensures that external error tracking services (such as Sentry, Bugsnag, or Flare) are not inundated with non-critical 404 events, keeping issue logs actionable.
+
+## Development vs Production {#development-vs-production}
+
+Wrapping custom error view renderers inside `if (app()->isProduction()) { ... }` allows local development and staging environments with `APP_DEBUG=true` to display rich interactive error pages (like Laravel Ignition), making debugging API issues and missing components straightforward.
+
+> [!NOTE]
+> If you use Sentry for error tracking, you can register `\Sentry\Laravel\Integration::handles($exceptions);` inside the `$exceptions` configuration closure.

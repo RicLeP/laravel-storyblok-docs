@@ -57,7 +57,7 @@ class MyComponent extends BaseBlock
 > [!WARNING]
 > Ensure you have set your Space ID and OAUTH Token in the .env file.
 
-You can also generate Blade and SCSS files readily configured with the Block’s name by passing a `-s` or `-b` argument to the command.
+You can also generate Blade files readily configured with the Block’s name by passing `-b` argument to the command.
 
 ```console
 php artisan ls:block MyComponent -b
@@ -76,27 +76,14 @@ Creates `resources/views/storyblok/components/my-component.blade.php`
 </div>
 ```
 
-```console
-php artisan ls:block MyComponent -s
-```
-
-Creates `resources/sass/blocks/_my-component.scss` and updates the app.scss file.
-
-```scss
-.my-component {
-
-}
-```
-
 ### Custom generator stubs
 
 You can customise any of the stubs used for creating files by making a `/resources/stubs/storyblok` folder containing the following files. You only need to create those you wish to customise.
 
 * `/resources/stubs/storyblok/block.stub` - Block class template
 * `/resources/stubs/storyblok/block.blade.stub` - Block Blade template
-* `/resources/stubs/storyblok/block.scss.stub` - Block SCSS template
 
-Each stub contains ‘Dummy’ references that get replaced during generation so it’s recommended you copy and adpt the files from [GitHub](https://github.com/RicLeP/laravel-storyblok/tree/master/src/Console/stubs).
+Each stub contains ‘Dummy’ references that get replaced during generation so it’s recommended you copy and adapt the files from [GitHub](https://github.com/RicLeP/laravel-storyblok/tree/master/src/Console/stubs).
 
 ---
 
@@ -129,8 +116,6 @@ $componentPath = ['page', 'podcast', 'episodes', 'episode'];
 ## Accessing fields {#accessing-fields}
 
 Blocks store their fields in a Laravel Collection on the `$_fields` property. You can access them directly on the Block’s object. See the [fields documentation](fields.md) for more information on how to access them and their transformations.
-
-```php
 
 ```php
 echo $someBlock->someField;

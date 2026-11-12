@@ -20,7 +20,7 @@ Create the following folder `resources/views/storyblok/pages`, this is the defau
 
 ## Determining the view to use {#determining-view}
 
-Every `Page` has a `views()` method that returns an array of possible views to pass to Laravel’s `view()->first()` function ([see the Laravel docs](https://laravel.com/docs/7.x/views)). The package looks for a Blade file matching the name of the [Content Type](https://www.storyblok.com/docs/the-key-concept#content-types) component used for the current page in Storyblok, that doesn’t exist then `page.blade.php` will be tried.
+Every `Page` has a `views()` method that returns an array of possible views to pass to Laravel’s `view()->first()` function ([see the Laravel docs](https://laravel.com/docs/views)). The package looks for a Blade file matching the name of the [Content Type](https://www.storyblok.com/docs/the-key-concept#content-types) component used for the current page in Storyblok, that doesn’t exist then `page.blade.php` will be tried.
 
 If you have a Content Type component called `episode` being used for the page then it will look for an `episode.blade.php` file in `resources/views/storyblok/pages`.
 
@@ -40,7 +40,9 @@ In the `episode` example above you’d create an `Episode` class like so:
 
 namespace App\Storyblok\Pages;
 
-class Episode extends App\Storyblok\Page
+use App\Storyblok\Page;
+
+class Episode extends Page
 {
 
 }
@@ -68,7 +70,7 @@ The selected view will be passed the complete `Page` object in a variable called
 
 ```
 
-If the `text` field was rich-text it would automatically be converted in a `Riclep\Storyblok\Fields\RictText` class. Printing it to screen will automatically covert it to HTML.
+If the `text` field was rich-text it would automatically be converted in a `Riclep\Storyblok\Fields\RichText` class. Printing it to screen will automatically covert it to HTML.
 
 The nested blocks will be transformed into `App\Storyblok\Block` classes and all of their fields processed and converted. You can of course override this. If the JSON for the block looked like this:
 

@@ -61,7 +61,7 @@ class SomeBlock extends Block
 To render a form do the following in your Blade view. This will use the stubbed fields installed earlier. Feel free to customise them as required.
 
 ```blade
-{{ $story->form->render() }}
+{!! $story->form->render() !!}
 ```
 
 By default the form will post to the same URL as the form’s page in Storyblok. Add a `post` route in your `web.php` file. You can customise the form’s action by editing `lsf-form.blade.php`.

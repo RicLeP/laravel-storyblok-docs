@@ -48,10 +48,10 @@ namespace App\Storyblok;
 
 use App\Storyblok\Traits\TruncateStrings;
 
-class SomeComponent extends \App\Storyblok\DefaultBlock
+class SomeComponent extends \App\Storyblok\Block
 {
     use TruncateStrings;
 
-    protected $toTruncate = ['introduction'];
+    protected array $toTruncate = ['introduction'];
 }
 ```

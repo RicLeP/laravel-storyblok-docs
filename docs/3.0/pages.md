@@ -100,7 +100,7 @@ namespace App\View\Components;
 
 use Exception;
 use Illuminate\View\Component;
-use Riclep\Storyblok\StoryblokFacade as StoryBlok;
+use Riclep\Storyblok\StoryblokFacade as Storyblok;
 
 class Header extends Component
 {
@@ -131,26 +131,23 @@ Whilst it may be tempting to share lot’s of content this way it can lead to cl
 namespace App\Providers;
 
 use Illuminate\Support\Facades\View;
-use Riclep\Storyblok\StoryblokFacade as StoryBlok;
+use Illuminate\Support\ServiceProvider;
+use Riclep\Storyblok\StoryblokFacade as Storyblok;
 
 class AppServiceProvider extends ServiceProvider
 {
     /**
      * Register any application services.
-     *
-     * @return void
      */
-    public function register()
+    public function register(): void
     {
         //
     }
 
     /**
      * Bootstrap any application services.
-     *
-     * @return void
      */
-    public function boot()
+    public function boot(): void
     {
         View::share('shared-key', Storyblok::read('/shared/global-data'));
     }

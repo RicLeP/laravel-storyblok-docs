@@ -16,8 +16,6 @@ echo $folder->totalStories;
 
 You can generate Folder classes using the built-in the `ls:folder` Artisan command. The folder name will be used for the class name and also set the folder’s slug but you can update this as required.
 
-```bash
-
 ```console
 php artisan ls:folder FolderName
 ```
@@ -206,7 +204,7 @@ class NewsController extends Controller
 }
 ```
 
-The package uses Laravel’s `LengthAwarePaginator` [see the Laravel docs](https://laravel.com/docs/9.x/pagination#displaying-pagination-results) for customisation options. 
+The package uses Laravel’s `LengthAwarePaginator` [see the Laravel docs](https://laravel.com/docs/pagination#displaying-pagination-results) for customisation options. 
 
 To display the standard pagination links in your view do the following:
 
@@ -277,7 +275,7 @@ Here’s a more complete controller that loads the root `news` page Story and ad
 namespace App\Http\Controllers;
 
 use App\Storyblok\Folders\News;
-use Riclep\Storyblok\StoryblokFacade as StoryBlok;
+use Riclep\Storyblok\StoryblokFacade as Storyblok;
 
 class NewsController extends Controller
 {
