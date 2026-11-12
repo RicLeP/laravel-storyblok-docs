@@ -114,12 +114,13 @@ By default the relationship’s component name will be used to determine which C
 namespace App\Storyblok\Blocks;
 
 use App\Storyblok\Block;
+use App\Storyblok\Blocks\Guest;
 
-class Postcast extends Block
+class Podcast extends Block
 {
     public $_resolveRelations = [
        'hosts',
-       'guests' => App\Storyblok\Blocks\Guest::class,
+       'guests' => Guest::class,
     ];
 }
 ```

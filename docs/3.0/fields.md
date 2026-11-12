@@ -80,7 +80,7 @@ use Riclep\Storyblok\Fields\DateTime;
 use Riclep\Storyblok\Block;
 use App\Storyblok\Fields\HeroImage;
 
-class Postcast extends Block
+class Podcast extends Block
 {
 	protected array $_casts = [
 		'release_date' => DateTime::class,
@@ -114,7 +114,7 @@ $field->content();
 
 You load custom TipTap extensions to override how they rendered. To do so load them in a ServiceProvider boot method.
 
-Make sure you always load the Storyblok extension. The package in include a `<figure>` extension with support for caption and image
+Make sure you always load the Storyblok extension. The package includes a `<figure>` extension with support for caption and image
 resizing.
 
 ```php
@@ -135,8 +135,8 @@ public function boot(): void
 }
 ```
 
-To resize images using the `TipTapFigure` extension pass the set your transformations to the config file. Do not load
-extensions directly in the config file as this will now allow you to cache your config.
+To resize images using the `TipTapFigure` extension pass your transformations to the config file. Do not load
+extensions directly in the config file as this will not allow you to cache your config.
 
 ```php
 

@@ -29,7 +29,7 @@ trait TruncateStrings
 
 	/**
      * A fairly pointless method to truncate selected content to 10 words.
-     * It is run when automatically when this Trait is used on a class.
+     * It is run automatically when this Trait is used on a class.
      */
     public function initTruncateStrings() {
 		if (!empty($this->toTruncate)) {
@@ -44,11 +44,12 @@ trait TruncateStrings
 ```php
 <?php
 
-namespace App\Storyblok;
+namespace App\Storyblok\Blocks;
 
 use App\Storyblok\Traits\TruncateStrings;
+use Riclep\Storyblok\Block;
 
-class SomeComponent extends \App\Storyblok\Block
+class SomeComponent extends Block
 {
     use TruncateStrings;
 

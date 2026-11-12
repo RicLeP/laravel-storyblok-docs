@@ -130,7 +130,7 @@ Just like with Laravel’s models sometimes you want to manipulate the data each
 ```php
 <?php
 
-namespace App;
+namespace App\Storyblok\Blocks;
 
 use Riclep\Storyblok\Block;
 
@@ -155,7 +155,7 @@ You’re not limited to only transforming existing fields, you can also create n
 ```php
 <?php
 
-namespace App;
+namespace App\Storyblok\Blocks;
 
 use Riclep\Storyblok\Block;
 
@@ -178,14 +178,14 @@ And a more complex example: you have a component in Storyblok that allows the us
 ```php
 <?php
 
-namespace App\Storyblok;
+namespace App\Storyblok\Blocks;
 
 use ColorContrast\ColorContrast;
 use Riclep\Storyblok\Block;
 
 class ServiceBlock extends Block
 {
-    # creates text_class content attribute containing the contrasting class name
+    // creates text_class content attribute containing the contrasting class name
 	public function getTextClassAttribute() {
 		$contrast = new ColorContrast();
 		$complimentary = $contrast->complimentaryTheme($this->_fields['colour']->color);
@@ -266,7 +266,7 @@ class Custom extends Block
 > When casting fields to custom Classes make sure you extend an existing Field type such as `Riclep\Storyblok\Field` or `Riclep\Storyblok\Fields\Image`  and implement the `__toString()` method.
 
 > [!NOTE]
-> $casts was renamed to $_casts in version 2.2.1 to advoid field name classes
+> `$casts` was renamed to `$_casts` in version 2.2.1 to avoid field name clashes.
 
 ---
 

@@ -5,7 +5,7 @@ description: 'Handling and manipulating Storyblok asset fields in Laravel applic
 
 # Assets
 
-Assets are a special type of Field with additional functionality. Where possible to try to detect the type of file upload and return an appropriate Field. `Image` classes are returned when the file has one of the following extensions: ‘.jpg’, ‘.jpeg’, ‘.png’, ‘.gif’, ‘.webp’. See the [Image documentation](images.md) for more.
+Assets are a special type of Field with additional functionality. Where possible we try to detect the type of file uploaded and return an appropriate Field. `Image` classes are returned when the file has one of the supported image extensions (by default: `.jpg`, `.jpeg`, `.png`, `.gif`, `.webp`, `.jfif`, `.heic`, `.avif`). See the [Image documentation](images.md) for more.
 
 ## Checking for a file
 
@@ -16,7 +16,7 @@ $myAsset->hasFile();
 ```
 
 > [!NOTE]
-> When using multi-asset fields we only receive a URL from Storyblok the Asset|Image fields are less complete.
+> When using multi-asset fields we only receive a URL from Storyblok, so the Asset/Image fields are less complete.
 
 ## Custom asset domains {#custom-domains}
 

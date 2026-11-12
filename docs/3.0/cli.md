@@ -14,7 +14,7 @@ description: 'Artisan commands for generating Storyblok classes and managing com
 Artisan commands for working with the Storyblok API in Laravel.
 
 > [!NOTE]
-> Since version 2.15.0 of Laravel Storyblok Artisan commands for working with the API are separate package. Any commands for generating classes for Laravel Storyblok are still part of that package.
+> Since version 2.15.0 of Laravel Storyblok, Artisan commands for working with the Storyblok Management API are part of a separate package (`riclep/laravel-storyblok-cli`). Any commands for generating local classes (like `make:block`, `ls:block`, `ls:page`) are part of the core package.
 
 ## Installation
 

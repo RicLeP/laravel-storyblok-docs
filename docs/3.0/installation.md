@@ -19,7 +19,7 @@ composer require riclep/laravel-storyblok
 
 After installing the package update your `.env` file with your Storyblok Content Delivery API keys and specify if you want to receive draft content.
 
-```php
+```env
 STORYBLOK_PREVIEW_API_KEY=your_preview_key
 STORYBLOK_PUBLIC_API_KEY=your_public_key
 STORYBLOK_DRAFT=true
@@ -30,7 +30,7 @@ STORYBLOK_WEBHOOK_SECRET=someComplexKeySuchAsAHash #free Storyblok plans don’t
 
 To use the Artisan generator commands you’ll also need to specify your Space ID and OAuth Token.
 
-```php
+```env
 STORYBLOK_SPACE_ID=your_space_id
 STORYBLOK_OAUTH_TOKEN=your_oauth_token
 ```
@@ -73,7 +73,7 @@ If you need to test or debug your webhooks locally I highly recommend [ngrok](ht
 
 Next you need to publish the default Page and Block classes. These will be used for all your Storyblok Pages and Components but can be overridden by your own classes. The default classes are published to `app/Storyblok`. This will also publish a `storyblok.php` configuration file.
 
-```php
+```bash
 php artisan vendor:publish --tag=storyblok
 ```
 
@@ -85,9 +85,10 @@ The easiest way to get started is to add a catchall route to your `routes/web.ph
 
 ```php
 // routes/web.php
+use Riclep\Storyblok\Http\Controllers\StoryblokController;
 
 // Catch-all route for Storyblok - this may lead to a lot of 404s from their API as it matches everything
-Route::get('/{slug?}', '\Riclep\Storyblok\Http\Controllers\StoryblokController@show')->where('slug', '(.*)');
+Route::get('/{slug?}', [StoryblokController::class, 'show'])->where('slug', '(.*)');
 
 // Or a more specific route that doesn't match the img folder
 Route::get('/{slug?}', [StoryblokController::class, 'show'])->where('slug', '^(?!img).*$');
@@ -119,19 +120,7 @@ The package also creates a named route that posts to `storyblok.clear-cache` whi
 
 To finalise setting up the package see [linking to the visual editor](linking-the-visual-editor.md).
 
-## VueJS Configuration {#vue-js}
-
-A big part of the magic of Storyblok is the live editor. This uses special HTML comments to link your HTML to their editor. However, VueJS will remove comments by default so make sure you update your VueJS app configuration as so:
-
-```javascript
-const app = new Vue({
-	el: '#app',
-	comments: true,
-    ...
-});
-```
-
-To add the link to your code use the Block’s `@{!! $someBlock->editorLink() !!}` method, for more see [linking to the visual editor](linking-the-visual-editor.md).
+To add the link to your code use the Block’s `{!! $someBlock->editorLink() !!}` method, this adds a HTML comment prior the the block when in edit mode. You can also add a attribute to an HTML tag `<section {{ $someBlock->editorLink(true) }}>`. For more see [linking to the visual editor](linking-the-visual-editor.md).
 
 > [!WARNING]
 > If you forget to update your VueJS configuration you can waste many hours debugging why the visual editor link isn’t working! 😅

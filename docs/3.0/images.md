@@ -93,7 +93,7 @@ The package includes a driver for Imgix’s web proxy allowing you to take advan
 
 **Specifying the transformer**
 
-There are two ways to user a transformer - set the default transformer class in your Storyblok configuration file with the `image_transformer` key or pass a transformer class to the `transformer()` method before calling `transform()`.
+There are two ways to use a transformer - set the default transformer class in your Storyblok configuration file with the `image_transformer` key or pass a transformer class to the `transformer()` method before calling `transform()`.
 
 ```php
 // resize the image and rotate it 99 degrees - ‘rot’ is a feature of Imgix 
@@ -183,7 +183,7 @@ You can add additional attributes to the `<img>` tag with the third argument wit
 $image->picture('A super image', 'mobile', ['class' => 'hero mb-10', 'id' => 'hero-image']);
 ```
 
-If you don’t like the default view used for generating the `<picture>` element then you can supply your own Blade view with the forth argument
+If you don’t like the default view used for generating the `<picture>` element then you can supply your own Blade view with the fourth argument
 
 ```php
 $image->picture('A super image', 'mobile', ['class' => 'hero mb-10', 'id' => 'hero-image'], 'blocks.picture');
@@ -235,7 +235,7 @@ $field->setTransformations([
         'src' => $field->transform()->resize(400, 400),
         'media' => '(min-width: 800px)',
     ],
-])->picture('The alt text', 'mobile')));
+])->picture('The alt text', 'mobile');
 
 ```
 
@@ -256,7 +256,7 @@ Sometimes you might need your transformations to be used for background images. 
 <div class="hero" style="{{ $image->cssVars() }}"></div>
 ```
 
-Each transformation key is converted to a variable with a value of the transformed URL. Make sure you CSS is set to look for these variables.
+Each transformation key is converted to a variable with a value of the transformed URL. Make sure your CSS is set to look for these variables.
 
 ```scss
 .hero {

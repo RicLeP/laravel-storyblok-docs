@@ -20,35 +20,46 @@ An addon package for Laravel Storyblok that lets you use the Storyblok headless 
 
 ## Installation {#installation}
 
-Install the package using Composer
+Install the package using Composer:
 
-`composer require riclep/laravel-storyblok-forms`
+```bash
+composer require riclep/laravel-storyblok-forms
+```
 
-Publish the package assets selecting Laravel Storyblok Forms - this will copy stub views for each form component.
+Publish the package assets selecting Laravel Storyblok Forms - this will copy stub views for each form component:
 
-`php artisan vendor:publish`
+```bash
+php artisan vendor:publish --tag=storyblok-forms
+```
 
 > [!WARNING]
-> Currently this can fail. If it does manually copy the views from `vendor/riclep/laravel-storyblok-forms/stubs/views/blocks` to your ap’s `resources/views/storyblok` folder.
+> Currently this can fail. If it does, manually copy the views from `vendor/riclep/laravel-storyblok-forms/stubs/views/blocks` to your app’s `resources/views/storyblok` folder.
 
-Tell Laravel Storyblok where to find the Form Block classes but editing your `laravel-storyblok` config file and adding the `Riclep\StoryblokForms` namespace.
+Tell Laravel Storyblok where to find the Form Block classes by editing your `storyblok.php` config file and adding the `Riclep\StoryblokForms` namespace:
 
-`'component_class_namespace' => ['App\Storyblok\\', 'Riclep\StoryblokForms\\'],`
+```php
+'component_class_namespace' => [
+    'App\Storyblok\\',
+    'Riclep\StoryblokForms\\',
+],
+```
 
-Install the Storyblok Components - this will create the required components and component groups in Storyblok. Ensure you have your management key and space ID set up in the `.env`, see [Laravel Storyblok installation docs](https://github.com/RicLeP/laravel-storyblok) installation for details.
+Install the Storyblok Components - this will create the required components and component groups in Storyblok. Ensure you have your management key and space ID set up in `.env`, see [installation docs](installation.md#artisan-commands) for details:
 
-`php artisan lsf:install`
+```bash
+php artisan lsf:install
+```
 
 ## Building forms {#building-forms}
 
-Each form should be created as a new page in Storyblok using the Form (lsf-form) content type created in the installation step.
+Each form should be created as a new page in Storyblok using the Form (`lsf-form`) content type created in the installation step.
 
 Once created attach a form to a page using a Single Option field with a source Stories.
 
-In the `Block` containing your form remember to resolve the relation as you would do for any Laravel Storyblok relationship.
+In the `Block` containing your form remember to resolve the relation as you would do for any Laravel Storyblok relationship:
 
 ```php
-namespace App\Storyblok;
+namespace App\Storyblok\Blocks;
 
 use Riclep\Storyblok\Block;
 

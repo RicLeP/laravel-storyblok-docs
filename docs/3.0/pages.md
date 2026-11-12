@@ -104,12 +104,11 @@ use Riclep\Storyblok\StoryblokFacade as Storyblok;
 
 class Header extends Component
 {
-	public $json;
-
+    public $headerMenu;
 
     public function __construct()
     {
-		$headerMenu = Storyblok::read('/shared/header-menu');
+        $this->headerMenu = Storyblok::read('/shared/header-menu');
     }
 
     public function render()

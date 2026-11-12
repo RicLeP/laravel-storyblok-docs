@@ -5,7 +5,7 @@ description: 'Resolving Blade views and passing nested Storyblok data to templat
 
 # Views
 
-You can loop over the nested Blocks in your Blade template, optionally using `@@include` to pass the data to child views to keep things manageable and reusable as shown below. This lets you quickly build your pages but does limit some of the dynamic nature of being able to create pages in Storyblok using nested components, see the `render()` method below.
+You can loop over the nested Blocks in your Blade template, optionally using `@include` to pass the data to child views to keep things manageable and reusable as shown below. This lets you quickly build your pages but does limit some of the dynamic nature of being able to create pages in Storyblok using nested components, see the `render()` method below.
 
 > [!NOTE]
 > You can quickly scaffold all your component views by running `artisan ls:stub-views`. Use `artisan ls:stub-views -O` to overwrite your current Blade files.
@@ -85,7 +85,6 @@ You can loop over the nested Blocks in your Blade template, optionally using `@@
 				@endforeach
 			</section>
 		@endforeach
-		</div>
 	</main>
 @endsection
 ```
@@ -110,7 +109,6 @@ Alternatively a block can render itself by implementing the `Renderable` trait a
 				@endforeach
 			</section>
 		@endforeach
-		</div>
 	</main>
 @endsection
 ```
