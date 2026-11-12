@@ -1,0 +1,39 @@
+{
+    "$schema": "https://larecipe.saleem.dev/schemas/3.x/navigation.json",
+    "groups": [
+        {
+            "group": "Getting Started",
+            "pages": [
+                "overview",
+                "installation",
+                "configuration",
+                "basic-usage",
+                {
+                    "page": "requesting-pages",
+                    "label": "Requesting pages"
+                },
+                "troubleshooting",
+                {
+                    "page": "exception-handling",
+                    "label": "Exception handling"
+                }
+            ]
+        },
+        {
+            "group": "Advanced Usage",
+            "pages": [
+                "pages",
+                "blocks",
+                "folders",
+                "views"
+            ]
+        },
+        {
+            "group": "Making Content Sing",
+            "pages": [
+                "typography",
+                "images"
+            ]
+        }
+    ]
+}
