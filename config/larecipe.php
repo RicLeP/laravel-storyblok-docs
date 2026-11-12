@@ -26,6 +26,7 @@ return [
         ],
         'integrations' => ['analytics' => [
             'custom' => [
+                'async' => false,
                 'attributes' => [
                     'data-website-id' => 'e188b7fc-b00b-43e6-a8eb-10cb12d35467'
                 ],
