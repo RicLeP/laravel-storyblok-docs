@@ -226,3 +226,50 @@ This project has domain-specific skills available in `**/skills/**`. You MUST ac
 - To filter on a particular test name: `ddev php artisan test --compact --filter=testName` (recommended after making a change to a related file).
 
 </laravel-boost-guidelines>
+
+<!-- larecipe:start -->
+## Documentation (LaRecipe)
+
+This app's docs live in `docs/` and are served by LaRecipe. Docs ship in the same push as the code they describe.
+
+Before you push a branch or open a pull request:
+
+1. Run `php artisan larecipe:affected --uncommitted --base=master` to list the docs pages your change affects.
+2. Update each affected page with the `larecipe-update-docs` skill. Keep unrelated text untouched.
+3. Run `php artisan larecipe:validate` and fix what it reports.
+4. Commit the docs with the code and push them together.
+
+Review mode is `required`: show the user the docs diff and wait for approval before committing it.
+
+Write docs for people first: open each page with the common case in a few short lines, then put options, edge cases and internals after it (in an `<Accordion>` or on a linked page). Order pages from easy to advanced. Agents still read everything in the Markdown twin.
+
+Search and read the docs with the `larecipe` MCP server. Never write configuration or environment values into docs.
+
+### Docs index: Laravel (version 3.0)
+
+23 pages. One line per page: path, title, description. Read a page with the `read_page` tool of the `larecipe` MCP server, or open its file in `docs/`. Refresh this index with `php artisan larecipe:agents-md`.
+
+- `assets`: Assets. Handling and manipulating Storyblok asset fields in Laravel applications.
+- `basic-usage`: Basic usage. Core concepts, view resolution, and basic usage patterns for Laravel Storyblok.
+- `blocks`: Blocks. Creating and managing Block classes for Storyblok components and nested structures.
+- `cli`: Laravel Storyblok Command Line Interface (CLI). Artisan commands for generating Storyblok classes and managing components.
+- `configuration`: Configuration. Overview of configuration options and settings available for Laravel Storyblok.
+- `css-classes`: Laravel Storyblok CSS Class helpers. Generating BEM and context-aware CSS classes for Storyblok components.
+- `embedding-media`: Embedding Media. Embedding external media like YouTube and Twitter into Storyblok fields.
+- `exception-handling`: Exception handling. How to handle API exceptions and display custom error pages for Storyblok content.
+- `fields`: Fields. Working with Storyblok field types, custom casting, and data transformations.
+- `folders`: Folders. Requesting and paginating collections of Storyblok stories within folders.
+- `images`: Images. Transforming images, generating responsive picture elements, and setting focal points.
+- `installation`: Installation. Step-by-step instructions for installing and configuring the Laravel Storyblok package.
+- `laravel-storyblok-forms`: Laravel Storyblok Forms. Building dynamic forms with Storyblok components and Laravel validation.
+- `linking-the-visual-editor`: Linked to the visual editor. Setting up the Storyblok Visual Editor bridge and enabling live preview.
+- `overview`: Laravel Storyblok Overview. Overview of the Laravel Storyblok package for building headless CMS applications in Laravel.
+- `pages`: Pages. Defining and using Page classes to represent and enhance Storyblok stories.
+- `requesting-pages`: Requesting Pages. Methods for querying stories, folders, and relations from Storyblok in Laravel.
+- `traits`: Traits. Extending Block and Page functionality with reusable traits in Laravel Storyblok.
+- `troubleshooting`: Troubleshooting. Common issues, debugging advice, and troubleshooting steps for Laravel Storyblok.
+- `typography`: Laravel Storyblok Typography Helpers. Applying PHP Typography rules and formatting helpers to Storyblok text.
+- `upgrading`: Upgrading. Upgrade guides and breaking changes for Laravel Storyblok releases.
+- `views`: Views. Resolving Blade views and passing nested Storyblok data to templates.
+- `whats-new`: What’s new. Release notes and new feature highlights across Laravel Storyblok versions.
+<!-- larecipe:end -->

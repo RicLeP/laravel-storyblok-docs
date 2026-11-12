@@ -1,0 +1,76 @@
+{
+    "$schema": "https://larecipe.saleem.dev/schemas/3.x/navigation.json",
+    "groups": [
+        {
+            "group": "Getting Started",
+            "pages": [
+                {
+                    "page": "overview",
+                    "label": "Overview"
+                },
+                "installation",
+                "whats-new",
+                "upgrading",
+                "configuration",
+                "basic-usage",
+                {
+                    "page": "requesting-pages",
+                    "label": "Requesting pages"
+                },
+                "troubleshooting",
+                {
+                    "page": "exception-handling",
+                    "label": "Exception handling"
+                }
+            ]
+        },
+        {
+            "group": "Advanced Usage",
+            "pages": [
+                "pages",
+                "folders",
+                "blocks",
+                "fields",
+                "assets",
+                {
+                    "page": "images",
+                    "label": "Images"
+                },
+                "views",
+                {
+                    "page": "traits",
+                    "label": "Extending"
+                },
+                {
+                    "page": "linking-the-visual-editor",
+                    "label": "Linking to the editor"
+                }
+            ]
+        },
+        {
+            "group": "Packages",
+            "pages": [
+                {
+                    "page": "cli",
+                    "label": "CLI & Artisan Commands"
+                },
+                {
+                    "page": "embedding-media",
+                    "label": "Embedding media"
+                },
+                {
+                    "page": "typography",
+                    "label": "Typography Helpers"
+                },
+                {
+                    "page": "css-classes",
+                    "label": "CSS Classes"
+                },
+                {
+                    "page": "laravel-storyblok-forms",
+                    "label": "Form Builder (Beta)"
+                }
+            ]
+        }
+    ]
+}
