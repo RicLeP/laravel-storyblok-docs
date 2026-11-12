@@ -30,6 +30,7 @@ return [
                 'attributes' => [
                     'data-website-id' => 'e188b7fc-b00b-43e6-a8eb-10cb12d35467'
                 ],
+                'defer' => true,
                 'src' => 'https://cloud.umami.is/script.js',
             ],
         ]],
