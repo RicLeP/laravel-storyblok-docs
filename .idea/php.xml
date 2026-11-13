@@ -147,6 +147,14 @@
       <path value="$PROJECT_DIR$/vendor/opis/uri" />
       <path value="$PROJECT_DIR$/vendor/opis/json-schema" />
       <path value="$PROJECT_DIR$/vendor/phiki/phiki" />
+      <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/code-unit" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/vendor/binarytorch/larecipe" />
+      <path value="$PROJECT_DIR$/vendor/masterminds/html5" />
+      <path value="$PROJECT_DIR$/vendor/erusev/parsedown" />
+      <path value="$PROJECT_DIR$/vendor/erusev/parsedown-extra" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php83" />
     </include_path>
   </component>
   <component name="PhpInterpreters">
@@ -173,10 +181,11 @@
         </remote_data>
       </interpreter>
       <interpreter id="25fc307e-7278-4155-bfa5-5bae7bc3226d" name="laravel-storyblok-docs" home="docker-compose://DATA" auto="false" debugger_id="php.debugger.XDebug">
-        <remote_data INTERPRETER_PATH="php8.4" HELPERS_PATH="/opt/.phpstorm_helpers" VALID="true" RUN_AS_ROOT_VIA_SUDO="false" DOCKER_ACCOUNT_NAME="Docker" DOCKER_COMPOSE_SERVICE_NAME="web" DOCKER_REMOTE_PROJECT_PATH="/opt/project">
+        <remote_data INTERPRETER_PATH="php8.5" HELPERS_PATH="/opt/.phpstorm_helpers" VALID="true" RUN_AS_ROOT_VIA_SUDO="false" DOCKER_ACCOUNT_NAME="Docker" DOCKER_COMPOSE_SERVICE_NAME="web" DOCKER_REMOTE_PROJECT_PATH="/opt/project">
           <PathMappingSettings>
             <option name="pathMappings">
               <list>
+                <mapping local-root="$PROJECT_DIR$" remote-root="/var/www/html" />
                 <mapping local-root="/home/riclep/www/packages/laravel-storyblok-docs" remote-root="/var/www/html" />
                 <mapping local-root="/home/riclep/www/packages/laravel-storyblok-docs/.ddev" remote-root="/mnt/ddev_config" />
                 <mapping local-root="$APPLICATION_CONFIG_DIR$/scratches" remote-root="/opt/scratches" />

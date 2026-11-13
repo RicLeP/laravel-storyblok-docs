@@ -5,6 +5,11 @@
     "theme": {
         "accent": "#00b3b0"
     },
+    "repository": {
+        "url": "https://github.com/RicLeP/laravel-storyblok",
+        "docsUrl": "https://github.com/RicLeP/laravel-storyblok-docs",
+        "docsPath": "docs"
+    },
     "versions": [
         {
             "id": "3.0",
